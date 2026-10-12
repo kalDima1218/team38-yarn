@@ -363,12 +363,6 @@ sudo nginx -t
 Повторная установка не удаляет данные HDFS и не форматирует существующий NN.
 Это учебный non-HA кластер в изолированной сети, без Kerberos.
 
-## 10. ОФИЦИАЛЬНЫЕ ИСТОЧНИКИ
+## 10. Дисклеймер
 
-- [Apache Hadoop 3.5.0 / Java 17](https://hadoop.apache.org/docs/r3.5.0/)
-- [Single Node Setup](https://hadoop.apache.org/docs/r3.5.0/hadoop-project-dist/hadoop-common/SingleCluster.html)
-- [Cluster Setup](https://hadoop.apache.org/docs/r3.5.0/hadoop-project-dist/hadoop-common/ClusterSetup.html)
-- [YARN architecture](https://hadoop.apache.org/docs/r3.5.0/hadoop-yarn/hadoop-yarn-site/YARN.html)
-- [Web Application Proxy](https://hadoop.apache.org/docs/r3.5.0/hadoop-yarn/hadoop-yarn-site/WebApplicationProxy.html)
-- [Timeline Server](https://hadoop.apache.org/docs/r3.5.0/hadoop-yarn/hadoop-yarn-site/TimelineServer.html)
-- [Cloudflare Quick Tunnels](https://developers.cloudflare.com/tunnel/get-started/quick-tunnels/)
+При сборке отчета и ридми использовался claude opus 5.5 c промптом "напиши подробный отчет и инструкцию по запуску"

@@ -1,0 +1,148 @@
+Sun Oct 11 11:00:25 UTC 2026
+team-38-en
+MemoryCurrent=154525696
+Id=hadoop-secondarynamenode.service
+ActiveState=active
+SubState=running
+UnitFileState=enabled
+
+MemoryCurrent=178737152
+Id=hadoop-historyserver.service
+ActiveState=active
+SubState=running
+UnitFileState=enabled
+
+MemoryCurrent=168480768
+Id=hadoop-timelineserver.service
+ActiveState=active
+SubState=running
+UnitFileState=enabled
+
+MemoryCurrent=101318656
+Id=hadoop-proxyserver.service
+ActiveState=active
+SubState=running
+UnitFileState=enabled
+
+MemoryCurrent=4599808
+Id=nginx.service
+ActiveState=active
+SubState=running
+UnitFileState=enabled
+inactive
+inactive
+inactive
+inactive
+               total        used        free      shared  buff/cache   available
+Mem:            3886        1270         944           1        1966        2615
+Swap:              0           0           0
+State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess
+LISTEN 0      4096      127.0.0.54:53         0.0.0.0:*          
+LISTEN 0      511          0.0.0.0:19099      0.0.0.0:*          
+LISTEN 0      500       10.38.0.10:19888      0.0.0.0:*          
+LISTEN 0      500       10.38.0.10:9868       0.0.0.0:*          
+LISTEN 0      256       10.38.0.10:10033      0.0.0.0:*          
+LISTEN 0      256       10.38.0.10:10020      0.0.0.0:*          
+LISTEN 0      500       10.38.0.10:8188       0.0.0.0:*          
+LISTEN 0      4096         0.0.0.0:22         0.0.0.0:*          
+LISTEN 0      256       10.38.0.10:10200      0.0.0.0:*          
+LISTEN 0      511          0.0.0.0:80         0.0.0.0:*          
+LISTEN 0      511          0.0.0.0:18188      0.0.0.0:*          
+LISTEN 0      511          0.0.0.0:18088      0.0.0.0:*          
+LISTEN 0      511          0.0.0.0:18043      0.0.0.0:*          
+LISTEN 0      511          0.0.0.0:18042      0.0.0.0:*          
+LISTEN 0      511          0.0.0.0:19868      0.0.0.0:*          
+LISTEN 0      511          0.0.0.0:19870      0.0.0.0:*          
+LISTEN 0      511          0.0.0.0:19865      0.0.0.0:*          
+LISTEN 0      511          0.0.0.0:19864      0.0.0.0:*          
+LISTEN 0      4096   127.0.0.53%lo:53         0.0.0.0:*          
+LISTEN 0      511          0.0.0.0:19880      0.0.0.0:*          
+LISTEN 0      500       10.38.0.10:9099       0.0.0.0:*          
+LISTEN 0      4096            [::]:22            [::]:*          
+Status: inactive
+Oct 11 10:43:07 team-38-en hdfs[98390]: 2026-10-11 10:43:07,305 WARN namenode.SecondaryNameNode: Checkpoint done. New Image Size: 864
+Oct 11 10:48:07 team-38-en hdfs[98390]: 2026-10-11 10:48:07,463 WARN namenode.SecondaryNameNode: Checkpoint done. New Image Size: 864
+Oct 11 10:53:07 team-38-en hdfs[98390]: 2026-10-11 10:53:07,675 WARN namenode.SecondaryNameNode: Checkpoint done. New Image Size: 3428
+Oct 11 11:00:18 team-38-en hdfs[103384]: 2026-10-11 11:00:18,654 WARN namenode.SecondaryNameNode: Checkpoint done. New Image Size: 5097
+
+team-38-nn
+MemoryCurrent=241266688
+Id=hadoop-namenode.service
+ActiveState=active
+SubState=running
+UnitFileState=enabled
+
+MemoryCurrent=309870592
+Id=hadoop-resourcemanager.service
+ActiveState=active
+SubState=running
+UnitFileState=enabled
+
+MemoryCurrent=[not set]
+Id=hadoop-datanode.service
+ActiveState=inactive
+SubState=dead
+UnitFileState=
+
+MemoryCurrent=[not set]
+Id=hadoop-nodemanager.service
+ActiveState=inactive
+SubState=dead
+UnitFileState=
+               total        used        free      shared  buff/cache   available
+Mem:            3886        1121         261           1        2799        2765
+Swap:              0           0           0
+team-38-00
+MemoryCurrent=[not set]
+Id=hadoop-namenode.service
+ActiveState=inactive
+SubState=dead
+UnitFileState=
+
+MemoryCurrent=[not set]
+Id=hadoop-resourcemanager.service
+ActiveState=inactive
+SubState=dead
+UnitFileState=
+
+MemoryCurrent=196087808
+Id=hadoop-datanode.service
+ActiveState=active
+SubState=running
+UnitFileState=enabled
+
+MemoryCurrent=270860288
+Id=hadoop-nodemanager.service
+ActiveState=active
+SubState=running
+UnitFileState=enabled
+               total        used        free      shared  buff/cache   available
+Mem:            3886        1024         854           1        2302        2861
+Swap:              0           0           0
+team-38-01
+MemoryCurrent=[not set]
+Id=hadoop-namenode.service
+ActiveState=inactive
+SubState=dead
+UnitFileState=
+
+MemoryCurrent=[not set]
+Id=hadoop-resourcemanager.service
+ActiveState=inactive
+SubState=dead
+UnitFileState=
+
+MemoryCurrent=215130112
+Id=hadoop-datanode.service
+ActiveState=active
+SubState=running
+UnitFileState=enabled
+
+MemoryCurrent=312799232
+Id=hadoop-nodemanager.service
+ActiveState=active
+SubState=running
+UnitFileState=enabled
+               total        used        free      shared  buff/cache   available
+Mem:            3886        1098         620           1        2462        2787
+Swap:              0           0           0

@@ -1,0 +1,80 @@
+2026-10-11 11:04:30,990 INFO client.DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at team-38-nn/10.38.0.11:8032
+2026-10-11 11:04:31,167 INFO client.AHSProxy: Connecting to Application History server at team-38-en/10.38.0.10:10200
+2026-10-11 11:04:31,530 INFO mapreduce.JobResourceUploader: Disabling Erasure Coding for path: /tmp/hadoop-yarn/staging/team/.staging/job_1791716023192_0003
+2026-10-11 11:04:31,892 INFO input.FileInputFormat: Total input files to process : 1
+2026-10-11 11:04:31,954 INFO mapreduce.JobSubmitter: number of splits:1
+2026-10-11 11:04:32,257 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1791716023192_0003
+2026-10-11 11:04:32,257 INFO mapreduce.JobSubmitter: Executing with tokens: []
+2026-10-11 11:04:32,454 INFO conf.Configuration: resource-types.xml not found
+2026-10-11 11:04:32,455 INFO resource.ResourceUtils: Unable to find 'resource-types.xml'.
+2026-10-11 11:04:32,544 INFO impl.YarnClientImpl: Submitted application application_1791716023192_0003
+2026-10-11 11:04:32,633 INFO mapreduce.Job: The url to track the job: http://team-38-en:9099/proxy/application_1791716023192_0003/
+2026-10-11 11:04:32,636 INFO mapreduce.Job: Running job: job_1791716023192_0003
+2026-10-11 11:04:40,741 INFO mapreduce.Job: Job job_1791716023192_0003 running in uber mode : false
+2026-10-11 11:04:40,742 INFO mapreduce.Job:  map 0% reduce 0%
+PASS: live Application Master via Web Application Proxy
+2026-10-11 11:04:45,795 INFO mapreduce.Job:  map 100% reduce 0%
+2026-10-11 11:04:51,828 INFO mapreduce.Job:  map 100% reduce 100%
+2026-10-11 11:04:52,842 INFO mapreduce.Job: Job job_1791716023192_0003 completed successfully
+2026-10-11 11:04:52,928 INFO mapreduce.Job: Counters: 54
+	File System Counters
+		FILE: Number of bytes read=42
+		FILE: Number of bytes written=637707
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=163
+		HDFS: Number of bytes written=24
+		HDFS: Number of read operations=8
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+		HDFS: Number of bytes read erasure-coded=0
+	Job Counters 
+		Launched map tasks=1
+		Launched reduce tasks=1
+		Data-local map tasks=1
+		Total time spent by all maps in occupied slots (ms)=7186
+		Total time spent by all reduces in occupied slots (ms)=7444
+		Total time spent by all map tasks (ms)=3593
+		Total time spent by all reduce tasks (ms)=3722
+		Total vcore-milliseconds taken by all map tasks=3593
+		Total vcore-milliseconds taken by all reduce tasks=3722
+		Total megabyte-milliseconds taken by all map tasks=1839616
+		Total megabyte-milliseconds taken by all reduce tasks=1905664
+	Map-Reduce Framework
+		Map input records=2
+		Map output records=4
+		Map output bytes=40
+		Map output materialized bytes=42
+		Input split bytes=139
+		Combine input records=4
+		Combine output records=3
+		Reduce input groups=3
+		Reduce shuffle bytes=42
+		Reduce input records=3
+		Reduce output records=3
+		Spilled Records=6
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=72
+		CPU time spent (ms)=1920
+		Physical memory (bytes) snapshot=489476096
+		Virtual memory (bytes) snapshot=4545847296
+		Total committed heap usage (bytes)=310378496
+		Peak Map Physical memory (bytes)=302039040
+		Peak Map Virtual memory (bytes)=2270302208
+		Peak Reduce Physical memory (bytes)=187437056
+		Peak Reduce Virtual memory (bytes)=2275545088
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=24
+	File Output Format Counters 
+		Bytes Written=24
+PASS: live WebProxy and completed WordCount

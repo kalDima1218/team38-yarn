@@ -1,0 +1,10 @@
+{
+  "application_id": "application_1791716023192_0003",
+  "status": 200,
+  "url": "http://127.0.0.1:19099/proxy/application_1791716023192_0003/",
+  "title": "\n    MapReduce Application application_1791716023192_0003\n  ",
+  "checked_at": "2026-10-11T11:04:41.371129+00:00",
+  "trigger": "MapReduce progress log event while Application Master is running",
+  "job_result": "SUCCEEDED; exact WordCount output",
+  "hdfs_output": "/user/team/proxy-check-20261011-110428"
+}

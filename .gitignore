@@ -1,0 +1,9 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+work/
+.ssh/
+*.pem
+*.key
+public-links.json

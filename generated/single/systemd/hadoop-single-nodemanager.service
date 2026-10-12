@@ -1,0 +1,25 @@
+[Unit]
+Description=Single-node Hadoop nodemanager (team-38)
+Wants=network-online.target
+After=network-online.target
+StartLimitIntervalSec=120
+StartLimitBurst=3
+
+[Service]
+Type=simple
+User=hadoop
+Group=hadoop
+Environment=HADOOP_CONF_DIR=/etc/hadoop-single
+Environment=JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+WorkingDirectory=/var/lib/hadoop
+ExecStart=/opt/hadoop/bin/yarn --config /etc/hadoop-single nodemanager
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=45
+KillSignal=SIGTERM
+SuccessExitStatus=143
+LimitNOFILE=65536
+MemoryMax=3400M
+
+[Install]
+WantedBy=multi-user.target

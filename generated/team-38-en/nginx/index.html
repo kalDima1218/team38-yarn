@@ -1,0 +1,14 @@
+<!doctype html><html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>team-38 — Hadoop / YARN</title><style>body{font:18px system-ui;margin:48px auto;max-width:920px;padding:0 24px;background:#f5f7fb;color:#17233d}h1{font-size:36px}li{margin:18px 0}a{color:#1655b8}small{color:#64748b;margin-left:14px}.box{padding:24px;background:white;border-radius:16px}</style>
+<h1>team-38 · Hadoop / YARN</h1><p>Учебный кластер: Hadoop 3.5.0 · Java 17 · 2 рабочих узла.</p>
+<div class="box"><ul><li><a data-port="18088" href="http://178.236.27.140:18088/">ResourceManager</a> <small>team-38-nn:8088</small></li>
+<li><a data-port="18042" href="http://178.236.27.140:18042/">NodeManager 0</a> <small>team-38-00:8042</small></li>
+<li><a data-port="18043" href="http://178.236.27.140:18043/">NodeManager 1</a> <small>team-38-01:8042</small></li>
+<li><a data-port="19880" href="http://178.236.27.140:19880/">MapReduce JobHistory</a> <small>team-38-en:19888</small></li>
+<li><a data-port="18188" href="http://178.236.27.140:18188/">YARN Timeline / Application History</a> <small>team-38-en:8188</small></li>
+<li><a data-port="19099" href="http://178.236.27.140:19099/">YARN Web Application Proxy</a> <small>team-38-en:9099</small></li>
+<li><a data-port="19870" href="http://178.236.27.140:19870/">HDFS NameNode</a> <small>team-38-nn:9870</small></li>
+<li><a data-port="19864" href="http://178.236.27.140:19864/">HDFS DataNode 0</a> <small>team-38-00:9864</small></li>
+<li><a data-port="19865" href="http://178.236.27.140:19865/">HDFS DataNode 1</a> <small>team-38-01:9864</small></li>
+<li><a data-port="19868" href="http://178.236.27.140:19868/">HDFS SecondaryNameNode</a> <small>team-38-en:9868</small></li></ul></div><p>История завершённых MapReduce-заданий находится в JobHistory. Application Master работает только во время выполнения приложения; его интерфейс доступен через Tracking URL и Web Application Proxy.</p>
+<script>if(['localhost','127.0.0.1'].includes(location.hostname)){document.querySelectorAll('a[data-port]').forEach(a=>a.href='http://'+location.hostname+':'+a.dataset.port+'/');}</script></html>

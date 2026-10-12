@@ -1,0 +1,8 @@
+{
+  "checked_at": "2026-10-11T10:56:25.689784+00:00",
+  "url": "http://178.236.27.140/",
+  "curl_exit_code": 28,
+  "http_code": "000",
+  "error": "curl: (28) Failed to connect to 178.236.27.140 port 80 after 8002 ms: Timeout was reached",
+  "interpretation": "Direct public HTTP ingress is unavailable; SSH access is verified separately."
+}

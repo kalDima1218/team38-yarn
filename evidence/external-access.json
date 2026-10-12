@@ -1,0 +1,764 @@
+{
+  "checked_at": "2026-10-11T11:05:38.834547+00:00",
+  "transport": "external client -> SSH 178.236.27.140:22 -> edge Nginx",
+  "checks": [
+    {
+      "port": 18080,
+      "path": "/",
+      "status": 200,
+      "final_url": "http://127.0.0.1:18080/"
+    },
+    {
+      "port": 18088,
+      "path": "/",
+      "status": 200,
+      "final_url": "http://127.0.0.1:18088/cluster"
+    },
+    {
+      "port": 18042,
+      "path": "/",
+      "status": 200,
+      "final_url": "http://127.0.0.1:18042/node"
+    },
+    {
+      "port": 18043,
+      "path": "/",
+      "status": 200,
+      "final_url": "http://127.0.0.1:18043/node"
+    },
+    {
+      "port": 19880,
+      "path": "/",
+      "status": 200,
+      "final_url": "http://127.0.0.1:19880/jobhistory"
+    },
+    {
+      "port": 18188,
+      "path": "/",
+      "status": 200,
+      "final_url": "http://127.0.0.1:18188/applicationhistory/"
+    },
+    {
+      "port": 19099,
+      "path": "/",
+      "status": 200,
+      "final_url": "http://127.0.0.1:19099/"
+    },
+    {
+      "port": 19870,
+      "path": "/",
+      "status": 200,
+      "final_url": "http://127.0.0.1:19870/index.html"
+    },
+    {
+      "port": 19864,
+      "path": "/",
+      "status": 200,
+      "final_url": "http://127.0.0.1:19864/index.html"
+    },
+    {
+      "port": 19865,
+      "path": "/",
+      "status": 200,
+      "final_url": "http://127.0.0.1:19865/index.html"
+    },
+    {
+      "port": 19868,
+      "path": "/",
+      "status": 200,
+      "final_url": "http://127.0.0.1:19868/index.html"
+    },
+    {
+      "port": 18188,
+      "path": "/ (redirect header)",
+      "status": 302,
+      "location": "/applicationhistory/"
+    },
+    {
+      "port": 18088,
+      "path": "/ws/v1/cluster/nodes",
+      "status": 200,
+      "final_url": "http://127.0.0.1:18088/ws/v1/cluster/nodes"
+    },
+    {
+      "port": 18088,
+      "path": "/ws/v1/cluster/apps",
+      "status": 200,
+      "final_url": "http://127.0.0.1:18088/ws/v1/cluster/apps"
+    },
+    {
+      "port": 19880,
+      "path": "/ws/v1/history/mapreduce/jobs",
+      "status": 200,
+      "final_url": "http://127.0.0.1:19880/ws/v1/history/mapreduce/jobs"
+    },
+    {
+      "port": 18188,
+      "path": "/ws/v1/timeline",
+      "status": 200,
+      "final_url": "http://127.0.0.1:18188/ws/v1/timeline"
+    },
+    {
+      "port": 18188,
+      "path": "/ws/v1/applicationhistory/about",
+      "status": 200,
+      "final_url": "http://127.0.0.1:18188/ws/v1/applicationhistory/about"
+    },
+    {
+      "port": 18188,
+      "path": "/ws/v1/applicationhistory/apps",
+      "status": 200,
+      "final_url": "http://127.0.0.1:18188/ws/v1/applicationhistory/apps"
+    },
+    {
+      "port": 18042,
+      "path": "/ws/v1/node/info",
+      "status": 200,
+      "final_url": "http://127.0.0.1:18042/ws/v1/node/info"
+    },
+    {
+      "port": 18043,
+      "path": "/ws/v1/node/info",
+      "status": 200,
+      "final_url": "http://127.0.0.1:18043/ws/v1/node/info"
+    },
+    {
+      "port": 19870,
+      "path": "/jmx",
+      "status": 200,
+      "final_url": "http://127.0.0.1:19870/jmx"
+    },
+    {
+      "port": 19864,
+      "path": "/jmx",
+      "status": 200,
+      "final_url": "http://127.0.0.1:19864/jmx"
+    },
+    {
+      "port": 19865,
+      "path": "/jmx",
+      "status": 200,
+      "final_url": "http://127.0.0.1:19865/jmx"
+    },
+    {
+      "port": 19868,
+      "path": "/jmx",
+      "status": 200,
+      "final_url": "http://127.0.0.1:19868/jmx"
+    },
+    {
+      "port": 19099,
+      "path": "/proxy/application_1791716023192_0003/",
+      "status": 200,
+      "final_url": "http://127.0.0.1:19880/jobhistory/job/job_1791716023192_0003"
+    },
+    {
+      "port": 19870,
+      "path": "/webhdfs/v1/user/team?op=LISTSTATUS&user.name=team",
+      "status": 200,
+      "final_url": "http://127.0.0.1:19870/webhdfs/v1/user/team?op=LISTSTATUS&user.name=team"
+    },
+    {
+      "port": 19870,
+      "path": "/webhdfs/v1/user/team/yarn-check-20261011-105419/input/text.txt?op=OPEN&user.name=team",
+      "status": 200,
+      "final_url": "http://127.0.0.1:19864/webhdfs/v1/user/team/yarn-check-20261011-105419/input/text.txt?op=OPEN&user.name=team&namenoderpcaddress=team-38-nn:9000&offset=0"
+    },
+    {
+      "port": 18088,
+      "method": "POST",
+      "status": 403
+    },
+    {
+      "port": 18042,
+      "method": "POST",
+      "status": 403
+    },
+    {
+      "port": 19880,
+      "method": "POST",
+      "status": 403
+    },
+    {
+      "port": 19870,
+      "method": "POST",
+      "status": 403
+    }
+  ],
+  "timeline_applications": [
+    {
+      "appId": "application_1791716023192_0003",
+      "currentAppAttemptId": "appattempt_1791716023192_0003_000001",
+      "user": "team",
+      "name": "word count",
+      "queue": "root.default",
+      "type": "MAPREDUCE",
+      "host": "team-38-01",
+      "rpcPort": 34679,
+      "appState": "FINISHED",
+      "runningContainers": 0,
+      "progress": 100.0,
+      "diagnosticsInfo": "",
+      "originalTrackingUrl": "http://127.0.0.1:19880/jobhistory/job/job_1791716023192_0003",
+      "trackingUrl": "http://127.0.0.1:19099/proxy/application_1791716023192_0003/",
+      "finalAppStatus": "SUCCEEDED",
+      "submittedTime": 1791716672506,
+      "startedTime": 1791716672514,
+      "launchTime": 1791716672546,
+      "finishedTime": 1791716690864,
+      "elapsedTime": 18350,
+      "priority": 0,
+      "allocatedCpuVcores": 0,
+      "allocatedMemoryMB": 0,
+      "allocatedGpus": 0,
+      "reservedCpuVcores": 0,
+      "reservedMemoryMB": 0,
+      "reservedGpus": 0,
+      "unmanagedApplication": false,
+      "appNodeLabelExpression": "<Not set>",
+      "amNodeLabelExpression": "<DEFAULT_PARTITION>",
+      "aggregateResourceAllocation": "17883 MB-seconds, 33 vcore-seconds",
+      "aggregatePreemptedResourceAllocation": "0 MB-seconds, 0 vcore-seconds"
+    },
+    {
+      "appId": "application_1791716023192_0002",
+      "currentAppAttemptId": "appattempt_1791716023192_0002_000001",
+      "user": "team",
+      "name": "streamjob4270044929088360167.jar",
+      "queue": "root.default",
+      "type": "MAPREDUCE",
+      "host": "team-38-01",
+      "rpcPort": 37335,
+      "appState": "FINISHED",
+      "runningContainers": 0,
+      "progress": 100.0,
+      "diagnosticsInfo": "",
+      "originalTrackingUrl": "http://127.0.0.1:19880/jobhistory/job/job_1791716023192_0002",
+      "trackingUrl": "http://127.0.0.1:19099/proxy/application_1791716023192_0002/",
+      "finalAppStatus": "SUCCEEDED",
+      "submittedTime": 1791716097971,
+      "startedTime": 1791716097972,
+      "launchTime": 1791716098013,
+      "finishedTime": 1791716117452,
+      "elapsedTime": 19480,
+      "priority": 0,
+      "allocatedCpuVcores": 0,
+      "allocatedMemoryMB": 0,
+      "allocatedGpus": 0,
+      "reservedCpuVcores": 0,
+      "reservedMemoryMB": 0,
+      "reservedGpus": 0,
+      "unmanagedApplication": false,
+      "appNodeLabelExpression": "<Not set>",
+      "amNodeLabelExpression": "<DEFAULT_PARTITION>",
+      "aggregateResourceAllocation": "21472 MB-seconds, 39 vcore-seconds",
+      "aggregatePreemptedResourceAllocation": "0 MB-seconds, 0 vcore-seconds"
+    },
+    {
+      "appId": "application_1791716023192_0001",
+      "currentAppAttemptId": "appattempt_1791716023192_0001_000001",
+      "user": "team",
+      "name": "word count",
+      "queue": "root.default",
+      "type": "MAPREDUCE",
+      "host": "team-38-01",
+      "rpcPort": 46101,
+      "appState": "FINISHED",
+      "runningContainers": 0,
+      "progress": 100.0,
+      "diagnosticsInfo": "",
+      "originalTrackingUrl": "http://127.0.0.1:19880/jobhistory/job/job_1791716023192_0001",
+      "trackingUrl": "http://127.0.0.1:19099/proxy/application_1791716023192_0001/",
+      "finalAppStatus": "SUCCEEDED",
+      "submittedTime": 1791716068758,
+      "startedTime": 1791716068844,
+      "launchTime": 1791716069881,
+      "finishedTime": 1791716089420,
+      "elapsedTime": 20576,
+      "priority": 0,
+      "allocatedCpuVcores": 0,
+      "allocatedMemoryMB": 0,
+      "allocatedGpus": 0,
+      "reservedCpuVcores": 0,
+      "reservedMemoryMB": 0,
+      "reservedGpus": 0,
+      "unmanagedApplication": false,
+      "appNodeLabelExpression": "<Not set>",
+      "amNodeLabelExpression": "<DEFAULT_PARTITION>",
+      "aggregateResourceAllocation": "18860 MB-seconds, 36 vcore-seconds",
+      "aggregatePreemptedResourceAllocation": "0 MB-seconds, 0 vcore-seconds"
+    }
+  ],
+  "nodes": [
+    {
+      "rack": "/default-rack",
+      "state": "RUNNING",
+      "id": "team-38-01:44263",
+      "nodeHostName": "team-38-01",
+      "nodeHTTPAddress": "127.0.0.1:18043",
+      "lastHealthUpdate": 1791716734816,
+      "version": "3.5.0",
+      "healthReport": "",
+      "numContainers": 0,
+      "usedMemoryMB": 0,
+      "availMemoryMB": 2048,
+      "usedVirtualCores": 0,
+      "availableVirtualCores": 2,
+      "memUtilization": 37.107567,
+      "cpuUtilization": 0.0,
+      "numRunningOpportContainers": 0,
+      "usedMemoryOpportGB": 0,
+      "usedVirtualCoresOpport": 0,
+      "numQueuedContainers": 0,
+      "allocationTags": {},
+      "resourceUtilization": {
+        "nodePhysicalMemoryMB": 1442,
+        "nodeVirtualMemoryMB": 1442,
+        "nodeCPUUsage": 0.0,
+        "aggregatedContainersPhysicalMemoryMB": 0,
+        "aggregatedContainersVirtualMemoryMB": 0,
+        "containersCPUUsage": 0.0
+      },
+      "usedResource": {
+        "memory": 0,
+        "vCores": 0,
+        "resourceInformations": {
+          "resourceInformation": [
+            {
+              "maximumAllocation": 9223372036854775807,
+              "minimumAllocation": 0,
+              "name": "memory-mb",
+              "resourceType": "COUNTABLE",
+              "units": "Mi",
+              "value": 0
+            },
+            {
+              "maximumAllocation": 9223372036854775807,
+              "minimumAllocation": 0,
+              "name": "vcores",
+              "resourceType": "COUNTABLE",
+              "units": "",
+              "value": 0
+            }
+          ]
+        }
+      },
+      "availableResource": {
+        "memory": 2048,
+        "vCores": 2,
+        "resourceInformations": {
+          "resourceInformation": [
+            {
+              "maximumAllocation": 9223372036854775807,
+              "minimumAllocation": 0,
+              "name": "memory-mb",
+              "resourceType": "COUNTABLE",
+              "units": "Mi",
+              "value": 2048
+            },
+            {
+              "maximumAllocation": 9223372036854775807,
+              "minimumAllocation": 0,
+              "name": "vcores",
+              "resourceType": "COUNTABLE",
+              "units": "",
+              "value": 2
+            }
+          ]
+        }
+      },
+      "nodeAttributesInfo": {},
+      "totalResource": {
+        "memory": 2048,
+        "vCores": 2,
+        "resourceInformations": {
+          "resourceInformation": [
+            {
+              "maximumAllocation": 9223372036854775807,
+              "minimumAllocation": 0,
+              "name": "memory-mb",
+              "resourceType": "COUNTABLE",
+              "units": "Mi",
+              "value": 2048
+            },
+            {
+              "maximumAllocation": 9223372036854775807,
+              "minimumAllocation": 0,
+              "name": "vcores",
+              "resourceType": "COUNTABLE",
+              "units": "",
+              "value": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "rack": "/default-rack",
+      "state": "RUNNING",
+      "id": "team-38-00:43197",
+      "nodeHostName": "team-38-00",
+      "nodeHTTPAddress": "127.0.0.1:18042",
+      "lastHealthUpdate": 1791716734309,
+      "version": "3.5.0",
+      "healthReport": "",
+      "numContainers": 0,
+      "usedMemoryMB": 0,
+      "availMemoryMB": 2048,
+      "usedVirtualCores": 0,
+      "availableVirtualCores": 2,
+      "memUtilization": 36.25836,
+      "cpuUtilization": 1.0,
+      "numRunningOpportContainers": 0,
+      "usedMemoryOpportGB": 0,
+      "usedVirtualCoresOpport": 0,
+      "numQueuedContainers": 0,
+      "allocationTags": {},
+      "resourceUtilization": {
+        "nodePhysicalMemoryMB": 1409,
+        "nodeVirtualMemoryMB": 1409,
+        "nodeCPUUsage": 0.019999999552965164,
+        "aggregatedContainersPhysicalMemoryMB": 0,
+        "aggregatedContainersVirtualMemoryMB": 0,
+        "containersCPUUsage": 0.0
+      },
+      "usedResource": {
+        "memory": 0,
+        "vCores": 0,
+        "resourceInformations": {
+          "resourceInformation": [
+            {
+              "maximumAllocation": 9223372036854775807,
+              "minimumAllocation": 0,
+              "name": "memory-mb",
+              "resourceType": "COUNTABLE",
+              "units": "Mi",
+              "value": 0
+            },
+            {
+              "maximumAllocation": 9223372036854775807,
+              "minimumAllocation": 0,
+              "name": "vcores",
+              "resourceType": "COUNTABLE",
+              "units": "",
+              "value": 0
+            }
+          ]
+        }
+      },
+      "availableResource": {
+        "memory": 2048,
+        "vCores": 2,
+        "resourceInformations": {
+          "resourceInformation": [
+            {
+              "maximumAllocation": 9223372036854775807,
+              "minimumAllocation": 0,
+              "name": "memory-mb",
+              "resourceType": "COUNTABLE",
+              "units": "Mi",
+              "value": 2048
+            },
+            {
+              "maximumAllocation": 9223372036854775807,
+              "minimumAllocation": 0,
+              "name": "vcores",
+              "resourceType": "COUNTABLE",
+              "units": "",
+              "value": 2
+            }
+          ]
+        }
+      },
+      "nodeAttributesInfo": {},
+      "totalResource": {
+        "memory": 2048,
+        "vCores": 2,
+        "resourceInformations": {
+          "resourceInformation": [
+            {
+              "maximumAllocation": 9223372036854775807,
+              "minimumAllocation": 0,
+              "name": "memory-mb",
+              "resourceType": "COUNTABLE",
+              "units": "Mi",
+              "value": 2048
+            },
+            {
+              "maximumAllocation": 9223372036854775807,
+              "minimumAllocation": 0,
+              "name": "vcores",
+              "resourceType": "COUNTABLE",
+              "units": "",
+              "value": 2
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "applications": [
+    {
+      "id": "application_1791716023192_0001",
+      "user": "team",
+      "name": "word count",
+      "queue": "root.default",
+      "state": "FINISHED",
+      "finalStatus": "SUCCEEDED",
+      "progress": 100.0,
+      "trackingUI": "History",
+      "trackingUrl": "http://127.0.0.1:19099/proxy/application_1791716023192_0001/",
+      "diagnostics": "",
+      "clusterId": 1791716023192,
+      "applicationType": "MAPREDUCE",
+      "applicationTags": "",
+      "priority": 0,
+      "startedTime": 1791716068844,
+      "launchTime": 1791716069881,
+      "finishedTime": 1791716089420,
+      "elapsedTime": 20576,
+      "amContainerLogs": "http://127.0.0.1:18043/node/containerlogs/container_1791716023192_0001_01_000001/team",
+      "amHostHttpAddress": "127.0.0.1:18043",
+      "amRPCAddress": "team-38-01:46101",
+      "masterNodeId": "team-38-01:44263",
+      "allocatedMB": -1,
+      "allocatedVCores": -1,
+      "reservedMB": -1,
+      "reservedVCores": -1,
+      "runningContainers": -1,
+      "memorySeconds": 18860,
+      "vcoreSeconds": 36,
+      "queueUsagePercentage": 0.0,
+      "clusterUsagePercentage": 0.0,
+      "resourceSecondsMap": {
+        "entry": [
+          {
+            "key": "memory-mb",
+            "value": 18860
+          },
+          {
+            "key": "vcores",
+            "value": 36
+          }
+        ]
+      },
+      "preemptedResourceMB": 0,
+      "preemptedResourceVCores": 0,
+      "numNonAMContainerPreempted": 0,
+      "numAMContainerPreempted": 0,
+      "preemptedMemorySeconds": 0,
+      "preemptedVcoreSeconds": 0,
+      "logAggregationStatus": "SUCCEEDED",
+      "unmanagedApplication": false,
+      "amNodeLabelExpression": "",
+      "timeouts": {
+        "timeout": [
+          {
+            "type": "LIFETIME",
+            "expiryTime": "UNLIMITED",
+            "remainingTimeInSeconds": -1
+          }
+        ]
+      }
+    },
+    {
+      "id": "application_1791716023192_0002",
+      "user": "team",
+      "name": "streamjob4270044929088360167.jar",
+      "queue": "root.default",
+      "state": "FINISHED",
+      "finalStatus": "SUCCEEDED",
+      "progress": 100.0,
+      "trackingUI": "History",
+      "trackingUrl": "http://127.0.0.1:19099/proxy/application_1791716023192_0002/",
+      "diagnostics": "",
+      "clusterId": 1791716023192,
+      "applicationType": "MAPREDUCE",
+      "applicationTags": "",
+      "priority": 0,
+      "startedTime": 1791716097972,
+      "launchTime": 1791716098013,
+      "finishedTime": 1791716117452,
+      "elapsedTime": 19480,
+      "amContainerLogs": "http://127.0.0.1:18043/node/containerlogs/container_1791716023192_0002_01_000001/team",
+      "amHostHttpAddress": "127.0.0.1:18043",
+      "amRPCAddress": "team-38-01:37335",
+      "masterNodeId": "team-38-01:44263",
+      "allocatedMB": -1,
+      "allocatedVCores": -1,
+      "reservedMB": -1,
+      "reservedVCores": -1,
+      "runningContainers": -1,
+      "memorySeconds": 21472,
+      "vcoreSeconds": 39,
+      "queueUsagePercentage": 0.0,
+      "clusterUsagePercentage": 0.0,
+      "resourceSecondsMap": {
+        "entry": [
+          {
+            "key": "memory-mb",
+            "value": 21472
+          },
+          {
+            "key": "vcores",
+            "value": 39
+          }
+        ]
+      },
+      "preemptedResourceMB": 0,
+      "preemptedResourceVCores": 0,
+      "numNonAMContainerPreempted": 0,
+      "numAMContainerPreempted": 0,
+      "preemptedMemorySeconds": 0,
+      "preemptedVcoreSeconds": 0,
+      "logAggregationStatus": "SUCCEEDED",
+      "unmanagedApplication": false,
+      "amNodeLabelExpression": "",
+      "timeouts": {
+        "timeout": [
+          {
+            "type": "LIFETIME",
+            "expiryTime": "UNLIMITED",
+            "remainingTimeInSeconds": -1
+          }
+        ]
+      }
+    },
+    {
+      "id": "application_1791716023192_0003",
+      "user": "team",
+      "name": "word count",
+      "queue": "root.default",
+      "state": "FINISHED",
+      "finalStatus": "SUCCEEDED",
+      "progress": 100.0,
+      "trackingUI": "History",
+      "trackingUrl": "http://127.0.0.1:19099/proxy/application_1791716023192_0003/",
+      "diagnostics": "",
+      "clusterId": 1791716023192,
+      "applicationType": "MAPREDUCE",
+      "applicationTags": "",
+      "priority": 0,
+      "startedTime": 1791716672514,
+      "launchTime": 1791716672546,
+      "finishedTime": 1791716690864,
+      "elapsedTime": 18350,
+      "amContainerLogs": "http://127.0.0.1:18043/node/containerlogs/container_1791716023192_0003_01_000001/team",
+      "amHostHttpAddress": "127.0.0.1:18043",
+      "amRPCAddress": "team-38-01:34679",
+      "masterNodeId": "team-38-01:44263",
+      "allocatedMB": -1,
+      "allocatedVCores": -1,
+      "reservedMB": -1,
+      "reservedVCores": -1,
+      "runningContainers": -1,
+      "memorySeconds": 17883,
+      "vcoreSeconds": 33,
+      "queueUsagePercentage": 0.0,
+      "clusterUsagePercentage": 0.0,
+      "resourceSecondsMap": {
+        "entry": [
+          {
+            "key": "memory-mb",
+            "value": 17883
+          },
+          {
+            "key": "vcores",
+            "value": 33
+          }
+        ]
+      },
+      "preemptedResourceMB": 0,
+      "preemptedResourceVCores": 0,
+      "numNonAMContainerPreempted": 0,
+      "numAMContainerPreempted": 0,
+      "preemptedMemorySeconds": 0,
+      "preemptedVcoreSeconds": 0,
+      "logAggregationStatus": "SUCCEEDED",
+      "unmanagedApplication": false,
+      "amNodeLabelExpression": "",
+      "timeouts": {
+        "timeout": [
+          {
+            "type": "LIFETIME",
+            "expiryTime": "UNLIMITED",
+            "remainingTimeInSeconds": -1
+          }
+        ]
+      }
+    }
+  ],
+  "jobs": [
+    {
+      "submitTime": 1791715748414,
+      "startTime": 1791715757370,
+      "finishTime": 1791715771244,
+      "id": "job_1791715300870_0001",
+      "name": "word count",
+      "queue": "root.default",
+      "user": "team",
+      "state": "SUCCEEDED",
+      "mapsTotal": 1,
+      "mapsCompleted": 1,
+      "reducesTotal": 1,
+      "reducesCompleted": 1
+    },
+    {
+      "submitTime": 1791715780387,
+      "startTime": 1791715786620,
+      "finishTime": 1791715802856,
+      "id": "job_1791715300870_0002",
+      "name": "streamjob14290492027899963185.jar",
+      "queue": "root.default",
+      "user": "team",
+      "state": "SUCCEEDED",
+      "mapsTotal": 2,
+      "mapsCompleted": 2,
+      "reducesTotal": 1,
+      "reducesCompleted": 1
+    },
+    {
+      "submitTime": 1791716068758,
+      "startTime": 1791716076235,
+      "finishTime": 1791716089240,
+      "id": "job_1791716023192_0001",
+      "name": "word count",
+      "queue": "root.default",
+      "user": "team",
+      "state": "SUCCEEDED",
+      "mapsTotal": 1,
+      "mapsCompleted": 1,
+      "reducesTotal": 1,
+      "reducesCompleted": 1
+    },
+    {
+      "submitTime": 1791716097971,
+      "startTime": 1791716104377,
+      "finishTime": 1791716117260,
+      "id": "job_1791716023192_0002",
+      "name": "streamjob4270044929088360167.jar",
+      "queue": "root.default",
+      "user": "team",
+      "state": "SUCCEEDED",
+      "mapsTotal": 2,
+      "mapsCompleted": 2,
+      "reducesTotal": 1,
+      "reducesCompleted": 1
+    },
+    {
+      "submitTime": 1791716672506,
+      "startTime": 1791716678833,
+      "finishTime": 1791716690686,
+      "id": "job_1791716023192_0003",
+      "name": "word count",
+      "queue": "root.default",
+      "user": "team",
+      "state": "SUCCEEDED",
+      "mapsTotal": 1,
+      "mapsCompleted": 1,
+      "reducesTotal": 1,
+      "reducesCompleted": 1
+    }
+  ],
+  "status": "PASS"
+}

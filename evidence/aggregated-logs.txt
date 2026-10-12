@@ -1,0 +1,1207 @@
+2026-10-11 11:00:23,828 INFO client.DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at team-38-nn/10.38.0.11:8032
+2026-10-11 11:00:24,065 INFO client.AHSProxy: Connecting to Application History server at team-38-en/10.38.0.10:10200
+Container: container_1791716023192_0002_01_000003 on team-38-00_43197
+LogAggregationType: AGGREGATED
+=====================================================================
+LogType:directory.info
+LogLastModifiedTime:Sun Oct 11 10:55:24 +0000 2026
+LogLength:2392
+LogContents:
+ls -l:
+total 40
+-rw-r--r-- 1 hadoop hadoop  129 Oct 11 10:55 container_tokens
+-rwx------ 1 hadoop hadoop  711 Oct 11 10:55 default_container_executor.sh
+-rwx------ 1 hadoop hadoop  656 Oct 11 10:55 default_container_executor_session.sh
+lrwxrwxrwx 1 hadoop hadoop  102 Oct 11 10:55 job.jar -> /var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/filecache/10/job.jar
+lrwxrwxrwx 1 hadoop hadoop  102 Oct 11 10:55 job.xml -> /var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/filecache/11/job.xml
+-rwx------ 1 hadoop hadoop 5292 Oct 11 10:55 launch_container.sh
+lrwxrwxrwx 1 hadoop hadoop   64 Oct 11 10:55 mapper.py -> /var/lib/hadoop/yarn/local/usercache/team/filecache/12/mapper.py
+lrwxrwxrwx 1 hadoop hadoop   65 Oct 11 10:55 reducer.py -> /var/lib/hadoop/yarn/local/usercache/team/filecache/13/reducer.py
+drwx--x--- 2 hadoop hadoop 4096 Oct 11 10:55 tmp
+find -L . -maxdepth 5 -ls:
+   789933      4 drwx--x---   3 hadoop   hadoop       4096 Oct 11 10:55 .
+   789943      4 -rw-r--r--   1 hadoop   hadoop         16 Oct 11 10:55 ./.default_container_executor.sh.crc
+   789922      4 drwx------   2 hadoop   hadoop       4096 Oct 11 10:55 ./job.jar
+   789923    144 -r-x------   1 hadoop   hadoop     143536 Oct 11 10:55 ./job.jar/job.jar
+   789935      4 drwx--x---   2 hadoop   hadoop       4096 Oct 11 10:55 ./tmp
+   789936      4 -rw-r--r--   1 hadoop   hadoop        129 Oct 11 10:55 ./container_tokens
+   789938      8 -rwx------   1 hadoop   hadoop       5292 Oct 11 10:55 ./launch_container.sh
+   789909      4 -r-x------   1 hadoop   hadoop        115 Oct 11 10:55 ./mapper.py
+   789942      4 -rwx------   1 hadoop   hadoop        711 Oct 11 10:55 ./default_container_executor.sh
+   789939      4 -rw-r--r--   1 hadoop   hadoop         52 Oct 11 10:55 ./.launch_container.sh.crc
+   789915      4 -r-x------   1 hadoop   hadoop        238 Oct 11 10:55 ./reducer.py
+   789941      4 -rw-r--r--   1 hadoop   hadoop         16 Oct 11 10:55 ./.default_container_executor_session.sh.crc
+   789940      4 -rwx------   1 hadoop   hadoop        656 Oct 11 10:55 ./default_container_executor_session.sh
+   789925    272 -r-x------   1 hadoop   hadoop     275801 Oct 11 10:55 ./job.xml
+   789937      4 -rw-r--r--   1 hadoop   hadoop         12 Oct 11 10:55 ./.container_tokens.crc
+broken symlinks(find -L . -maxdepth 5 -type l -ls):
+
+End of LogType:directory.info
+*******************************************************************************
+
+Container: container_1791716023192_0002_01_000003 on team-38-00_43197
+LogAggregationType: AGGREGATED
+=====================================================================
+LogType:launch_container.sh
+LogLastModifiedTime:Sun Oct 11 10:55:24 +0000 2026
+LogLength:5292
+LogContents:
+#!/bin/bash
+
+set -o pipefail -e
+export PRELAUNCH_OUT="/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000003/prelaunch.out"
+exec >"${PRELAUNCH_OUT}"
+export PRELAUNCH_ERR="/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000003/prelaunch.err"
+exec 2>"${PRELAUNCH_ERR}"
+echo "Setting up env variables"
+export JAVA_HOME=${JAVA_HOME:-"/usr/lib/jvm/java-17-openjdk-amd64"}
+export HADOOP_COMMON_HOME=${HADOOP_COMMON_HOME:-"/opt/hadoop"}
+export HADOOP_HDFS_HOME=${HADOOP_HDFS_HOME:-"/opt/hadoop"}
+export HADOOP_CONF_DIR=${HADOOP_CONF_DIR:-"/etc/hadoop"}
+export HADOOP_YARN_HOME=${HADOOP_YARN_HOME:-"/opt/hadoop"}
+export HADOOP_MAPRED_HOME=${HADOOP_MAPRED_HOME:-"/opt/hadoop"}
+export PATH=${PATH:-"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/snap/bin"}
+export LANG=${LANG:-"C.UTF-8"}
+export HADOOP_TOKEN_FILE_LOCATION="/var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/container_1791716023192_0002_01_000003/container_tokens"
+export CONTAINER_ID="container_1791716023192_0002_01_000003"
+export NM_PORT="43197"
+export NM_HOST="team-38-00"
+export NM_HTTP_PORT="8042"
+export LOCAL_DIRS="/var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002"
+export LOCAL_USER_DIRS="/var/lib/hadoop/yarn/local/usercache/team/"
+export LOG_DIRS="/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000003"
+export USER="team"
+export LOGNAME="team"
+export HOME="/home/"
+export PWD="/var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/container_1791716023192_0002_01_000003"
+export LOCALIZATION_COUNTERS="421878,0,4,0,133"
+export JVM_PID="$$"
+export NM_AUX_SERVICE_mapreduce_shuffle="AAA0+gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+export STDOUT_LOGFILE_ENV="/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000003/stdout"
+export SHELL="/bin/bash"
+export HADOOP_ROOT_LOGGER="INFO,console"
+export CLASSPATH="$PWD:$HADOOP_CONF_DIR:$HADOOP_COMMON_HOME/share/hadoop/common/*:$HADOOP_COMMON_HOME/share/hadoop/common/lib/*:$HADOOP_HDFS_HOME/share/hadoop/hdfs/*:$HADOOP_HDFS_HOME/share/hadoop/hdfs/lib/*:$HADOOP_YARN_HOME/share/hadoop/yarn/*:$HADOOP_YARN_HOME/share/hadoop/yarn/lib/*:$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/*:$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/lib/*:job.jar/*:job.jar/classes/:job.jar/lib/*:$PWD/*"
+export LD_LIBRARY_PATH="$PWD:$HADOOP_COMMON_HOME/lib/native"
+export STDERR_LOGFILE_ENV="/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000003/stderr"
+export HADOOP_CLIENT_OPTS=""
+export MALLOC_ARENA_MAX="4"
+echo "Setting up job resources"
+ln -sf -- "/var/lib/hadoop/yarn/local/usercache/team/filecache/13/reducer.py" "reducer.py"
+ln -sf -- "/var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/filecache/11/job.xml" "job.xml"
+ln -sf -- "/var/lib/hadoop/yarn/local/usercache/team/filecache/12/mapper.py" "mapper.py"
+ln -sf -- "/var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/filecache/10/job.jar" "job.jar"
+echo "Copying debugging information"
+# Creating copy of launch script
+cp "launch_container.sh" "/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000003/launch_container.sh"
+chmod 640 "/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000003/launch_container.sh"
+# Determining directory contents
+echo "ls -l:" 1>"/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000003/directory.info"
+ls -l 1>>"/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000003/directory.info"
+echo "find -L . -maxdepth 5 -ls:" 1>>"/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000003/directory.info"
+find -L . -maxdepth 5 -ls 1>>"/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000003/directory.info"
+echo "broken symlinks(find -L . -maxdepth 5 -type l -ls):" 1>>"/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000003/directory.info"
+find -L . -maxdepth 5 -type l -ls 1>>"/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000003/directory.info"
+echo "Launching container"
+exec /bin/bash -c "$JAVA_HOME/bin/java -Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN  -Xmx384m -Djava.io.tmpdir=$PWD/tmp -Dlog4j.configuration=container-log4j.properties -Dyarn.app.container.log.dir=/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000003 -Dyarn.app.container.log.filesize=0 -Dhadoop.root.logger=INFO,CLA -Dhadoop.root.logfile=syslog org.apache.hadoop.mapred.YarnChild 10.38.0.13 41697 attempt_1791716023192_0002_m_000001_0 3 1>/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000003/stdout 2>/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000003/stderr "
+
+End of LogType:launch_container.sh
+************************************************************************************
+
+Container: container_1791716023192_0002_01_000003 on team-38-00_43197
+LogAggregationType: AGGREGATED
+=====================================================================
+LogType:prelaunch.err
+LogLastModifiedTime:Sun Oct 11 10:55:24 +0000 2026
+LogLength:0
+LogContents:
+
+End of LogType:prelaunch.err
+******************************************************************************
+
+Container: container_1791716023192_0002_01_000003 on team-38-00_43197
+LogAggregationType: AGGREGATED
+=====================================================================
+LogType:prelaunch.out
+LogLastModifiedTime:Sun Oct 11 10:55:24 +0000 2026
+LogLength:100
+LogContents:
+Setting up env variables
+Setting up job resources
+Copying debugging information
+Launching container
+
+End of LogType:prelaunch.out
+******************************************************************************
+
+Container: container_1791716023192_0002_01_000003 on team-38-00_43197
+LogAggregationType: AGGREGATED
+=====================================================================
+LogType:stderr
+LogLastModifiedTime:Sun Oct 11 10:55:24 +0000 2026
+LogLength:0
+LogContents:
+
+End of LogType:stderr
+***********************************************************************
+
+Container: container_1791716023192_0002_01_000003 on team-38-00_43197
+LogAggregationType: AGGREGATED
+=====================================================================
+LogType:stdout
+LogLastModifiedTime:Sun Oct 11 10:55:24 +0000 2026
+LogLength:0
+LogContents:
+
+End of LogType:stdout
+***********************************************************************
+
+Container: container_1791716023192_0002_01_000003 on team-38-00_43197
+LogAggregationType: AGGREGATED
+=====================================================================
+LogType:syslog
+LogLastModifiedTime:Sun Oct 11 10:55:24 +0000 2026
+LogLength:28158
+LogContents:
+2026-10-11 10:55:07,905 INFO [main] org.apache.hadoop.security.SecurityUtil: Updating Configuration
+2026-10-11 10:55:08,316 INFO [main] org.apache.hadoop.mapred.YarnChild: Executing with tokens: [Kind: mapreduce.job, Service: job_1791716023192_0002, Ident: (org.apache.hadoop.mapreduce.security.token.JobTokenIdentifier@2f67b837)]
+2026-10-11 10:55:08,365 INFO [main] org.apache.hadoop.mapred.YarnChild: Sleeping for 0ms before retrying again. Got null now.
+2026-10-11 10:55:08,688 INFO [main] org.apache.hadoop.mapred.YarnChild: mapreduce.cluster.local.dir for child: /var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002
+2026-10-11 10:55:09,219 INFO [main] org.apache.hadoop.mapred.YarnChild: 
+/************************************************************
+[system properties]
+os.name: Linux
+os.version: 6.8.0-139-generic
+java.home: /usr/lib/jvm/java-17-openjdk-amd64
+java.runtime.version: 17.0.20.1+1-1-24.04-Ubuntu
+java.vendor: Ubuntu
+java.version: 17.0.20.1
+java.vm.name: OpenJDK 64-Bit Server VM
+java.class.path: /var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/container_1791716023192_0002_01_000003:/etc/hadoop:/opt/hadoop/share/hadoop/common/hadoop-registry-3.5.0.jar:/opt/hadoop/share/hadoop/common/hadoop-nfs-3.5.0.jar:/opt/hadoop/share/hadoop/common/hadoop-common-3.5.0-tests.jar:/opt/hadoop/share/hadoop/common/hadoop-common-3.5.0.jar:/opt/hadoop/share/hadoop/common/hadoop-kms-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/dnsjava-3.6.1.jar:/opt/hadoop/share/hadoop/common/lib/jackson-annotations-2.18.6.jar:/opt/hadoop/share/hadoop/common/lib/HdrHistogram-2.1.12.jar:/opt/hadoop/share/hadoop/common/lib/kerby-asn1-2.0.3.jar:/opt/hadoop/share/hadoop/common/lib/commons-net-3.9.0.jar:/opt/hadoop/share/hadoop/common/lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/opt/hadoop/share/hadoop/common/lib/jackson-databind-2.18.6.jar:/opt/hadoop/share/hadoop/common/lib/kerby-config-2.0.3.jar:/opt/hadoop/share/hadoop/common/lib/jspecify-1.0.0.jar:/opt/hadoop/share/hadoop/common/lib/stax2-api-4.2.1.jar:/opt/hadoop/share/hadoop/common/lib/commons-lang3-3.18.0.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.xml.bind-api-2.3.3.jar:/opt/hadoop/share/hadoop/common/lib/hk2-locator-2.6.1.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.servlet.jsp-api-2.3.6.jar:/opt/hadoop/share/hadoop/common/lib/javax.servlet-api-3.1.0.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.activation-api-1.2.1.jar:/opt/hadoop/share/hadoop/common/lib/metrics-core-3.2.4.jar:/opt/hadoop/share/hadoop/common/lib/reload4j-1.2.22.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-cos-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/kerby-util-2.0.3.jar:/opt/hadoop/share/hadoop/common/lib/jetty-servlet-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/curator-recipes-5.2.0.jar:/opt/hadoop/share/hadoop/common/lib/netty-transport-native-unix-common-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-tos-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/commons-collections4-4.4.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-shaded-guava-1.5.0.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.servlet-api-4.0.4.jar:/opt/hadoop/share/hadoop/common/lib/slf4j-api-1.7.36.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.annotation-api-1.3.5.jar:/opt/hadoop/share/hadoop/common/lib/nimbus-jose-jwt-10.4.jar:/opt/hadoop/share/hadoop/common/lib/kerb-util-2.0.3.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-auth-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/istack-commons-runtime-3.0.12.jar:/opt/hadoop/share/hadoop/common/lib/curator-client-5.2.0.jar:/opt/hadoop/share/hadoop/common/lib/commons-cli-1.9.0.jar:/opt/hadoop/share/hadoop/common/lib/zookeeper-3.8.6.jar:/opt/hadoop/share/hadoop/common/lib/jersey-client-2.46.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.inject-2.6.1.jar:/opt/hadoop/share/hadoop/common/lib/netty-transport-native-epoll-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/bcprov-jdk18on-1.82.jar:/opt/hadoop/share/hadoop/common/lib/netty-transport-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/jul-to-slf4j-1.7.36.jar:/opt/hadoop/share/hadoop/common/lib/jackson-core-2.18.6.jar:/opt/hadoop/share/hadoop/common/lib/failureaccess-1.0.3.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-shaded-protobuf_3_25-1.5.0.jar:/opt/hadoop/share/hadoop/common/lib/jetty-security-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/jersey-container-servlet-2.46.jar:/opt/hadoop/share/hadoop/common/lib/jetty-util-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/jetty-webapp-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/commons-configuration2-2.10.1.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.activation-1.2.2.jar:/opt/hadoop/share/hadoop/common/lib/netty-codec-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/commons-io-2.16.1.jar:/opt/hadoop/share/hadoop/common/lib/commons-math3-3.6.1.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-azure-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/analyticsaccelerator-s3-1.3.1.jar:/opt/hadoop/share/hadoop/common/lib/aopalliance-repackaged-2.6.1.jar:/opt/hadoop/share/hadoop/common/lib/hk2-utils-2.6.1.jar:/opt/hadoop/share/hadoop/common/lib/jetty-io-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/httpclient-4.5.13.jar:/opt/hadoop/share/hadoop/common/lib/osgi-resource-locator-1.0.3.jar:/opt/hadoop/share/hadoop/common/lib/woodstox-core-5.4.0.jar:/opt/hadoop/share/hadoop/common/lib/jersey-hk2-2.46.jar:/opt/hadoop/share/hadoop/common/lib/zookeeper-jute-3.8.6.jar:/opt/hadoop/share/hadoop/common/lib/netty-transport-classes-epoll-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-azure-datalake-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/j2objc-annotations-3.0.0.jar:/opt/hadoop/share/hadoop/common/lib/jsr305-3.0.2.jar:/opt/hadoop/share/hadoop/common/lib/jetty-util-ajax-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/javassist-3.30.2-GA.jar:/opt/hadoop/share/hadoop/common/lib/audience-annotations-0.12.0.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-huaweicloud-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/kerb-crypto-2.0.3.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.ws.rs-api-2.1.6.jar:/opt/hadoop/share/hadoop/common/lib/jsch-0.1.55.jar:/opt/hadoop/share/hadoop/common/lib/hk2-api-2.6.1.jar:/opt/hadoop/share/hadoop/common/lib/netty-resolver-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/re2j-1.1.jar:/opt/hadoop/share/hadoop/common/lib/gson-2.9.0.jar:/opt/hadoop/share/hadoop/common/lib/commons-daemon-1.0.13.jar:/opt/hadoop/share/hadoop/common/lib/slf4j-reload4j-1.7.36.jar:/opt/hadoop/share/hadoop/common/lib/jetty-http-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/jetty-xml-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/kerb-core-2.0.3.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-gcp-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/azure-storage-7.0.1.jar:/opt/hadoop/share/hadoop/common/lib/jersey-common-2.46.jar:/opt/hadoop/share/hadoop/common/lib/wildfly-openssl-2.2.5.Final.jar:/opt/hadoop/share/hadoop/common/lib/azure-keyvault-core-1.0.0.jar:/opt/hadoop/share/hadoop/common/lib/netty-buffer-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/httpcore-4.4.13.jar:/opt/hadoop/share/hadoop/common/lib/netty-handler-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/commons-text-1.14.0.jar:/opt/hadoop/share/hadoop/common/lib/guava-33.4.8-jre.jar:/opt/hadoop/share/hadoop/common/lib/jetty-server-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-annotations-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.validation-api-2.0.2.jar:/opt/hadoop/share/hadoop/common/lib/jaxb-runtime-2.3.9.jar:/opt/hadoop/share/hadoop/common/lib/snappy-java-1.1.10.4.jar:/opt/hadoop/share/hadoop/common/lib/kerby-pkix-2.0.3.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-aws-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/commons-logging-1.3.0.jar:/opt/hadoop/share/hadoop/common/lib/commons-codec-1.15.jar:/opt/hadoop/share/hadoop/common/lib/curator-framework-5.2.0.jar:/opt/hadoop/share/hadoop/common/lib/txw2-2.3.9.jar:/opt/hadoop/share/hadoop/common/lib/netty-common-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/jersey-server-2.46.jar:/opt/hadoop/share/hadoop/common/lib/avro-1.11.5.jar:/opt/hadoop/share/hadoop/common/lib/jersey-container-servlet-core-2.46.jar:/opt/hadoop/share/hadoop/common/lib/commons-compress-1.26.1.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-httpfs-3.5.0.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-client-3.5.0.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-nfs-3.5.0.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-native-client-3.5.0-tests.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-client-3.5.0-tests.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-3.5.0.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-native-client-3.5.0.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-rbf-3.5.0-tests.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-3.5.0-tests.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-rbf-3.5.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/dnsjava-3.6.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/jackson-annotations-2.18.6.jar:/opt/hadoop/share/hadoop/hdfs/lib/kerby-asn1-2.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-redis-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-net-3.9.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-resolver-dns-classes-macos-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/jackson-databind-2.18.6.jar:/opt/hadoop/share/hadoop/hdfs/lib/kerby-config-2.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/jspecify-1.0.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/stax2-api-4.2.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-lang3-3.18.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/HikariCP-4.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.xml.bind-api-2.3.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-native-epoll-4.1.130.Final-linux-aarch_64.jar:/opt/hadoop/share/hadoop/hdfs/lib/hk2-locator-2.6.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.servlet.jsp-api-2.3.6.jar:/opt/hadoop/share/hadoop/hdfs/lib/javax.servlet-api-3.1.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.activation-api-1.2.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/metrics-core-3.2.4.jar:/opt/hadoop/share/hadoop/hdfs/lib/reload4j-1.2.22.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-stomp-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/kerby-util-2.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-servlet-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/json-simple-1.1.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/curator-recipes-5.2.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-native-unix-common-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-udt-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-native-epoll-4.1.130.Final-linux-riscv64.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-collections4-4.4.jar:/opt/hadoop/share/hadoop/hdfs/lib/hadoop-shaded-guava-1.5.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.servlet-api-4.0.4.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-socks-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.annotation-api-1.3.5.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-handler-ssl-ocsp-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/nimbus-jose-jwt-10.4.jar:/opt/hadoop/share/hadoop/hdfs/lib/kerb-util-2.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/hadoop-auth-3.5.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/istack-commons-runtime-3.0.12.jar:/opt/hadoop/share/hadoop/hdfs/lib/curator-client-5.2.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-cli-1.9.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-http2-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/zookeeper-3.8.6.jar:/opt/hadoop/share/hadoop/hdfs/lib/jersey-client-2.46.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.inject-2.6.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-native-epoll-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-native-epoll-4.1.130.Final-linux-x86_64.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/jackson-core-2.18.6.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-smtp-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/failureaccess-1.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/hadoop-shaded-protobuf_3_25-1.5.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-security-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/jersey-container-servlet-2.46.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-util-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-haproxy-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-webapp-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-configuration2-2.10.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.activation-1.2.2.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-sctp-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-io-2.16.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-math3-3.6.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/aopalliance-repackaged-2.6.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-xml-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-resolver-dns-native-macos-4.1.130.Final-osx-x86_64.jar:/opt/hadoop/share/hadoop/hdfs/lib/hk2-utils-2.6.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-io-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/httpclient-4.5.13.jar:/opt/hadoop/share/hadoop/hdfs/lib/osgi-resource-locator-1.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/woodstox-core-5.4.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/jersey-hk2-2.46.jar:/opt/hadoop/share/hadoop/hdfs/lib/zookeeper-jute-3.8.6.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-classes-epoll-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-dns-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-memcache-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/j2objc-annotations-3.0.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/jsr305-3.0.2.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-util-ajax-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/javassist-3.30.2-GA.jar:/opt/hadoop/share/hadoop/hdfs/lib/audience-annotations-0.12.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/kerb-crypto-2.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.ws.rs-api-2.1.6.jar:/opt/hadoop/share/hadoop/hdfs/lib/jsch-0.1.55.jar:/opt/hadoop/share/hadoop/hdfs/lib/hk2-api-2.6.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-resolver-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/re2j-1.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-all-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-http-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-classes-kqueue-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/gson-2.9.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-daemon-1.0.13.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-resolver-dns-native-macos-4.1.130.Final-osx-aarch_64.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-http-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-xml-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/kerb-core-2.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/jettison-1.5.4.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-rxtx-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/jersey-common-2.46.jar:/opt/hadoop/share/hadoop/hdfs/lib/leveldbjni-all-1.8.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-buffer-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/httpcore-4.4.13.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-handler-proxy-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-handler-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-text-1.14.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/guava-33.4.8-jre.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-server-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-native-kqueue-4.1.130.Final-osx-x86_64.jar:/opt/hadoop/share/hadoop/hdfs/lib/hadoop-annotations-3.5.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-mqtt-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.validation-api-2.0.2.jar:/opt/hadoop/share/hadoop/hdfs/lib/jaxb-runtime-2.3.9.jar:/opt/hadoop/share/hadoop/hdfs/lib/snappy-java-1.1.10.4.jar:/opt/hadoop/share/hadoop/hdfs/lib/kerby-pkix-2.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-logging-1.3.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-codec-1.15.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-resolver-dns-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/curator-framework-5.2.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/txw2-2.3.9.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-common-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/jersey-server-2.46.jar:/opt/hadoop/share/hadoop/hdfs/lib/avro-1.11.5.jar:/opt/hadoop/share/hadoop/hdfs/lib/jersey-container-servlet-core-2.46.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-compress-1.26.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-native-kqueue-4.1.130.Final-osx-aarch_64.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-applicationhistoryservice-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-globalpolicygenerator-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-timeline-pluginstorage-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-applications-distributedshell-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-services-api-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-applications-unmanaged-am-launcher-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-tests-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-services-core-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-router-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-api-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-registry-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-resourcemanager-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-common-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-nodemanager-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-web-proxy-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-sharedcachemanager-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-applications-mawo-core-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-common-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-client-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/lib/websocket-servlet-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/jsonschema2pojo-core-1.0.2.jar:/opt/hadoop/share/hadoop/yarn/lib/bcpkix-jdk18on-1.82.jar:/opt/hadoop/share/hadoop/yarn/lib/javax-websocket-client-impl-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/jetty-jndi-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/websocket-api-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/asm-tree-9.7.1.jar:/opt/hadoop/share/hadoop/yarn/lib/websocket-server-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/org.eclipse.persistence.asm-9.6.0.jar:/opt/hadoop/share/hadoop/yarn/lib/jakarta.json-api-1.1.6.jar:/opt/hadoop/share/hadoop/yarn/lib/commons-csv-1.9.0.jar:/opt/hadoop/share/hadoop/yarn/lib/fst-2.50.jar:/opt/hadoop/share/hadoop/yarn/lib/websocket-client-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/org.eclipse.persistence.core-2.7.14.jar:/opt/hadoop/share/hadoop/yarn/lib/swagger-annotations-1.5.4.jar:/opt/hadoop/share/hadoop/yarn/lib/javax.json-1.1.4.jar:/opt/hadoop/share/hadoop/yarn/lib/asm-commons-9.7.1.jar:/opt/hadoop/share/hadoop/yarn/lib/commons-lang-2.6.jar:/opt/hadoop/share/hadoop/yarn/lib/javax.websocket-client-api-1.0.jar:/opt/hadoop/share/hadoop/yarn/lib/javax.websocket-api-1.0.jar:/opt/hadoop/share/hadoop/yarn/lib/aopalliance-1.0.jar:/opt/hadoop/share/hadoop/yarn/lib/jersey-media-jaxb-2.46.jar:/opt/hadoop/share/hadoop/yarn/lib/mssql-jdbc-6.2.1.jre7.jar:/opt/hadoop/share/hadoop/yarn/lib/websocket-common-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/jetty-plus-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/snakeyaml-2.0.jar:/opt/hadoop/share/hadoop/yarn/lib/jackson-jaxrs-json-provider-2.18.6.jar:/opt/hadoop/share/hadoop/yarn/lib/javax-websocket-server-impl-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/bcutil-jdk18on-1.82.jar:/opt/hadoop/share/hadoop/yarn/lib/cache-api-1.1.1.jar:/opt/hadoop/share/hadoop/yarn/lib/jetty-client-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/org.eclipse.persistence.moxy-2.7.14.jar:/opt/hadoop/share/hadoop/yarn/lib/jersey-media-json-jettison-2.46.jar:/opt/hadoop/share/hadoop/yarn/lib/caffeine-2.9.3.jar:/opt/hadoop/share/hadoop/yarn/lib/jcodings-1.0.13.jar:/opt/hadoop/share/hadoop/yarn/lib/jackson-module-jaxb-annotations-2.18.6.jar:/opt/hadoop/share/hadoop/yarn/lib/guice-servlet-5.1.0.jar:/opt/hadoop/share/hadoop/yarn/lib/jna-5.2.0.jar:/opt/hadoop/share/hadoop/yarn/lib/guice-5.1.0.jar:/opt/hadoop/share/hadoop/yarn/lib/javax.annotation-api-1.3.2.jar:/opt/hadoop/share/hadoop/yarn/lib/jetty-annotations-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/ehcache-3.8.2.jar:/opt/hadoop/share/hadoop/yarn/lib/jline-3.9.0.jar:/opt/hadoop/share/hadoop/yarn/lib/failsafe-2.4.4.jar:/opt/hadoop/share/hadoop/yarn/lib/jackson-jaxrs-base-2.18.6.jar:/opt/hadoop/share/hadoop/yarn/lib/objenesis-2.6.jar:/opt/hadoop/share/hadoop/yarn/lib/codemodel-2.6.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-3.5.0-tests.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-hs-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-nativetask-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-core-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-app-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-uploader-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-common-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-hs-plugins-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-shuffle-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/lib/javax.inject-1.jar:job.jar/job.jar:job.jar/classes/:job.jar/lib/*:/var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/container_1791716023192_0002_01_000003/job.jar
+java.io.tmpdir: /var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/container_1791716023192_0002_01_000003/tmp
+user.dir: /var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/container_1791716023192_0002_01_000003
+user.name: hadoop
+************************************************************/
+2026-10-11 10:55:09,220 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: session.id is deprecated. Instead, use dfs.metrics.session-id
+2026-10-11 10:55:09,816 INFO [main] org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2026-10-11 10:55:09,820 INFO [main] org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2026-10-11 10:55:09,851 INFO [main] org.apache.hadoop.mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2026-10-11 10:55:10,142 INFO [main] org.apache.hadoop.mapred.MapTask: Processing split: hdfs://team-38-nn:9000/user/team/yarn-check-20261011-105419/input/text.txt:12+12
+2026-10-11 10:55:10,176 INFO [main] org.apache.hadoop.mapred.MapTask: numReduceTasks: 1
+2026-10-11 10:55:10,271 INFO [main] org.apache.hadoop.mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2026-10-11 10:55:10,272 INFO [main] org.apache.hadoop.mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2026-10-11 10:55:10,272 INFO [main] org.apache.hadoop.mapred.MapTask: soft limit at 83886080
+2026-10-11 10:55:10,272 INFO [main] org.apache.hadoop.mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2026-10-11 10:55:10,272 INFO [main] org.apache.hadoop.mapred.MapTask: kvstart = 26214396; length = 6553600
+2026-10-11 10:55:10,276 INFO [main] org.apache.hadoop.mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2026-10-11 10:55:10,288 INFO [main] org.apache.hadoop.streaming.PipeMapRed: PipeMapRed exec [/usr/bin/python3, mapper.py]
+2026-10-11 10:55:10,300 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.work.output.dir is deprecated. Instead, use mapreduce.task.output.dir
+2026-10-11 10:55:10,301 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: job.local.dir is deprecated. Instead, use mapreduce.job.local.dir
+2026-10-11 10:55:10,302 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.local.dir is deprecated. Instead, use mapreduce.cluster.local.dir
+2026-10-11 10:55:10,302 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: map.input.file is deprecated. Instead, use mapreduce.map.input.file
+2026-10-11 10:55:10,302 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: map.input.length is deprecated. Instead, use mapreduce.map.input.length
+2026-10-11 10:55:10,303 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.job.id is deprecated. Instead, use mapreduce.job.id
+2026-10-11 10:55:10,303 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.task.partition is deprecated. Instead, use mapreduce.task.partition
+2026-10-11 10:55:10,304 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: map.input.start is deprecated. Instead, use mapreduce.map.input.start
+2026-10-11 10:55:10,305 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.task.is.map is deprecated. Instead, use mapreduce.task.ismap
+2026-10-11 10:55:10,305 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+2026-10-11 10:55:10,305 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+2026-10-11 10:55:10,306 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.skip.on is deprecated. Instead, use mapreduce.job.skiprecords
+2026-10-11 10:55:10,306 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.cache.localFiles is deprecated. Instead, use mapreduce.job.cache.local.files
+2026-10-11 10:55:10,368 INFO [Thread-14] org.apache.hadoop.streaming.PipeMapRed: MRErrorThread done
+2026-10-11 10:55:10,369 INFO [main] org.apache.hadoop.streaming.PipeMapRed: mapRedFinished
+2026-10-11 10:55:10,386 INFO [main] org.apache.hadoop.mapred.MapTask: Starting flush of map output
+2026-10-11 10:55:10,445 INFO [main] org.apache.hadoop.mapred.Task: Task:attempt_1791716023192_0002_m_000001_0 is done. And is in the process of committing
+2026-10-11 10:55:10,520 INFO [main] org.apache.hadoop.mapred.Task: Task 'attempt_1791716023192_0002_m_000001_0' done.
+2026-10-11 10:55:10,529 INFO [main] org.apache.hadoop.mapred.Task: Final Counters for attempt_1791716023192_0002_m_000001_0: Counters: 28
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=322591
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=138
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=3
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=0
+		HDFS: Number of bytes read erasure-coded=0
+	Map-Reduce Framework
+		Map input records=0
+		Map output records=0
+		Map output bytes=0
+		Map output materialized bytes=6
+		Input split bytes=126
+		Combine input records=0
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=39
+		CPU time spent (ms)=1050
+		Physical memory (bytes) snapshot=286289920
+		Virtual memory (bytes) snapshot=2274754560
+		Total committed heap usage (bytes)=171966464
+		Peak Map Physical memory (bytes)=286289920
+		Peak Map Virtual memory (bytes)=2274754560
+	File Input Format Counters 
+		Bytes Read=12
+
+End of LogType:syslog
+***********************************************************************
+
+Container: container_1791716023192_0002_01_000004 on team-38-00_43197
+LogAggregationType: AGGREGATED
+=====================================================================
+LogType:directory.info
+LogLastModifiedTime:Sun Oct 11 10:55:24 +0000 2026
+LogLength:2392
+LogContents:
+ls -l:
+total 40
+-rw-r--r-- 1 hadoop hadoop  129 Oct 11 10:55 container_tokens
+-rwx------ 1 hadoop hadoop  711 Oct 11 10:55 default_container_executor.sh
+-rwx------ 1 hadoop hadoop  656 Oct 11 10:55 default_container_executor_session.sh
+lrwxrwxrwx 1 hadoop hadoop  102 Oct 11 10:55 job.jar -> /var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/filecache/10/job.jar
+lrwxrwxrwx 1 hadoop hadoop  102 Oct 11 10:55 job.xml -> /var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/filecache/11/job.xml
+-rwx------ 1 hadoop hadoop 5481 Oct 11 10:55 launch_container.sh
+lrwxrwxrwx 1 hadoop hadoop   64 Oct 11 10:55 mapper.py -> /var/lib/hadoop/yarn/local/usercache/team/filecache/12/mapper.py
+lrwxrwxrwx 1 hadoop hadoop   65 Oct 11 10:55 reducer.py -> /var/lib/hadoop/yarn/local/usercache/team/filecache/13/reducer.py
+drwx--x--- 2 hadoop hadoop 4096 Oct 11 10:55 tmp
+find -L . -maxdepth 5 -ls:
+   789932      4 drwx--x---   3 hadoop   hadoop       4096 Oct 11 10:55 .
+   789943      4 -rw-r--r--   1 hadoop   hadoop         16 Oct 11 10:55 ./.default_container_executor.sh.crc
+   789922      4 drwx------   2 hadoop   hadoop       4096 Oct 11 10:55 ./job.jar
+   789923    144 -r-x------   1 hadoop   hadoop     143536 Oct 11 10:55 ./job.jar/job.jar
+   789935      4 drwx--x---   2 hadoop   hadoop       4096 Oct 11 10:55 ./tmp
+   789936      4 -rw-r--r--   1 hadoop   hadoop        129 Oct 11 10:55 ./container_tokens
+   789938      8 -rwx------   1 hadoop   hadoop       5481 Oct 11 10:55 ./launch_container.sh
+   789909      4 -r-x------   1 hadoop   hadoop        115 Oct 11 10:55 ./mapper.py
+   789942      4 -rwx------   1 hadoop   hadoop        711 Oct 11 10:55 ./default_container_executor.sh
+   789939      4 -rw-r--r--   1 hadoop   hadoop         52 Oct 11 10:55 ./.launch_container.sh.crc
+   789915      4 -r-x------   1 hadoop   hadoop        238 Oct 11 10:55 ./reducer.py
+   789941      4 -rw-r--r--   1 hadoop   hadoop         16 Oct 11 10:55 ./.default_container_executor_session.sh.crc
+   789940      4 -rwx------   1 hadoop   hadoop        656 Oct 11 10:55 ./default_container_executor_session.sh
+   789925    272 -r-x------   1 hadoop   hadoop     275801 Oct 11 10:55 ./job.xml
+   789937      4 -rw-r--r--   1 hadoop   hadoop         12 Oct 11 10:55 ./.container_tokens.crc
+broken symlinks(find -L . -maxdepth 5 -type l -ls):
+
+End of LogType:directory.info
+*******************************************************************************
+
+Container: container_1791716023192_0002_01_000004 on team-38-00_43197
+LogAggregationType: AGGREGATED
+=====================================================================
+LogType:launch_container.sh
+LogLastModifiedTime:Sun Oct 11 10:55:24 +0000 2026
+LogLength:5481
+LogContents:
+#!/bin/bash
+
+set -o pipefail -e
+export PRELAUNCH_OUT="/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000004/prelaunch.out"
+exec >"${PRELAUNCH_OUT}"
+export PRELAUNCH_ERR="/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000004/prelaunch.err"
+exec 2>"${PRELAUNCH_ERR}"
+echo "Setting up env variables"
+export JAVA_HOME=${JAVA_HOME:-"/usr/lib/jvm/java-17-openjdk-amd64"}
+export HADOOP_COMMON_HOME=${HADOOP_COMMON_HOME:-"/opt/hadoop"}
+export HADOOP_HDFS_HOME=${HADOOP_HDFS_HOME:-"/opt/hadoop"}
+export HADOOP_CONF_DIR=${HADOOP_CONF_DIR:-"/etc/hadoop"}
+export HADOOP_YARN_HOME=${HADOOP_YARN_HOME:-"/opt/hadoop"}
+export HADOOP_MAPRED_HOME=${HADOOP_MAPRED_HOME:-"/opt/hadoop"}
+export PATH=${PATH:-"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/snap/bin"}
+export LANG=${LANG:-"C.UTF-8"}
+export HADOOP_TOKEN_FILE_LOCATION="/var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/container_1791716023192_0002_01_000004/container_tokens"
+export CONTAINER_ID="container_1791716023192_0002_01_000004"
+export NM_PORT="43197"
+export NM_HOST="team-38-00"
+export NM_HTTP_PORT="8042"
+export LOCAL_DIRS="/var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002"
+export LOCAL_USER_DIRS="/var/lib/hadoop/yarn/local/usercache/team/"
+export LOG_DIRS="/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000004"
+export USER="team"
+export LOGNAME="team"
+export HOME="/home/"
+export PWD="/var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/container_1791716023192_0002_01_000004"
+export LOCALIZATION_COUNTERS="0,421878,0,4,1"
+export JVM_PID="$$"
+export NM_AUX_SERVICE_mapreduce_shuffle="AAA0+gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+export STDOUT_LOGFILE_ENV="/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000004/stdout"
+export SHELL="/bin/bash"
+export HADOOP_ROOT_LOGGER="INFO,console"
+export CLASSPATH="$PWD:$HADOOP_CONF_DIR:$HADOOP_COMMON_HOME/share/hadoop/common/*:$HADOOP_COMMON_HOME/share/hadoop/common/lib/*:$HADOOP_HDFS_HOME/share/hadoop/hdfs/*:$HADOOP_HDFS_HOME/share/hadoop/hdfs/lib/*:$HADOOP_YARN_HOME/share/hadoop/yarn/*:$HADOOP_YARN_HOME/share/hadoop/yarn/lib/*:$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/*:$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/lib/*:job.jar/*:job.jar/classes/:job.jar/lib/*:$PWD/*"
+export LD_LIBRARY_PATH="$PWD:$HADOOP_COMMON_HOME/lib/native"
+export STDERR_LOGFILE_ENV="/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000004/stderr"
+export HADOOP_CLIENT_OPTS=""
+export MALLOC_ARENA_MAX="4"
+echo "Setting up job resources"
+ln -sf -- "/var/lib/hadoop/yarn/local/usercache/team/filecache/13/reducer.py" "reducer.py"
+ln -sf -- "/var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/filecache/11/job.xml" "job.xml"
+ln -sf -- "/var/lib/hadoop/yarn/local/usercache/team/filecache/12/mapper.py" "mapper.py"
+ln -sf -- "/var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/filecache/10/job.jar" "job.jar"
+echo "Copying debugging information"
+# Creating copy of launch script
+cp "launch_container.sh" "/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000004/launch_container.sh"
+chmod 640 "/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000004/launch_container.sh"
+# Determining directory contents
+echo "ls -l:" 1>"/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000004/directory.info"
+ls -l 1>>"/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000004/directory.info"
+echo "find -L . -maxdepth 5 -ls:" 1>>"/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000004/directory.info"
+find -L . -maxdepth 5 -ls 1>>"/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000004/directory.info"
+echo "broken symlinks(find -L . -maxdepth 5 -type l -ls):" 1>>"/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000004/directory.info"
+find -L . -maxdepth 5 -type l -ls 1>>"/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000004/directory.info"
+echo "Launching container"
+exec /bin/bash -c "$JAVA_HOME/bin/java -Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN  -Xmx384m -Djava.io.tmpdir=$PWD/tmp -Dlog4j.configuration=container-log4j.properties -Dyarn.app.container.log.dir=/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000004 -Dyarn.app.container.log.filesize=0 -Dhadoop.root.logger=INFO,CLA -Dhadoop.root.logfile=syslog -Dyarn.app.mapreduce.shuffle.logger=INFO,shuffleCLA -Dyarn.app.mapreduce.shuffle.logfile=syslog.shuffle -Dyarn.app.mapreduce.shuffle.log.filesize=0 -Dyarn.app.mapreduce.shuffle.log.backups=0 org.apache.hadoop.mapred.YarnChild 10.38.0.13 41697 attempt_1791716023192_0002_r_000000_0 4 1>/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000004/stdout 2>/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000004/stderr "
+
+End of LogType:launch_container.sh
+************************************************************************************
+
+Container: container_1791716023192_0002_01_000004 on team-38-00_43197
+LogAggregationType: AGGREGATED
+=====================================================================
+LogType:prelaunch.err
+LogLastModifiedTime:Sun Oct 11 10:55:24 +0000 2026
+LogLength:0
+LogContents:
+
+End of LogType:prelaunch.err
+******************************************************************************
+
+Container: container_1791716023192_0002_01_000004 on team-38-00_43197
+LogAggregationType: AGGREGATED
+=====================================================================
+LogType:prelaunch.out
+LogLastModifiedTime:Sun Oct 11 10:55:24 +0000 2026
+LogLength:100
+LogContents:
+Setting up env variables
+Setting up job resources
+Copying debugging information
+Launching container
+
+End of LogType:prelaunch.out
+******************************************************************************
+
+Container: container_1791716023192_0002_01_000004 on team-38-00_43197
+LogAggregationType: AGGREGATED
+=====================================================================
+LogType:stderr
+LogLastModifiedTime:Sun Oct 11 10:55:24 +0000 2026
+LogLength:0
+LogContents:
+
+End of LogType:stderr
+***********************************************************************
+
+Container: container_1791716023192_0002_01_000004 on team-38-00_43197
+LogAggregationType: AGGREGATED
+=====================================================================
+LogType:stdout
+LogLastModifiedTime:Sun Oct 11 10:55:24 +0000 2026
+LogLength:0
+LogContents:
+
+End of LogType:stdout
+***********************************************************************
+
+Container: container_1791716023192_0002_01_000004 on team-38-00_43197
+LogAggregationType: AGGREGATED
+=====================================================================
+LogType:syslog
+LogLastModifiedTime:Sun Oct 11 10:55:24 +0000 2026
+LogLength:27833
+LogContents:
+2026-10-11 10:55:14,651 INFO [main] org.apache.hadoop.security.SecurityUtil: Updating Configuration
+2026-10-11 10:55:15,049 INFO [main] org.apache.hadoop.mapred.YarnChild: Executing with tokens: [Kind: mapreduce.job, Service: job_1791716023192_0002, Ident: (org.apache.hadoop.mapreduce.security.token.JobTokenIdentifier@1fc32e4f)]
+2026-10-11 10:55:15,096 INFO [main] org.apache.hadoop.mapred.YarnChild: Sleeping for 0ms before retrying again. Got null now.
+2026-10-11 10:55:15,362 INFO [main] org.apache.hadoop.mapred.YarnChild: mapreduce.cluster.local.dir for child: /var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002
+2026-10-11 10:55:15,916 INFO [main] org.apache.hadoop.mapred.YarnChild: 
+/************************************************************
+[system properties]
+os.name: Linux
+os.version: 6.8.0-139-generic
+java.home: /usr/lib/jvm/java-17-openjdk-amd64
+java.runtime.version: 17.0.20.1+1-1-24.04-Ubuntu
+java.vendor: Ubuntu
+java.version: 17.0.20.1
+java.vm.name: OpenJDK 64-Bit Server VM
+java.class.path: /var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/container_1791716023192_0002_01_000004:/etc/hadoop:/opt/hadoop/share/hadoop/common/hadoop-registry-3.5.0.jar:/opt/hadoop/share/hadoop/common/hadoop-nfs-3.5.0.jar:/opt/hadoop/share/hadoop/common/hadoop-common-3.5.0-tests.jar:/opt/hadoop/share/hadoop/common/hadoop-common-3.5.0.jar:/opt/hadoop/share/hadoop/common/hadoop-kms-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/dnsjava-3.6.1.jar:/opt/hadoop/share/hadoop/common/lib/jackson-annotations-2.18.6.jar:/opt/hadoop/share/hadoop/common/lib/HdrHistogram-2.1.12.jar:/opt/hadoop/share/hadoop/common/lib/kerby-asn1-2.0.3.jar:/opt/hadoop/share/hadoop/common/lib/commons-net-3.9.0.jar:/opt/hadoop/share/hadoop/common/lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/opt/hadoop/share/hadoop/common/lib/jackson-databind-2.18.6.jar:/opt/hadoop/share/hadoop/common/lib/kerby-config-2.0.3.jar:/opt/hadoop/share/hadoop/common/lib/jspecify-1.0.0.jar:/opt/hadoop/share/hadoop/common/lib/stax2-api-4.2.1.jar:/opt/hadoop/share/hadoop/common/lib/commons-lang3-3.18.0.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.xml.bind-api-2.3.3.jar:/opt/hadoop/share/hadoop/common/lib/hk2-locator-2.6.1.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.servlet.jsp-api-2.3.6.jar:/opt/hadoop/share/hadoop/common/lib/javax.servlet-api-3.1.0.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.activation-api-1.2.1.jar:/opt/hadoop/share/hadoop/common/lib/metrics-core-3.2.4.jar:/opt/hadoop/share/hadoop/common/lib/reload4j-1.2.22.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-cos-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/kerby-util-2.0.3.jar:/opt/hadoop/share/hadoop/common/lib/jetty-servlet-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/curator-recipes-5.2.0.jar:/opt/hadoop/share/hadoop/common/lib/netty-transport-native-unix-common-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-tos-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/commons-collections4-4.4.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-shaded-guava-1.5.0.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.servlet-api-4.0.4.jar:/opt/hadoop/share/hadoop/common/lib/slf4j-api-1.7.36.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.annotation-api-1.3.5.jar:/opt/hadoop/share/hadoop/common/lib/nimbus-jose-jwt-10.4.jar:/opt/hadoop/share/hadoop/common/lib/kerb-util-2.0.3.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-auth-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/istack-commons-runtime-3.0.12.jar:/opt/hadoop/share/hadoop/common/lib/curator-client-5.2.0.jar:/opt/hadoop/share/hadoop/common/lib/commons-cli-1.9.0.jar:/opt/hadoop/share/hadoop/common/lib/zookeeper-3.8.6.jar:/opt/hadoop/share/hadoop/common/lib/jersey-client-2.46.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.inject-2.6.1.jar:/opt/hadoop/share/hadoop/common/lib/netty-transport-native-epoll-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/bcprov-jdk18on-1.82.jar:/opt/hadoop/share/hadoop/common/lib/netty-transport-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/jul-to-slf4j-1.7.36.jar:/opt/hadoop/share/hadoop/common/lib/jackson-core-2.18.6.jar:/opt/hadoop/share/hadoop/common/lib/failureaccess-1.0.3.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-shaded-protobuf_3_25-1.5.0.jar:/opt/hadoop/share/hadoop/common/lib/jetty-security-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/jersey-container-servlet-2.46.jar:/opt/hadoop/share/hadoop/common/lib/jetty-util-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/jetty-webapp-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/commons-configuration2-2.10.1.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.activation-1.2.2.jar:/opt/hadoop/share/hadoop/common/lib/netty-codec-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/commons-io-2.16.1.jar:/opt/hadoop/share/hadoop/common/lib/commons-math3-3.6.1.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-azure-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/analyticsaccelerator-s3-1.3.1.jar:/opt/hadoop/share/hadoop/common/lib/aopalliance-repackaged-2.6.1.jar:/opt/hadoop/share/hadoop/common/lib/hk2-utils-2.6.1.jar:/opt/hadoop/share/hadoop/common/lib/jetty-io-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/httpclient-4.5.13.jar:/opt/hadoop/share/hadoop/common/lib/osgi-resource-locator-1.0.3.jar:/opt/hadoop/share/hadoop/common/lib/woodstox-core-5.4.0.jar:/opt/hadoop/share/hadoop/common/lib/jersey-hk2-2.46.jar:/opt/hadoop/share/hadoop/common/lib/zookeeper-jute-3.8.6.jar:/opt/hadoop/share/hadoop/common/lib/netty-transport-classes-epoll-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-azure-datalake-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/j2objc-annotations-3.0.0.jar:/opt/hadoop/share/hadoop/common/lib/jsr305-3.0.2.jar:/opt/hadoop/share/hadoop/common/lib/jetty-util-ajax-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/javassist-3.30.2-GA.jar:/opt/hadoop/share/hadoop/common/lib/audience-annotations-0.12.0.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-huaweicloud-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/kerb-crypto-2.0.3.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.ws.rs-api-2.1.6.jar:/opt/hadoop/share/hadoop/common/lib/jsch-0.1.55.jar:/opt/hadoop/share/hadoop/common/lib/hk2-api-2.6.1.jar:/opt/hadoop/share/hadoop/common/lib/netty-resolver-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/re2j-1.1.jar:/opt/hadoop/share/hadoop/common/lib/gson-2.9.0.jar:/opt/hadoop/share/hadoop/common/lib/commons-daemon-1.0.13.jar:/opt/hadoop/share/hadoop/common/lib/slf4j-reload4j-1.7.36.jar:/opt/hadoop/share/hadoop/common/lib/jetty-http-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/jetty-xml-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/kerb-core-2.0.3.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-gcp-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/azure-storage-7.0.1.jar:/opt/hadoop/share/hadoop/common/lib/jersey-common-2.46.jar:/opt/hadoop/share/hadoop/common/lib/wildfly-openssl-2.2.5.Final.jar:/opt/hadoop/share/hadoop/common/lib/azure-keyvault-core-1.0.0.jar:/opt/hadoop/share/hadoop/common/lib/netty-buffer-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/httpcore-4.4.13.jar:/opt/hadoop/share/hadoop/common/lib/netty-handler-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/commons-text-1.14.0.jar:/opt/hadoop/share/hadoop/common/lib/guava-33.4.8-jre.jar:/opt/hadoop/share/hadoop/common/lib/jetty-server-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-annotations-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.validation-api-2.0.2.jar:/opt/hadoop/share/hadoop/common/lib/jaxb-runtime-2.3.9.jar:/opt/hadoop/share/hadoop/common/lib/snappy-java-1.1.10.4.jar:/opt/hadoop/share/hadoop/common/lib/kerby-pkix-2.0.3.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-aws-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/commons-logging-1.3.0.jar:/opt/hadoop/share/hadoop/common/lib/commons-codec-1.15.jar:/opt/hadoop/share/hadoop/common/lib/curator-framework-5.2.0.jar:/opt/hadoop/share/hadoop/common/lib/txw2-2.3.9.jar:/opt/hadoop/share/hadoop/common/lib/netty-common-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/jersey-server-2.46.jar:/opt/hadoop/share/hadoop/common/lib/avro-1.11.5.jar:/opt/hadoop/share/hadoop/common/lib/jersey-container-servlet-core-2.46.jar:/opt/hadoop/share/hadoop/common/lib/commons-compress-1.26.1.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-httpfs-3.5.0.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-client-3.5.0.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-nfs-3.5.0.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-native-client-3.5.0-tests.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-client-3.5.0-tests.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-3.5.0.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-native-client-3.5.0.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-rbf-3.5.0-tests.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-3.5.0-tests.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-rbf-3.5.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/dnsjava-3.6.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/jackson-annotations-2.18.6.jar:/opt/hadoop/share/hadoop/hdfs/lib/kerby-asn1-2.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-redis-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-net-3.9.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-resolver-dns-classes-macos-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/jackson-databind-2.18.6.jar:/opt/hadoop/share/hadoop/hdfs/lib/kerby-config-2.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/jspecify-1.0.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/stax2-api-4.2.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-lang3-3.18.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/HikariCP-4.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.xml.bind-api-2.3.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-native-epoll-4.1.130.Final-linux-aarch_64.jar:/opt/hadoop/share/hadoop/hdfs/lib/hk2-locator-2.6.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.servlet.jsp-api-2.3.6.jar:/opt/hadoop/share/hadoop/hdfs/lib/javax.servlet-api-3.1.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.activation-api-1.2.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/metrics-core-3.2.4.jar:/opt/hadoop/share/hadoop/hdfs/lib/reload4j-1.2.22.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-stomp-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/kerby-util-2.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-servlet-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/json-simple-1.1.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/curator-recipes-5.2.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-native-unix-common-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-udt-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-native-epoll-4.1.130.Final-linux-riscv64.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-collections4-4.4.jar:/opt/hadoop/share/hadoop/hdfs/lib/hadoop-shaded-guava-1.5.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.servlet-api-4.0.4.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-socks-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.annotation-api-1.3.5.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-handler-ssl-ocsp-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/nimbus-jose-jwt-10.4.jar:/opt/hadoop/share/hadoop/hdfs/lib/kerb-util-2.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/hadoop-auth-3.5.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/istack-commons-runtime-3.0.12.jar:/opt/hadoop/share/hadoop/hdfs/lib/curator-client-5.2.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-cli-1.9.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-http2-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/zookeeper-3.8.6.jar:/opt/hadoop/share/hadoop/hdfs/lib/jersey-client-2.46.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.inject-2.6.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-native-epoll-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-native-epoll-4.1.130.Final-linux-x86_64.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/jackson-core-2.18.6.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-smtp-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/failureaccess-1.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/hadoop-shaded-protobuf_3_25-1.5.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-security-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/jersey-container-servlet-2.46.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-util-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-haproxy-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-webapp-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-configuration2-2.10.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.activation-1.2.2.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-sctp-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-io-2.16.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-math3-3.6.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/aopalliance-repackaged-2.6.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-xml-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-resolver-dns-native-macos-4.1.130.Final-osx-x86_64.jar:/opt/hadoop/share/hadoop/hdfs/lib/hk2-utils-2.6.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-io-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/httpclient-4.5.13.jar:/opt/hadoop/share/hadoop/hdfs/lib/osgi-resource-locator-1.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/woodstox-core-5.4.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/jersey-hk2-2.46.jar:/opt/hadoop/share/hadoop/hdfs/lib/zookeeper-jute-3.8.6.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-classes-epoll-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-dns-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-memcache-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/j2objc-annotations-3.0.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/jsr305-3.0.2.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-util-ajax-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/javassist-3.30.2-GA.jar:/opt/hadoop/share/hadoop/hdfs/lib/audience-annotations-0.12.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/kerb-crypto-2.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.ws.rs-api-2.1.6.jar:/opt/hadoop/share/hadoop/hdfs/lib/jsch-0.1.55.jar:/opt/hadoop/share/hadoop/hdfs/lib/hk2-api-2.6.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-resolver-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/re2j-1.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-all-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-http-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-classes-kqueue-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/gson-2.9.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-daemon-1.0.13.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-resolver-dns-native-macos-4.1.130.Final-osx-aarch_64.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-http-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-xml-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/kerb-core-2.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/jettison-1.5.4.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-rxtx-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/jersey-common-2.46.jar:/opt/hadoop/share/hadoop/hdfs/lib/leveldbjni-all-1.8.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-buffer-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/httpcore-4.4.13.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-handler-proxy-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-handler-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-text-1.14.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/guava-33.4.8-jre.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-server-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-native-kqueue-4.1.130.Final-osx-x86_64.jar:/opt/hadoop/share/hadoop/hdfs/lib/hadoop-annotations-3.5.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-mqtt-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.validation-api-2.0.2.jar:/opt/hadoop/share/hadoop/hdfs/lib/jaxb-runtime-2.3.9.jar:/opt/hadoop/share/hadoop/hdfs/lib/snappy-java-1.1.10.4.jar:/opt/hadoop/share/hadoop/hdfs/lib/kerby-pkix-2.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-logging-1.3.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-codec-1.15.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-resolver-dns-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/curator-framework-5.2.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/txw2-2.3.9.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-common-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/jersey-server-2.46.jar:/opt/hadoop/share/hadoop/hdfs/lib/avro-1.11.5.jar:/opt/hadoop/share/hadoop/hdfs/lib/jersey-container-servlet-core-2.46.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-compress-1.26.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-native-kqueue-4.1.130.Final-osx-aarch_64.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-applicationhistoryservice-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-globalpolicygenerator-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-timeline-pluginstorage-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-applications-distributedshell-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-services-api-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-applications-unmanaged-am-launcher-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-tests-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-services-core-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-router-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-api-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-registry-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-resourcemanager-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-common-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-nodemanager-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-web-proxy-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-sharedcachemanager-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-applications-mawo-core-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-common-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-client-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/lib/websocket-servlet-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/jsonschema2pojo-core-1.0.2.jar:/opt/hadoop/share/hadoop/yarn/lib/bcpkix-jdk18on-1.82.jar:/opt/hadoop/share/hadoop/yarn/lib/javax-websocket-client-impl-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/jetty-jndi-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/websocket-api-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/asm-tree-9.7.1.jar:/opt/hadoop/share/hadoop/yarn/lib/websocket-server-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/org.eclipse.persistence.asm-9.6.0.jar:/opt/hadoop/share/hadoop/yarn/lib/jakarta.json-api-1.1.6.jar:/opt/hadoop/share/hadoop/yarn/lib/commons-csv-1.9.0.jar:/opt/hadoop/share/hadoop/yarn/lib/fst-2.50.jar:/opt/hadoop/share/hadoop/yarn/lib/websocket-client-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/org.eclipse.persistence.core-2.7.14.jar:/opt/hadoop/share/hadoop/yarn/lib/swagger-annotations-1.5.4.jar:/opt/hadoop/share/hadoop/yarn/lib/javax.json-1.1.4.jar:/opt/hadoop/share/hadoop/yarn/lib/asm-commons-9.7.1.jar:/opt/hadoop/share/hadoop/yarn/lib/commons-lang-2.6.jar:/opt/hadoop/share/hadoop/yarn/lib/javax.websocket-client-api-1.0.jar:/opt/hadoop/share/hadoop/yarn/lib/javax.websocket-api-1.0.jar:/opt/hadoop/share/hadoop/yarn/lib/aopalliance-1.0.jar:/opt/hadoop/share/hadoop/yarn/lib/jersey-media-jaxb-2.46.jar:/opt/hadoop/share/hadoop/yarn/lib/mssql-jdbc-6.2.1.jre7.jar:/opt/hadoop/share/hadoop/yarn/lib/websocket-common-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/jetty-plus-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/snakeyaml-2.0.jar:/opt/hadoop/share/hadoop/yarn/lib/jackson-jaxrs-json-provider-2.18.6.jar:/opt/hadoop/share/hadoop/yarn/lib/javax-websocket-server-impl-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/bcutil-jdk18on-1.82.jar:/opt/hadoop/share/hadoop/yarn/lib/cache-api-1.1.1.jar:/opt/hadoop/share/hadoop/yarn/lib/jetty-client-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/org.eclipse.persistence.moxy-2.7.14.jar:/opt/hadoop/share/hadoop/yarn/lib/jersey-media-json-jettison-2.46.jar:/opt/hadoop/share/hadoop/yarn/lib/caffeine-2.9.3.jar:/opt/hadoop/share/hadoop/yarn/lib/jcodings-1.0.13.jar:/opt/hadoop/share/hadoop/yarn/lib/jackson-module-jaxb-annotations-2.18.6.jar:/opt/hadoop/share/hadoop/yarn/lib/guice-servlet-5.1.0.jar:/opt/hadoop/share/hadoop/yarn/lib/jna-5.2.0.jar:/opt/hadoop/share/hadoop/yarn/lib/guice-5.1.0.jar:/opt/hadoop/share/hadoop/yarn/lib/javax.annotation-api-1.3.2.jar:/opt/hadoop/share/hadoop/yarn/lib/jetty-annotations-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/ehcache-3.8.2.jar:/opt/hadoop/share/hadoop/yarn/lib/jline-3.9.0.jar:/opt/hadoop/share/hadoop/yarn/lib/failsafe-2.4.4.jar:/opt/hadoop/share/hadoop/yarn/lib/jackson-jaxrs-base-2.18.6.jar:/opt/hadoop/share/hadoop/yarn/lib/objenesis-2.6.jar:/opt/hadoop/share/hadoop/yarn/lib/codemodel-2.6.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-3.5.0-tests.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-hs-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-nativetask-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-core-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-app-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-uploader-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-common-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-hs-plugins-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-shuffle-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/lib/javax.inject-1.jar:job.jar/job.jar:job.jar/classes/:job.jar/lib/*:/var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/container_1791716023192_0002_01_000004/job.jar
+java.io.tmpdir: /var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/container_1791716023192_0002_01_000004/tmp
+user.dir: /var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/container_1791716023192_0002_01_000004
+user.name: hadoop
+************************************************************/
+2026-10-11 10:55:15,916 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: session.id is deprecated. Instead, use dfs.metrics.session-id
+2026-10-11 10:55:16,491 INFO [main] org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2026-10-11 10:55:16,493 INFO [main] org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2026-10-11 10:55:16,520 INFO [main] org.apache.hadoop.mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2026-10-11 10:55:16,584 INFO [main] org.apache.hadoop.mapred.ReduceTask: Using ShuffleConsumerPlugin: org.apache.hadoop.mapreduce.task.reduce.Shuffle@348d18a3
+2026-10-11 10:55:16,586 WARN [main] org.apache.hadoop.metrics2.impl.MetricsSystemImpl: ReduceTask metrics system already initialized!
+2026-10-11 10:55:16,765 INFO [main] org.apache.hadoop.streaming.PipeMapRed: PipeMapRed exec [/usr/bin/python3, reducer.py]
+2026-10-11 10:55:16,786 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.work.output.dir is deprecated. Instead, use mapreduce.task.output.dir
+2026-10-11 10:55:16,787 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: job.local.dir is deprecated. Instead, use mapreduce.job.local.dir
+2026-10-11 10:55:16,787 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.local.dir is deprecated. Instead, use mapreduce.cluster.local.dir
+2026-10-11 10:55:16,788 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.job.id is deprecated. Instead, use mapreduce.job.id
+2026-10-11 10:55:16,788 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.task.partition is deprecated. Instead, use mapreduce.task.partition
+2026-10-11 10:55:16,791 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.task.is.map is deprecated. Instead, use mapreduce.task.ismap
+2026-10-11 10:55:16,792 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+2026-10-11 10:55:16,792 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+2026-10-11 10:55:16,792 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.skip.on is deprecated. Instead, use mapreduce.job.skiprecords
+2026-10-11 10:55:16,793 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.cache.localFiles is deprecated. Instead, use mapreduce.job.cache.local.files
+2026-10-11 10:55:16,793 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.map.tasks is deprecated. Instead, use mapreduce.job.maps
+2026-10-11 10:55:16,989 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=1/0/0 in:NA [rec/s] out:NA [rec/s]
+2026-10-11 10:55:16,992 INFO [Thread-22] org.apache.hadoop.streaming.PipeMapRed: Records R/W=4/1
+2026-10-11 10:55:16,998 INFO [Thread-23] org.apache.hadoop.streaming.PipeMapRed: MRErrorThread done
+2026-10-11 10:55:16,999 INFO [main] org.apache.hadoop.streaming.PipeMapRed: mapRedFinished
+2026-10-11 10:55:17,168 INFO [main] org.apache.hadoop.mapred.Task: Task:attempt_1791716023192_0002_r_000000_0 is done. And is in the process of committing
+2026-10-11 10:55:17,181 INFO [main] org.apache.hadoop.mapred.Task: Task attempt_1791716023192_0002_r_000000_0 is allowed to commit now
+2026-10-11 10:55:17,207 INFO [main] org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter: Saved output of task 'attempt_1791716023192_0002_r_000000_0' to hdfs://team-38-nn:9000/user/team/yarn-check-20261011-105419/streaming
+2026-10-11 10:55:17,245 INFO [main] org.apache.hadoop.mapred.Task: Task 'attempt_1791716023192_0002_r_000000_0' done.
+2026-10-11 10:55:17,258 INFO [main] org.apache.hadoop.mapred.Task: Final Counters for attempt_1791716023192_0002_r_000000_0: Counters: 35
+	File System Counters
+		FILE: Number of bytes read=46
+		FILE: Number of bytes written=322576
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=0
+		HDFS: Number of bytes written=24
+		HDFS: Number of read operations=5
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+		HDFS: Number of bytes read erasure-coded=0
+	Map-Reduce Framework
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=3
+		Reduce shuffle bytes=52
+		Reduce input records=4
+		Reduce output records=3
+		Spilled Records=4
+		Shuffled Maps =2
+		Failed Shuffles=0
+		Merged Map outputs=2
+		GC time elapsed (ms)=26
+		CPU time spent (ms)=1190
+		Physical memory (bytes) snapshot=178294784
+		Virtual memory (bytes) snapshot=2276233216
+		Total committed heap usage (bytes)=71303168
+		Peak Reduce Physical memory (bytes)=178294784
+		Peak Reduce Virtual memory (bytes)=2276233216
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Output Format Counters 
+		Bytes Written=24
+
+End of LogType:syslog
+***********************************************************************
+
+Container: container_1791716023192_0002_01_000004 on team-38-00_43197
+LogAggregationType: AGGREGATED
+=====================================================================
+LogType:syslog.shuffle
+LogLastModifiedTime:Sun Oct 11 10:55:24 +0000 2026
+LogLength:3374
+LogContents:
+2026-10-11 10:55:16,612 INFO [main] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: MergerManager: memoryLimit=281857216, maxSingleShuffleLimit=70464304, mergeThreshold=186025776, ioSortFactor=10, memToMemMergeOutputsThreshold=10
+2026-10-11 10:55:16,616 INFO [EventFetcher for fetching Map Completion Events] org.apache.hadoop.mapreduce.task.reduce.EventFetcher: attempt_1791716023192_0002_r_000000_0 Thread started: EventFetcher for fetching Map Completion Events
+2026-10-11 10:55:16,631 INFO [EventFetcher for fetching Map Completion Events] org.apache.hadoop.mapreduce.task.reduce.EventFetcher: attempt_1791716023192_0002_r_000000_0: Got 2 new map-outputs
+2026-10-11 10:55:16,675 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: fetcher#1 about to shuffle output of map attempt_1791716023192_0002_m_000001_0 decomp: 2 len: 6 to MEMORY
+2026-10-11 10:55:16,677 INFO [fetcher#2] org.apache.hadoop.mapreduce.task.reduce.Fetcher: fetcher#2 about to shuffle output of map attempt_1791716023192_0002_m_000000_0 decomp: 42 len: 46 to MEMORY
+2026-10-11 10:55:16,680 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.InMemoryMapOutput: Read 2 bytes from map-output for attempt_1791716023192_0002_m_000001_0
+2026-10-11 10:55:16,684 INFO [fetcher#2] org.apache.hadoop.mapreduce.task.reduce.InMemoryMapOutput: Read 42 bytes from map-output for attempt_1791716023192_0002_m_000000_0
+2026-10-11 10:55:16,685 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 2, inMemoryMapOutputs.size() -> 1, commitMemory -> 0, usedMemory ->44
+2026-10-11 10:55:16,690 INFO [fetcher#2] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 42, inMemoryMapOutputs.size() -> 2, commitMemory -> 2, usedMemory ->44
+2026-10-11 10:55:16,695 INFO [fetcher#2] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: team-38-01:13562 freed by fetcher#2 in 60ms
+2026-10-11 10:55:16,695 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: team-38-00:13562 freed by fetcher#1 in 64ms
+2026-10-11 10:55:16,695 INFO [EventFetcher for fetching Map Completion Events] org.apache.hadoop.mapreduce.task.reduce.EventFetcher: EventFetcher is interrupted.. Returning
+2026-10-11 10:55:16,701 INFO [main] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: finalMerge called with 2 in-memory map-outputs and 0 on-disk map-outputs
+2026-10-11 10:55:16,710 INFO [main] org.apache.hadoop.mapred.Merger: Merging 2 sorted segments
+2026-10-11 10:55:16,714 INFO [main] org.apache.hadoop.mapred.Merger: Down to the last merge-pass, with 1 segments left of total size: 33 bytes
+2026-10-11 10:55:16,722 INFO [main] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: Merged 2 segments, 44 bytes to disk to satisfy reduce memory limit
+2026-10-11 10:55:16,729 INFO [main] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: Merging 1 files, 46 bytes from disk
+2026-10-11 10:55:16,730 INFO [main] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: Merging 0 segments, 0 bytes from memory into reduce
+2026-10-11 10:55:16,730 INFO [main] org.apache.hadoop.mapred.Merger: Merging 1 sorted segments
+2026-10-11 10:55:16,739 INFO [main] org.apache.hadoop.mapred.Merger: Down to the last merge-pass, with 1 segments left of total size: 33 bytes
+
+End of LogType:syslog.shuffle
+*******************************************************************************
+
+Container: container_1791716023192_0002_01_000001 on team-38-01_44263
+LogAggregationType: AGGREGATED
+=====================================================================
+LogType:directory.info
+LogLastModifiedTime:Sun Oct 11 10:55:24 +0000 2026
+LogLength:2739
+LogContents:
+ls -l:
+total 44
+-rw-r--r-- 1 hadoop hadoop  105 Oct 11 10:54 container_tokens
+-rwx------ 1 hadoop hadoop  711 Oct 11 10:54 default_container_executor.sh
+-rwx------ 1 hadoop hadoop  656 Oct 11 10:54 default_container_executor_session.sh
+lrwxrwxrwx 1 hadoop hadoop  102 Oct 11 10:54 job.jar -> /var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/filecache/11/job.jar
+lrwxrwxrwx 1 hadoop hadoop  102 Oct 11 10:54 job.xml -> /var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/filecache/13/job.xml
+drwxr-xr-x 2 hadoop hadoop 4096 Oct 11 10:54 jobSubmitDir
+-rwx------ 1 hadoop hadoop 5292 Oct 11 10:54 launch_container.sh
+lrwxrwxrwx 1 hadoop hadoop   64 Oct 11 10:54 mapper.py -> /var/lib/hadoop/yarn/local/usercache/team/filecache/12/mapper.py
+lrwxrwxrwx 1 hadoop hadoop   65 Oct 11 10:54 reducer.py -> /var/lib/hadoop/yarn/local/usercache/team/filecache/13/reducer.py
+drwx--x--- 2 hadoop hadoop 4096 Oct 11 10:54 tmp
+find -L . -maxdepth 5 -ls:
+   786716      4 drwx--x---   4 hadoop   hadoop       4096 Oct 11 10:54 .
+   786726      4 -rw-r--r--   1 hadoop   hadoop         16 Oct 11 10:54 ./.default_container_executor.sh.crc
+   786739      4 drwxr-xr-x   2 hadoop   hadoop       4096 Oct 11 10:54 ./jobSubmitDir
+   786699      4 -r-x------   1 hadoop   hadoop         61 Oct 11 10:54 ./jobSubmitDir/job.splitmetainfo
+   786705      4 -r-x------   1 hadoop   hadoop        259 Oct 11 10:54 ./jobSubmitDir/job.split
+   786702      4 drwx------   2 hadoop   hadoop       4096 Oct 11 10:54 ./job.jar
+   786703    144 -r-x------   1 hadoop   hadoop     143536 Oct 11 10:54 ./job.jar/job.jar
+   786718      4 drwx--x---   2 hadoop   hadoop       4096 Oct 11 10:54 ./tmp
+   786719      4 -rw-r--r--   1 hadoop   hadoop        105 Oct 11 10:54 ./container_tokens
+   786721      8 -rwx------   1 hadoop   hadoop       5292 Oct 11 10:54 ./launch_container.sh
+   786686      4 -r-x------   1 hadoop   hadoop        115 Oct 11 10:54 ./mapper.py
+   786725      4 -rwx------   1 hadoop   hadoop        711 Oct 11 10:54 ./default_container_executor.sh
+   786722      4 -rw-r--r--   1 hadoop   hadoop         52 Oct 11 10:54 ./.launch_container.sh.crc
+   786696      4 -r-x------   1 hadoop   hadoop        238 Oct 11 10:54 ./reducer.py
+   786724      4 -rw-r--r--   1 hadoop   hadoop         16 Oct 11 10:54 ./.default_container_executor_session.sh.crc
+   786723      4 -rwx------   1 hadoop   hadoop        656 Oct 11 10:54 ./default_container_executor_session.sh
+   786708    272 -r-x------   1 hadoop   hadoop     275801 Oct 11 10:54 ./job.xml
+   786720      4 -rw-r--r--   1 hadoop   hadoop         12 Oct 11 10:54 ./.container_tokens.crc
+broken symlinks(find -L . -maxdepth 5 -type l -ls):
+
+End of LogType:directory.info
+*******************************************************************************
+
+Container: container_1791716023192_0002_01_000001 on team-38-01_44263
+LogAggregationType: AGGREGATED
+=====================================================================
+LogType:launch_container.sh
+LogLastModifiedTime:Sun Oct 11 10:55:24 +0000 2026
+LogLength:5292
+LogContents:
+#!/bin/bash
+
+set -o pipefail -e
+export PRELAUNCH_OUT="/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000001/prelaunch.out"
+exec >"${PRELAUNCH_OUT}"
+export PRELAUNCH_ERR="/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000001/prelaunch.err"
+exec 2>"${PRELAUNCH_ERR}"
+echo "Setting up env variables"
+export JAVA_HOME=${JAVA_HOME:-"/usr/lib/jvm/java-17-openjdk-amd64"}
+export HADOOP_COMMON_HOME=${HADOOP_COMMON_HOME:-"/opt/hadoop"}
+export HADOOP_HDFS_HOME=${HADOOP_HDFS_HOME:-"/opt/hadoop"}
+export HADOOP_CONF_DIR=${HADOOP_CONF_DIR:-"/etc/hadoop"}
+export HADOOP_YARN_HOME=${HADOOP_YARN_HOME:-"/opt/hadoop"}
+export HADOOP_MAPRED_HOME=${HADOOP_MAPRED_HOME:-"/opt/hadoop"}
+export PATH=${PATH:-"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/snap/bin"}
+export LANG=${LANG:-"C.UTF-8"}
+export HADOOP_TOKEN_FILE_LOCATION="/var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/container_1791716023192_0002_01_000001/container_tokens"
+export CONTAINER_ID="container_1791716023192_0002_01_000001"
+export NM_PORT="44263"
+export NM_HOST="team-38-01"
+export NM_HTTP_PORT="8042"
+export LOCAL_DIRS="/var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002"
+export LOCAL_USER_DIRS="/var/lib/hadoop/yarn/local/usercache/team/"
+export LOG_DIRS="/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000001"
+export USER="team"
+export LOGNAME="team"
+export HOME="/home/"
+export PWD="/var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/container_1791716023192_0002_01_000001"
+export LOCALIZATION_COUNTERS="422222,0,6,0,176"
+export JVM_PID="$$"
+export NM_AUX_SERVICE_mapreduce_shuffle="AAA0+gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+export APPLICATION_WEB_PROXY_BASE="/proxy/application_1791716023192_0002"
+export SHELL="/bin/bash"
+export CLASSPATH="$PWD:$HADOOP_CONF_DIR:$HADOOP_COMMON_HOME/share/hadoop/common/*:$HADOOP_COMMON_HOME/share/hadoop/common/lib/*:$HADOOP_HDFS_HOME/share/hadoop/hdfs/*:$HADOOP_HDFS_HOME/share/hadoop/hdfs/lib/*:$HADOOP_YARN_HOME/share/hadoop/yarn/*:$HADOOP_YARN_HOME/share/hadoop/yarn/lib/*:$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/*:$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/lib/*:job.jar/*:job.jar/classes/:job.jar/lib/*:$PWD/*"
+export APP_SUBMIT_TIME_ENV="1791716097971"
+export LD_LIBRARY_PATH="$PWD:$HADOOP_COMMON_HOME/lib/native"
+export MALLOC_ARENA_MAX="4"
+echo "Setting up job resources"
+ln -sf -- "/var/lib/hadoop/yarn/local/usercache/team/filecache/13/reducer.py" "reducer.py"
+mkdir -p jobSubmitDir
+ln -sf -- "/var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/filecache/12/job.split" "jobSubmitDir/job.split"
+ln -sf -- "/var/lib/hadoop/yarn/local/usercache/team/filecache/12/mapper.py" "mapper.py"
+ln -sf -- "/var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/filecache/11/job.jar" "job.jar"
+mkdir -p jobSubmitDir
+ln -sf -- "/var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/filecache/10/job.splitmetainfo" "jobSubmitDir/job.splitmetainfo"
+ln -sf -- "/var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/filecache/13/job.xml" "job.xml"
+echo "Copying debugging information"
+# Creating copy of launch script
+cp "launch_container.sh" "/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000001/launch_container.sh"
+chmod 640 "/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000001/launch_container.sh"
+# Determining directory contents
+echo "ls -l:" 1>"/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000001/directory.info"
+ls -l 1>>"/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000001/directory.info"
+echo "find -L . -maxdepth 5 -ls:" 1>>"/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000001/directory.info"
+find -L . -maxdepth 5 -ls 1>>"/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000001/directory.info"
+echo "broken symlinks(find -L . -maxdepth 5 -type l -ls):" 1>>"/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000001/directory.info"
+find -L . -maxdepth 5 -type l -ls 1>>"/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000001/directory.info"
+echo "Launching container"
+exec /bin/bash -c "$JAVA_HOME/bin/java -Djava.io.tmpdir=$PWD/tmp -Dlog4j.configuration=container-log4j.properties -Dyarn.app.container.log.dir=/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000001 -Dyarn.app.container.log.filesize=0 -Dhadoop.root.logger=INFO,CLA -Dhadoop.root.logfile=syslog  -Xmx384m org.apache.hadoop.mapreduce.v2.app.MRAppMaster 1>/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000001/stdout 2>/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000001/stderr "
+
+End of LogType:launch_container.sh
+************************************************************************************
+
+Container: container_1791716023192_0002_01_000001 on team-38-01_44263
+LogAggregationType: AGGREGATED
+=====================================================================
+LogType:prelaunch.err
+LogLastModifiedTime:Sun Oct 11 10:55:24 +0000 2026
+LogLength:0
+LogContents:
+
+End of LogType:prelaunch.err
+******************************************************************************
+
+Container: container_1791716023192_0002_01_000001 on team-38-01_44263
+LogAggregationType: AGGREGATED
+=====================================================================
+LogType:prelaunch.out
+LogLastModifiedTime:Sun Oct 11 10:55:24 +0000 2026
+LogLength:100
+LogContents:
+Setting up env variables
+Setting up job resources
+Copying debugging information
+Launching container
+
+End of LogType:prelaunch.out
+******************************************************************************
+
+Container: container_1791716023192_0002_01_000001 on team-38-01_44263
+LogAggregationType: AGGREGATED
+=====================================================================
+LogType:stderr
+LogLastModifiedTime:Sun Oct 11 10:55:24 +0000 2026
+LogLength:240
+LogContents:
+log4j:WARN No appenders could be found for logger (org.apache.hadoop.mapreduce.v2.app.MRAppMaster).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+
+End of LogType:stderr
+***********************************************************************
+
+Container: container_1791716023192_0002_01_000001 on team-38-01_44263
+LogAggregationType: AGGREGATED
+=====================================================================
+LogType:stdout
+LogLastModifiedTime:Sun Oct 11 10:55:24 +0000 2026
+LogLength:0
+LogContents:
+
+End of LogType:stdout
+***********************************************************************
+
+Container: container_1791716023192_0002_01_000001 on team-38-01_44263
+LogAggregationType: AGGREGATED
+=====================================================================
+LogType:syslog
+LogLastModifiedTime:Sun Oct 11 10:55:24 +0000 2026
+LogLength:66756
+LogContents:
+2026-10-11 10:54:59,390 INFO [main] org.apache.hadoop.mapreduce.v2.app.MRAppMaster: Created MRAppMaster for application appattempt_1791716023192_0002_000001
+2026-10-11 10:54:59,482 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: yarn.resourcemanager.system-metrics-publisher.enabled in yarn-site.xml is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+2026-10-11 10:54:59,567 INFO [main] org.apache.hadoop.mapreduce.v2.app.MRAppMaster: 
+/************************************************************
+[system properties]
+os.name: Linux
+os.version: 6.8.0-139-generic
+java.home: /usr/lib/jvm/java-17-openjdk-amd64
+java.runtime.version: 17.0.20.1+1-1-24.04-Ubuntu
+java.vendor: Ubuntu
+java.version: 17.0.20.1
+java.vm.name: OpenJDK 64-Bit Server VM
+java.class.path: /var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/container_1791716023192_0002_01_000001:/etc/hadoop:/opt/hadoop/share/hadoop/common/hadoop-registry-3.5.0.jar:/opt/hadoop/share/hadoop/common/hadoop-nfs-3.5.0.jar:/opt/hadoop/share/hadoop/common/hadoop-common-3.5.0-tests.jar:/opt/hadoop/share/hadoop/common/hadoop-common-3.5.0.jar:/opt/hadoop/share/hadoop/common/hadoop-kms-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/dnsjava-3.6.1.jar:/opt/hadoop/share/hadoop/common/lib/jackson-annotations-2.18.6.jar:/opt/hadoop/share/hadoop/common/lib/HdrHistogram-2.1.12.jar:/opt/hadoop/share/hadoop/common/lib/kerby-asn1-2.0.3.jar:/opt/hadoop/share/hadoop/common/lib/commons-net-3.9.0.jar:/opt/hadoop/share/hadoop/common/lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/opt/hadoop/share/hadoop/common/lib/jackson-databind-2.18.6.jar:/opt/hadoop/share/hadoop/common/lib/kerby-config-2.0.3.jar:/opt/hadoop/share/hadoop/common/lib/jspecify-1.0.0.jar:/opt/hadoop/share/hadoop/common/lib/stax2-api-4.2.1.jar:/opt/hadoop/share/hadoop/common/lib/commons-lang3-3.18.0.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.xml.bind-api-2.3.3.jar:/opt/hadoop/share/hadoop/common/lib/hk2-locator-2.6.1.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.servlet.jsp-api-2.3.6.jar:/opt/hadoop/share/hadoop/common/lib/javax.servlet-api-3.1.0.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.activation-api-1.2.1.jar:/opt/hadoop/share/hadoop/common/lib/metrics-core-3.2.4.jar:/opt/hadoop/share/hadoop/common/lib/reload4j-1.2.22.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-cos-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/kerby-util-2.0.3.jar:/opt/hadoop/share/hadoop/common/lib/jetty-servlet-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/curator-recipes-5.2.0.jar:/opt/hadoop/share/hadoop/common/lib/netty-transport-native-unix-common-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-tos-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/commons-collections4-4.4.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-shaded-guava-1.5.0.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.servlet-api-4.0.4.jar:/opt/hadoop/share/hadoop/common/lib/slf4j-api-1.7.36.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.annotation-api-1.3.5.jar:/opt/hadoop/share/hadoop/common/lib/nimbus-jose-jwt-10.4.jar:/opt/hadoop/share/hadoop/common/lib/kerb-util-2.0.3.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-auth-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/istack-commons-runtime-3.0.12.jar:/opt/hadoop/share/hadoop/common/lib/curator-client-5.2.0.jar:/opt/hadoop/share/hadoop/common/lib/commons-cli-1.9.0.jar:/opt/hadoop/share/hadoop/common/lib/zookeeper-3.8.6.jar:/opt/hadoop/share/hadoop/common/lib/jersey-client-2.46.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.inject-2.6.1.jar:/opt/hadoop/share/hadoop/common/lib/netty-transport-native-epoll-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/bcprov-jdk18on-1.82.jar:/opt/hadoop/share/hadoop/common/lib/netty-transport-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/jul-to-slf4j-1.7.36.jar:/opt/hadoop/share/hadoop/common/lib/jackson-core-2.18.6.jar:/opt/hadoop/share/hadoop/common/lib/failureaccess-1.0.3.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-shaded-protobuf_3_25-1.5.0.jar:/opt/hadoop/share/hadoop/common/lib/jetty-security-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/jersey-container-servlet-2.46.jar:/opt/hadoop/share/hadoop/common/lib/jetty-util-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/jetty-webapp-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/commons-configuration2-2.10.1.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.activation-1.2.2.jar:/opt/hadoop/share/hadoop/common/lib/netty-codec-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/commons-io-2.16.1.jar:/opt/hadoop/share/hadoop/common/lib/commons-math3-3.6.1.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-azure-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/analyticsaccelerator-s3-1.3.1.jar:/opt/hadoop/share/hadoop/common/lib/aopalliance-repackaged-2.6.1.jar:/opt/hadoop/share/hadoop/common/lib/hk2-utils-2.6.1.jar:/opt/hadoop/share/hadoop/common/lib/jetty-io-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/httpclient-4.5.13.jar:/opt/hadoop/share/hadoop/common/lib/osgi-resource-locator-1.0.3.jar:/opt/hadoop/share/hadoop/common/lib/woodstox-core-5.4.0.jar:/opt/hadoop/share/hadoop/common/lib/jersey-hk2-2.46.jar:/opt/hadoop/share/hadoop/common/lib/zookeeper-jute-3.8.6.jar:/opt/hadoop/share/hadoop/common/lib/netty-transport-classes-epoll-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-azure-datalake-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/j2objc-annotations-3.0.0.jar:/opt/hadoop/share/hadoop/common/lib/jsr305-3.0.2.jar:/opt/hadoop/share/hadoop/common/lib/jetty-util-ajax-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/javassist-3.30.2-GA.jar:/opt/hadoop/share/hadoop/common/lib/audience-annotations-0.12.0.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-huaweicloud-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/kerb-crypto-2.0.3.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.ws.rs-api-2.1.6.jar:/opt/hadoop/share/hadoop/common/lib/jsch-0.1.55.jar:/opt/hadoop/share/hadoop/common/lib/hk2-api-2.6.1.jar:/opt/hadoop/share/hadoop/common/lib/netty-resolver-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/re2j-1.1.jar:/opt/hadoop/share/hadoop/common/lib/gson-2.9.0.jar:/opt/hadoop/share/hadoop/common/lib/commons-daemon-1.0.13.jar:/opt/hadoop/share/hadoop/common/lib/slf4j-reload4j-1.7.36.jar:/opt/hadoop/share/hadoop/common/lib/jetty-http-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/jetty-xml-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/kerb-core-2.0.3.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-gcp-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/azure-storage-7.0.1.jar:/opt/hadoop/share/hadoop/common/lib/jersey-common-2.46.jar:/opt/hadoop/share/hadoop/common/lib/wildfly-openssl-2.2.5.Final.jar:/opt/hadoop/share/hadoop/common/lib/azure-keyvault-core-1.0.0.jar:/opt/hadoop/share/hadoop/common/lib/netty-buffer-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/httpcore-4.4.13.jar:/opt/hadoop/share/hadoop/common/lib/netty-handler-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/commons-text-1.14.0.jar:/opt/hadoop/share/hadoop/common/lib/guava-33.4.8-jre.jar:/opt/hadoop/share/hadoop/common/lib/jetty-server-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-annotations-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.validation-api-2.0.2.jar:/opt/hadoop/share/hadoop/common/lib/jaxb-runtime-2.3.9.jar:/opt/hadoop/share/hadoop/common/lib/snappy-java-1.1.10.4.jar:/opt/hadoop/share/hadoop/common/lib/kerby-pkix-2.0.3.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-aws-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/commons-logging-1.3.0.jar:/opt/hadoop/share/hadoop/common/lib/commons-codec-1.15.jar:/opt/hadoop/share/hadoop/common/lib/curator-framework-5.2.0.jar:/opt/hadoop/share/hadoop/common/lib/txw2-2.3.9.jar:/opt/hadoop/share/hadoop/common/lib/netty-common-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/jersey-server-2.46.jar:/opt/hadoop/share/hadoop/common/lib/avro-1.11.5.jar:/opt/hadoop/share/hadoop/common/lib/jersey-container-servlet-core-2.46.jar:/opt/hadoop/share/hadoop/common/lib/commons-compress-1.26.1.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-httpfs-3.5.0.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-client-3.5.0.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-nfs-3.5.0.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-native-client-3.5.0-tests.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-client-3.5.0-tests.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-3.5.0.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-native-client-3.5.0.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-rbf-3.5.0-tests.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-3.5.0-tests.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-rbf-3.5.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/dnsjava-3.6.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/jackson-annotations-2.18.6.jar:/opt/hadoop/share/hadoop/hdfs/lib/kerby-asn1-2.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-redis-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-net-3.9.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-resolver-dns-classes-macos-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/jackson-databind-2.18.6.jar:/opt/hadoop/share/hadoop/hdfs/lib/kerby-config-2.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/jspecify-1.0.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/stax2-api-4.2.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-lang3-3.18.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/HikariCP-4.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.xml.bind-api-2.3.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-native-epoll-4.1.130.Final-linux-aarch_64.jar:/opt/hadoop/share/hadoop/hdfs/lib/hk2-locator-2.6.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.servlet.jsp-api-2.3.6.jar:/opt/hadoop/share/hadoop/hdfs/lib/javax.servlet-api-3.1.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.activation-api-1.2.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/metrics-core-3.2.4.jar:/opt/hadoop/share/hadoop/hdfs/lib/reload4j-1.2.22.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-stomp-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/kerby-util-2.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-servlet-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/json-simple-1.1.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/curator-recipes-5.2.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-native-unix-common-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-udt-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-native-epoll-4.1.130.Final-linux-riscv64.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-collections4-4.4.jar:/opt/hadoop/share/hadoop/hdfs/lib/hadoop-shaded-guava-1.5.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.servlet-api-4.0.4.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-socks-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.annotation-api-1.3.5.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-handler-ssl-ocsp-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/nimbus-jose-jwt-10.4.jar:/opt/hadoop/share/hadoop/hdfs/lib/kerb-util-2.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/hadoop-auth-3.5.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/istack-commons-runtime-3.0.12.jar:/opt/hadoop/share/hadoop/hdfs/lib/curator-client-5.2.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-cli-1.9.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-http2-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/zookeeper-3.8.6.jar:/opt/hadoop/share/hadoop/hdfs/lib/jersey-client-2.46.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.inject-2.6.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-native-epoll-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-native-epoll-4.1.130.Final-linux-x86_64.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/jackson-core-2.18.6.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-smtp-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/failureaccess-1.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/hadoop-shaded-protobuf_3_25-1.5.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-security-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/jersey-container-servlet-2.46.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-util-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-haproxy-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-webapp-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-configuration2-2.10.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.activation-1.2.2.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-sctp-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-io-2.16.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-math3-3.6.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/aopalliance-repackaged-2.6.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-xml-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-resolver-dns-native-macos-4.1.130.Final-osx-x86_64.jar:/opt/hadoop/share/hadoop/hdfs/lib/hk2-utils-2.6.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-io-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/httpclient-4.5.13.jar:/opt/hadoop/share/hadoop/hdfs/lib/osgi-resource-locator-1.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/woodstox-core-5.4.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/jersey-hk2-2.46.jar:/opt/hadoop/share/hadoop/hdfs/lib/zookeeper-jute-3.8.6.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-classes-epoll-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-dns-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-memcache-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/j2objc-annotations-3.0.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/jsr305-3.0.2.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-util-ajax-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/javassist-3.30.2-GA.jar:/opt/hadoop/share/hadoop/hdfs/lib/audience-annotations-0.12.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/kerb-crypto-2.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.ws.rs-api-2.1.6.jar:/opt/hadoop/share/hadoop/hdfs/lib/jsch-0.1.55.jar:/opt/hadoop/share/hadoop/hdfs/lib/hk2-api-2.6.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-resolver-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/re2j-1.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-all-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-http-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-classes-kqueue-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/gson-2.9.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-daemon-1.0.13.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-resolver-dns-native-macos-4.1.130.Final-osx-aarch_64.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-http-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-xml-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/kerb-core-2.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/jettison-1.5.4.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-rxtx-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/jersey-common-2.46.jar:/opt/hadoop/share/hadoop/hdfs/lib/leveldbjni-all-1.8.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-buffer-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/httpcore-4.4.13.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-handler-proxy-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-handler-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-text-1.14.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/guava-33.4.8-jre.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-server-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-native-kqueue-4.1.130.Final-osx-x86_64.jar:/opt/hadoop/share/hadoop/hdfs/lib/hadoop-annotations-3.5.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-mqtt-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.validation-api-2.0.2.jar:/opt/hadoop/share/hadoop/hdfs/lib/jaxb-runtime-2.3.9.jar:/opt/hadoop/share/hadoop/hdfs/lib/snappy-java-1.1.10.4.jar:/opt/hadoop/share/hadoop/hdfs/lib/kerby-pkix-2.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-logging-1.3.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-codec-1.15.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-resolver-dns-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/curator-framework-5.2.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/txw2-2.3.9.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-common-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/jersey-server-2.46.jar:/opt/hadoop/share/hadoop/hdfs/lib/avro-1.11.5.jar:/opt/hadoop/share/hadoop/hdfs/lib/jersey-container-servlet-core-2.46.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-compress-1.26.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-native-kqueue-4.1.130.Final-osx-aarch_64.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-applicationhistoryservice-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-globalpolicygenerator-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-timeline-pluginstorage-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-applications-distributedshell-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-services-api-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-applications-unmanaged-am-launcher-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-tests-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-services-core-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-router-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-api-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-registry-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-resourcemanager-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-common-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-nodemanager-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-web-proxy-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-sharedcachemanager-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-applications-mawo-core-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-common-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-client-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/lib/websocket-servlet-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/jsonschema2pojo-core-1.0.2.jar:/opt/hadoop/share/hadoop/yarn/lib/bcpkix-jdk18on-1.82.jar:/opt/hadoop/share/hadoop/yarn/lib/javax-websocket-client-impl-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/jetty-jndi-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/websocket-api-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/asm-tree-9.7.1.jar:/opt/hadoop/share/hadoop/yarn/lib/websocket-server-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/org.eclipse.persistence.asm-9.6.0.jar:/opt/hadoop/share/hadoop/yarn/lib/jakarta.json-api-1.1.6.jar:/opt/hadoop/share/hadoop/yarn/lib/commons-csv-1.9.0.jar:/opt/hadoop/share/hadoop/yarn/lib/fst-2.50.jar:/opt/hadoop/share/hadoop/yarn/lib/websocket-client-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/org.eclipse.persistence.core-2.7.14.jar:/opt/hadoop/share/hadoop/yarn/lib/swagger-annotations-1.5.4.jar:/opt/hadoop/share/hadoop/yarn/lib/javax.json-1.1.4.jar:/opt/hadoop/share/hadoop/yarn/lib/asm-commons-9.7.1.jar:/opt/hadoop/share/hadoop/yarn/lib/commons-lang-2.6.jar:/opt/hadoop/share/hadoop/yarn/lib/javax.websocket-client-api-1.0.jar:/opt/hadoop/share/hadoop/yarn/lib/javax.websocket-api-1.0.jar:/opt/hadoop/share/hadoop/yarn/lib/aopalliance-1.0.jar:/opt/hadoop/share/hadoop/yarn/lib/jersey-media-jaxb-2.46.jar:/opt/hadoop/share/hadoop/yarn/lib/mssql-jdbc-6.2.1.jre7.jar:/opt/hadoop/share/hadoop/yarn/lib/websocket-common-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/jetty-plus-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/snakeyaml-2.0.jar:/opt/hadoop/share/hadoop/yarn/lib/jackson-jaxrs-json-provider-2.18.6.jar:/opt/hadoop/share/hadoop/yarn/lib/javax-websocket-server-impl-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/bcutil-jdk18on-1.82.jar:/opt/hadoop/share/hadoop/yarn/lib/cache-api-1.1.1.jar:/opt/hadoop/share/hadoop/yarn/lib/jetty-client-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/org.eclipse.persistence.moxy-2.7.14.jar:/opt/hadoop/share/hadoop/yarn/lib/jersey-media-json-jettison-2.46.jar:/opt/hadoop/share/hadoop/yarn/lib/caffeine-2.9.3.jar:/opt/hadoop/share/hadoop/yarn/lib/jcodings-1.0.13.jar:/opt/hadoop/share/hadoop/yarn/lib/jackson-module-jaxb-annotations-2.18.6.jar:/opt/hadoop/share/hadoop/yarn/lib/guice-servlet-5.1.0.jar:/opt/hadoop/share/hadoop/yarn/lib/jna-5.2.0.jar:/opt/hadoop/share/hadoop/yarn/lib/guice-5.1.0.jar:/opt/hadoop/share/hadoop/yarn/lib/javax.annotation-api-1.3.2.jar:/opt/hadoop/share/hadoop/yarn/lib/jetty-annotations-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/ehcache-3.8.2.jar:/opt/hadoop/share/hadoop/yarn/lib/jline-3.9.0.jar:/opt/hadoop/share/hadoop/yarn/lib/failsafe-2.4.4.jar:/opt/hadoop/share/hadoop/yarn/lib/jackson-jaxrs-base-2.18.6.jar:/opt/hadoop/share/hadoop/yarn/lib/objenesis-2.6.jar:/opt/hadoop/share/hadoop/yarn/lib/codemodel-2.6.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-3.5.0-tests.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-hs-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-nativetask-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-core-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-app-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-uploader-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-common-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-hs-plugins-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-shuffle-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/lib/javax.inject-1.jar:job.jar/job.jar:job.jar/classes/:job.jar/lib/*:/var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/container_1791716023192_0002_01_000001/job.jar
+java.io.tmpdir: /var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/container_1791716023192_0002_01_000001/tmp
+user.dir: /var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/container_1791716023192_0002_01_000001
+user.name: hadoop
+************************************************************/
+2026-10-11 10:54:59,604 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: yarn.resourcemanager.system-metrics-publisher.enabled in yarn-site.xml is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+2026-10-11 10:54:59,644 INFO [main] org.apache.hadoop.security.SecurityUtil: Updating Configuration
+2026-10-11 10:54:59,855 INFO [main] org.apache.hadoop.mapreduce.v2.app.MRAppMaster: Executing with tokens: [Kind: YARN_AM_RM_TOKEN, Service: , Ident: (appAttemptId { application_id { id: 2 cluster_timestamp: 1791716023192 } attemptId: 1 } keyId: -346501970)]
+2026-10-11 10:54:59,913 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: yarn.resourcemanager.system-metrics-publisher.enabled in yarn-site.xml is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+2026-10-11 10:54:59,914 INFO [main] org.apache.hadoop.conf.Configuration: resource-types.xml not found
+2026-10-11 10:54:59,917 INFO [main] org.apache.hadoop.yarn.util.resource.ResourceUtils: Unable to find 'resource-types.xml'.
+2026-10-11 10:54:59,936 INFO [main] org.apache.hadoop.mapreduce.v2.app.MRAppMaster: OutputCommitter set in config null
+2026-10-11 10:54:59,937 INFO [main] org.apache.hadoop.mapreduce.v2.app.MRAppMaster: OutputCommitter is org.apache.hadoop.mapred.FileOutputCommitter
+2026-10-11 10:54:59,965 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: yarn.resourcemanager.system-metrics-publisher.enabled in yarn-site.xml is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+2026-10-11 10:55:00,027 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: yarn.resourcemanager.system-metrics-publisher.enabled in yarn-site.xml is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+2026-10-11 10:55:00,594 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: yarn.resourcemanager.system-metrics-publisher.enabled in yarn-site.xml is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+2026-10-11 10:55:00,708 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: yarn.resourcemanager.system-metrics-publisher.enabled in yarn-site.xml is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+2026-10-11 10:55:00,827 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: yarn.resourcemanager.system-metrics-publisher.enabled in yarn-site.xml is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+2026-10-11 10:55:00,855 INFO [main] org.apache.hadoop.yarn.event.AsyncDispatcher: Registering class org.apache.hadoop.mapreduce.jobhistory.EventType for class org.apache.hadoop.mapreduce.jobhistory.JobHistoryEventHandler
+2026-10-11 10:55:00,856 INFO [main] org.apache.hadoop.yarn.event.AsyncDispatcher: Registering class org.apache.hadoop.mapreduce.v2.app.job.event.JobEventType for class org.apache.hadoop.mapreduce.v2.app.MRAppMaster$JobEventDispatcher
+2026-10-11 10:55:00,857 INFO [main] org.apache.hadoop.yarn.event.AsyncDispatcher: Registering class org.apache.hadoop.mapreduce.v2.app.job.event.TaskEventType for class org.apache.hadoop.mapreduce.v2.app.MRAppMaster$TaskEventDispatcher
+2026-10-11 10:55:00,858 INFO [main] org.apache.hadoop.yarn.event.AsyncDispatcher: Registering class org.apache.hadoop.mapreduce.v2.app.job.event.TaskAttemptEventType for class org.apache.hadoop.mapreduce.v2.app.MRAppMaster$TaskAttemptEventDispatcher
+2026-10-11 10:55:00,858 INFO [main] org.apache.hadoop.yarn.event.AsyncDispatcher: Registering class org.apache.hadoop.mapreduce.v2.app.commit.CommitterEventType for class org.apache.hadoop.mapreduce.v2.app.commit.CommitterEventHandler
+2026-10-11 10:55:00,862 INFO [main] org.apache.hadoop.yarn.event.AsyncDispatcher: Registering class org.apache.hadoop.mapreduce.v2.app.speculate.Speculator$EventType for class org.apache.hadoop.mapreduce.v2.app.MRAppMaster$SpeculatorEventDispatcher
+2026-10-11 10:55:00,863 INFO [main] org.apache.hadoop.yarn.event.AsyncDispatcher: Registering class org.apache.hadoop.mapreduce.v2.app.rm.ContainerAllocator$EventType for class org.apache.hadoop.mapreduce.v2.app.MRAppMaster$ContainerAllocatorRouter
+2026-10-11 10:55:00,864 INFO [main] org.apache.hadoop.yarn.event.AsyncDispatcher: Registering class org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncher$EventType for class org.apache.hadoop.mapreduce.v2.app.MRAppMaster$ContainerLauncherRouter
+2026-10-11 10:55:00,889 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: yarn.resourcemanager.system-metrics-publisher.enabled in yarn-site.xml is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+2026-10-11 10:55:00,917 INFO [main] org.apache.hadoop.mapreduce.v2.jobhistory.JobHistoryUtils: Default file system [hdfs://team-38-nn:9000]
+2026-10-11 10:55:00,934 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: yarn.resourcemanager.system-metrics-publisher.enabled in yarn-site.xml is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+2026-10-11 10:55:00,949 INFO [main] org.apache.hadoop.mapreduce.v2.jobhistory.JobHistoryUtils: Default file system [hdfs://team-38-nn:9000]
+2026-10-11 10:55:00,965 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: yarn.resourcemanager.system-metrics-publisher.enabled in yarn-site.xml is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+2026-10-11 10:55:00,977 INFO [main] org.apache.hadoop.mapreduce.v2.jobhistory.JobHistoryUtils: Default file system [hdfs://team-38-nn:9000]
+2026-10-11 10:55:00,994 INFO [main] org.apache.hadoop.mapreduce.jobhistory.JobHistoryEventHandler: Emitting job history data to the timeline server is not enabled
+2026-10-11 10:55:01,042 INFO [main] org.apache.hadoop.yarn.event.AsyncDispatcher: Registering class org.apache.hadoop.mapreduce.v2.app.job.event.JobFinishEvent$Type for class org.apache.hadoop.mapreduce.v2.app.MRAppMaster$JobFinishEventHandler
+2026-10-11 10:55:01,519 INFO [main] org.apache.hadoop.mapreduce.v2.app.job.impl.JobImpl: Adding job token for job_1791716023192_0002 to jobTokenSecretManager
+2026-10-11 10:55:01,638 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: yarn.resourcemanager.system-metrics-publisher.enabled in yarn-site.xml is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+2026-10-11 10:55:01,662 INFO [main] org.apache.hadoop.mapreduce.v2.app.job.impl.JobImpl: Not uberizing job_1791716023192_0002 because: not enabled;
+2026-10-11 10:55:01,688 INFO [main] org.apache.hadoop.mapreduce.v2.app.job.impl.JobImpl: Input size for job job_1791716023192_0002 = 24. Number of splits = 2
+2026-10-11 10:55:01,689 INFO [main] org.apache.hadoop.mapreduce.v2.app.job.impl.JobImpl: Number of reduces for job job_1791716023192_0002 = 1
+2026-10-11 10:55:01,690 INFO [main] org.apache.hadoop.mapreduce.v2.app.job.impl.JobImpl: job_1791716023192_0002Job Transitioned from NEW to INITED
+2026-10-11 10:55:01,691 INFO [main] org.apache.hadoop.mapreduce.v2.app.MRAppMaster: MRAppMaster launching normal, non-uberized, multi-container job job_1791716023192_0002.
+2026-10-11 10:55:01,718 INFO [main] org.apache.hadoop.ipc.CallQueueManager: Using callQueue: class java.util.concurrent.LinkedBlockingQueue, queueCapacity: 100, scheduler: class org.apache.hadoop.ipc.DefaultRpcScheduler, ipcBackoff: false, ipcFailOver: false.
+2026-10-11 10:55:01,725 INFO [main] org.apache.hadoop.ipc.Server: Listener at 0.0.0.0:37335
+2026-10-11 10:55:01,730 INFO [Socket Reader #1 for port 0] org.apache.hadoop.ipc.Server: Starting Socket Reader #1 for port 0
+2026-10-11 10:55:01,797 INFO [main] org.apache.hadoop.yarn.factories.impl.pb.RpcServerFactoryPBImpl: Adding protocol org.apache.hadoop.mapreduce.v2.api.MRClientProtocolPB to the server
+2026-10-11 10:55:01,798 INFO [IPC Server Responder] org.apache.hadoop.ipc.Server: IPC Server Responder: starting
+2026-10-11 10:55:01,799 INFO [IPC Server listener on 0] org.apache.hadoop.ipc.Server: IPC Server listener on 0: starting
+2026-10-11 10:55:01,799 INFO [main] org.apache.hadoop.mapreduce.v2.app.client.MRClientService: Instantiated MRClientService at team-38-01/10.38.0.13:37335
+2026-10-11 10:55:01,910 INFO [main] org.eclipse.jetty.util.log: Logging initialized @3624ms to org.eclipse.jetty.util.log.Slf4jLog
+2026-10-11 10:55:02,004 WARN [main] org.apache.hadoop.security.authentication.server.AuthenticationFilter: Unable to initialize FileSignerSecretProvider, falling back to use random secrets. Reason: Could not read signature secret file: /var/lib/hadoop/hadoop-http-auth-signature-secret
+2026-10-11 10:55:02,035 INFO [main] org.apache.hadoop.http.HttpServer2: Added global filter 'safety' (class=org.apache.hadoop.http.HttpServer2$QuotingInputFilter)
+2026-10-11 10:55:02,058 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: yarn.resourcemanager.system-metrics-publisher.enabled in yarn-site.xml is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+2026-10-11 10:55:02,077 INFO [main] org.apache.hadoop.http.HttpServer2: Added filter AM_PROXY_FILTER (class=org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter) to context mapreduce
+2026-10-11 10:55:02,078 INFO [main] org.apache.hadoop.http.HttpServer2: Added filter AM_PROXY_FILTER (class=org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter) to context static
+2026-10-11 10:55:02,082 INFO [main] org.apache.hadoop.http.HttpServer2: ASYNC_PROFILER_HOME environment variable and async.profiler.home system property not specified. Disabling /prof endpoint.
+2026-10-11 10:55:02,114 INFO [main] org.apache.hadoop.http.HttpServer2: addJerseyResourceConfig: pathSpec = /*.
+2026-10-11 10:55:02,521 INFO [main] org.apache.hadoop.yarn.webapp.WebApps: Registered webapp guice modules
+2026-10-11 10:55:02,522 INFO [main] org.apache.hadoop.http.HttpServer2: Jetty bound to port 33057
+2026-10-11 10:55:02,524 INFO [main] org.eclipse.jetty.server.Server: jetty-9.4.58.v20250814; built: 2025-08-14T02:28:49.637Z; git: 8f1440587e9e4ae7db3d74cf205643f3d707148d; jvm 17.0.20.1+1-1-24.04-Ubuntu
+2026-10-11 10:55:02,560 INFO [main] org.eclipse.jetty.server.session: DefaultSessionIdManager workerName=node0
+2026-10-11 10:55:02,560 INFO [main] org.eclipse.jetty.server.session: No SessionScavenger set, using defaults
+2026-10-11 10:55:02,562 INFO [main] org.eclipse.jetty.server.session: node0 Scavenging every 600000ms
+2026-10-11 10:55:02,578 INFO [main] org.eclipse.jetty.server.handler.ContextHandler: Started o.e.j.s.ServletContextHandler@713ec32d{static,/static,jar:file:/opt/hadoop-3.5.0/share/hadoop/yarn/hadoop-yarn-common-3.5.0.jar!/webapps/static,AVAILABLE}
+2026-10-11 10:55:04,174 INFO [main] org.eclipse.jetty.server.handler.ContextHandler: Started o.e.j.w.WebAppContext@25f14e93{mapreduce,/,file:///var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/container_1791716023192_0002_01_000001/tmp/jetty-0_0_0_0-33057-hadoop-yarn-common-3_5_0_jar-_-any-8722533176918146621/webapp/,AVAILABLE}{jar:file:/opt/hadoop-3.5.0/share/hadoop/yarn/hadoop-yarn-common-3.5.0.jar!/webapps/mapreduce}
+2026-10-11 10:55:04,181 INFO [main] org.eclipse.jetty.server.AbstractConnector: Started ServerConnector@3913f206{HTTP/1.1, (http/1.1)}{0.0.0.0:33057}
+2026-10-11 10:55:04,182 INFO [main] org.eclipse.jetty.server.Server: Started @5896ms
+2026-10-11 10:55:04,188 INFO [main] org.apache.hadoop.yarn.webapp.WebApps: Web app mapreduce started at 33057.
+2026-10-11 10:55:04,193 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.speculate.DefaultSpeculator: JOB_CREATE job_1791716023192_0002
+2026-10-11 10:55:04,195 INFO [main] org.apache.hadoop.ipc.CallQueueManager: Using callQueue: class java.util.concurrent.LinkedBlockingQueue, queueCapacity: 3000, scheduler: class org.apache.hadoop.ipc.DefaultRpcScheduler, ipcBackoff: false, ipcFailOver: false.
+2026-10-11 10:55:04,196 INFO [main] org.apache.hadoop.ipc.Server: Listener at 0.0.0.0:41697
+2026-10-11 10:55:04,198 INFO [Socket Reader #1 for port 0] org.apache.hadoop.ipc.Server: Starting Socket Reader #1 for port 0
+2026-10-11 10:55:04,206 INFO [IPC Server Responder] org.apache.hadoop.ipc.Server: IPC Server Responder: starting
+2026-10-11 10:55:04,207 INFO [IPC Server listener on 0] org.apache.hadoop.ipc.Server: IPC Server listener on 0: starting
+2026-10-11 10:55:04,243 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true
+2026-10-11 10:55:04,243 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: maxTaskFailuresPerNode is 3
+2026-10-11 10:55:04,243 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: blacklistDisablePercent is 33
+2026-10-11 10:55:04,245 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: 0% of the mappers will be scheduled using OPPORTUNISTIC containers
+2026-10-11 10:55:04,264 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: yarn.resourcemanager.system-metrics-publisher.enabled in yarn-site.xml is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+2026-10-11 10:55:04,287 INFO [main] org.apache.hadoop.yarn.client.DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at team-38-nn/10.38.0.11:8030
+2026-10-11 10:55:04,364 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMCommunicator: maxContainerCapability: <memory:2048, vCores:2>
+2026-10-11 10:55:04,364 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMCommunicator: queue: root.default
+2026-10-11 10:55:04,369 INFO [main] org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncherImpl: Upper limit on the thread pool size is 500
+2026-10-11 10:55:04,369 INFO [main] org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncherImpl: The thread pool initial size is 10
+2026-10-11 10:55:04,385 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.JobImpl: job_1791716023192_0002Job Transitioned from INITED to SETUP
+2026-10-11 10:55:04,388 INFO [CommitterEvent Processor #0] org.apache.hadoop.mapreduce.v2.app.commit.CommitterEventHandler: Processing the event EventType: JOB_SETUP
+2026-10-11 10:55:04,397 INFO [CommitterEvent Processor #0] org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2026-10-11 10:55:04,397 INFO [CommitterEvent Processor #0] org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2026-10-11 10:55:04,414 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.JobImpl: job_1791716023192_0002Job Transitioned from SETUP to RUNNING
+2026-10-11 10:55:04,466 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: Resource capability of task type MAP is set to <memory:512, vCores:1>
+2026-10-11 10:55:04,471 INFO [eventHandlingThread] org.apache.hadoop.mapreduce.jobhistory.JobHistoryEventHandler: Event Writer setup for JobId: job_1791716023192_0002, File: hdfs://team-38-nn:9000/tmp/hadoop-yarn/staging/team/.staging/job_1791716023192_0002/job_1791716023192_0002_1.jhist
+2026-10-11 10:55:04,479 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskImpl: task_1791716023192_0002_m_000000 Task Transitioned from NEW to SCHEDULED
+2026-10-11 10:55:04,480 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskImpl: task_1791716023192_0002_m_000001 Task Transitioned from NEW to SCHEDULED
+2026-10-11 10:55:04,483 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: Resource capability of task type REDUCE is set to <memory:512, vCores:1>
+2026-10-11 10:55:04,483 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskImpl: task_1791716023192_0002_r_000000 Task Transitioned from NEW to SCHEDULED
+2026-10-11 10:55:04,487 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1791716023192_0002_m_000000_0 TaskAttempt Transitioned from NEW to UNASSIGNED
+2026-10-11 10:55:04,487 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1791716023192_0002_m_000001_0 TaskAttempt Transitioned from NEW to UNASSIGNED
+2026-10-11 10:55:04,487 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1791716023192_0002_r_000000_0 TaskAttempt Transitioned from NEW to UNASSIGNED
+2026-10-11 10:55:04,490 INFO [Thread-57] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: mapResourceRequest:<memory:512, vCores:1>
+2026-10-11 10:55:04,509 INFO [Thread-57] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: reduceResourceRequest:<memory:512, vCores:1>
+2026-10-11 10:55:05,378 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Before Scheduling: PendingReds:1 ScheduledMaps:2 ScheduledReds:0 AssignedMaps:0 AssignedReds:0 CompletedMaps:0 CompletedReds:0 ContAlloc:0 ContRel:0 HostLocal:0 RackLocal:0
+2026-10-11 10:55:05,412 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: applicationId=application_1791716023192_0002: ask=4 release=0 newContainers=0 finishedContainers=0 resourceLimit=<memory:3584, vCores:3> knownNMs=2
+2026-10-11 10:55:05,414 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Recalculating schedule, headroom=<memory:3584, vCores:3>
+2026-10-11 10:55:05,414 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Reduce slow start threshold not met. completedMapsForReduceSlowstart 1
+2026-10-11 10:55:06,427 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Got allocated containers 2
+2026-10-11 10:55:06,429 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Assigned container container_1791716023192_0002_01_000002 to attempt_1791716023192_0002_m_000000_0
+2026-10-11 10:55:06,430 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Assigned container container_1791716023192_0002_01_000003 to attempt_1791716023192_0002_m_000001_0
+2026-10-11 10:55:06,430 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Recalculating schedule, headroom=<memory:2560, vCores:1>
+2026-10-11 10:55:06,430 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Reduce slow start threshold not met. completedMapsForReduceSlowstart 1
+2026-10-11 10:55:06,432 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: After Scheduling: PendingReds:1 ScheduledMaps:0 ScheduledReds:0 AssignedMaps:2 AssignedReds:0 CompletedMaps:0 CompletedReds:0 ContAlloc:2 ContRel:0 HostLocal:2 RackLocal:0
+2026-10-11 10:55:06,450 INFO [AsyncDispatcher event handler] org.apache.hadoop.conf.Configuration.deprecation: yarn.resourcemanager.system-metrics-publisher.enabled in yarn-site.xml is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+2026-10-11 10:55:06,475 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: The job-jar file on the remote FS is hdfs://team-38-nn:9000/tmp/hadoop-yarn/staging/team/.staging/job_1791716023192_0002/job.jar
+2026-10-11 10:55:06,478 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: The job-conf file on the remote FS is /tmp/hadoop-yarn/staging/team/.staging/job_1791716023192_0002/job.xml
+2026-10-11 10:55:06,482 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: Adding #0 tokens and #1 secret keys for NM use for launching container
+2026-10-11 10:55:06,482 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: Size of containertokens_dob is 1
+2026-10-11 10:55:06,482 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: Putting shuffle token in serviceData
+2026-10-11 10:55:06,538 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1791716023192_0002_m_000000_0 TaskAttempt Transitioned from UNASSIGNED to ASSIGNED
+2026-10-11 10:55:06,542 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1791716023192_0002_m_000001_0 TaskAttempt Transitioned from UNASSIGNED to ASSIGNED
+2026-10-11 10:55:06,544 INFO [ContainerLauncher #0] org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncherImpl: Processing the event EventType: CONTAINER_REMOTE_LAUNCH for container container_1791716023192_0002_01_000002 taskAttempt attempt_1791716023192_0002_m_000000_0
+2026-10-11 10:55:06,544 INFO [ContainerLauncher #1] org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncherImpl: Processing the event EventType: CONTAINER_REMOTE_LAUNCH for container container_1791716023192_0002_01_000003 taskAttempt attempt_1791716023192_0002_m_000001_0
+2026-10-11 10:55:06,546 INFO [ContainerLauncher #0] org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncherImpl: Launching attempt_1791716023192_0002_m_000000_0
+2026-10-11 10:55:06,546 INFO [ContainerLauncher #1] org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncherImpl: Launching attempt_1791716023192_0002_m_000001_0
+2026-10-11 10:55:06,653 INFO [ContainerLauncher #0] org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncherImpl: Shuffle port returned by ContainerManager for attempt_1791716023192_0002_m_000000_0 : 13562
+2026-10-11 10:55:06,657 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: TaskAttempt: [attempt_1791716023192_0002_m_000000_0] using containerId: [container_1791716023192_0002_01_000002 on NM: [team-38-01:44263]
+2026-10-11 10:55:06,658 INFO [ContainerLauncher #1] org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncherImpl: Shuffle port returned by ContainerManager for attempt_1791716023192_0002_m_000001_0 : 13562
+2026-10-11 10:55:06,664 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1791716023192_0002_m_000000_0 TaskAttempt Transitioned from ASSIGNED to RUNNING
+2026-10-11 10:55:06,664 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: TaskAttempt: [attempt_1791716023192_0002_m_000001_0] using containerId: [container_1791716023192_0002_01_000003 on NM: [team-38-00:43197]
+2026-10-11 10:55:06,665 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1791716023192_0002_m_000001_0 TaskAttempt Transitioned from ASSIGNED to RUNNING
+2026-10-11 10:55:06,665 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.speculate.DefaultSpeculator: ATTEMPT_START task_1791716023192_0002_m_000000
+2026-10-11 10:55:06,665 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskImpl: task_1791716023192_0002_m_000000 Task Transitioned from SCHEDULED to RUNNING
+2026-10-11 10:55:06,665 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.speculate.DefaultSpeculator: ATTEMPT_START task_1791716023192_0002_m_000001
+2026-10-11 10:55:06,665 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskImpl: task_1791716023192_0002_m_000001 Task Transitioned from SCHEDULED to RUNNING
+2026-10-11 10:55:07,438 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: applicationId=application_1791716023192_0002: ask=4 release=0 newContainers=0 finishedContainers=0 resourceLimit=<memory:2560, vCores:1> knownNMs=2
+2026-10-11 10:55:08,527 INFO [Socket Reader #1 for port 0] SecurityLogger.org.apache.hadoop.ipc.Server: Auth successful for job_1791716023192_0002 (auth:SIMPLE) from 10.38.0.12:58498
+2026-10-11 10:55:08,534 INFO [Socket Reader #1 for port 0] SecurityLogger.org.apache.hadoop.ipc.Server: Auth successful for job_1791716023192_0002 (auth:SIMPLE) from 10.38.0.13:46952
+2026-10-11 10:55:08,556 INFO [IPC Server handler 0 on default port 41697] org.apache.hadoop.mapred.TaskAttemptListenerImpl: JVM with ID : jvm_1791716023192_0002_m_000002 asked for a task
+2026-10-11 10:55:08,557 INFO [IPC Server handler 0 on default port 41697] org.apache.hadoop.mapred.TaskAttemptListenerImpl: JVM with ID: jvm_1791716023192_0002_m_000002 given task: attempt_1791716023192_0002_m_000000_0
+2026-10-11 10:55:08,561 INFO [IPC Server handler 1 on default port 41697] org.apache.hadoop.mapred.TaskAttemptListenerImpl: JVM with ID : jvm_1791716023192_0002_m_000003 asked for a task
+2026-10-11 10:55:08,561 INFO [IPC Server handler 1 on default port 41697] org.apache.hadoop.mapred.TaskAttemptListenerImpl: JVM with ID: jvm_1791716023192_0002_m_000003 given task: attempt_1791716023192_0002_m_000001_0
+2026-10-11 10:55:10,367 INFO [IPC Server handler 0 on default port 41697] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1791716023192_0002_m_000001_0 is : 0.0
+2026-10-11 10:55:10,444 INFO [IPC Server handler 1 on default port 41697] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1791716023192_0002_m_000000_0 is : 0.0
+2026-10-11 10:55:10,489 INFO [IPC Server handler 2 on default port 41697] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1791716023192_0002_m_000001_0 is : 1.0
+2026-10-11 10:55:10,502 INFO [IPC Server handler 3 on default port 41697] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Done acknowledgment from attempt_1791716023192_0002_m_000001_0
+2026-10-11 10:55:10,506 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1791716023192_0002_m_000001_0 TaskAttempt Transitioned from RUNNING to SUCCESS_FINISHING_CONTAINER
+2026-10-11 10:55:10,524 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskImpl: Task succeeded with attempt attempt_1791716023192_0002_m_000001_0
+2026-10-11 10:55:10,527 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskImpl: task_1791716023192_0002_m_000001 Task Transitioned from RUNNING to SUCCEEDED
+2026-10-11 10:55:10,530 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.JobImpl: Num completed Tasks: 1
+2026-10-11 10:55:10,596 INFO [IPC Server handler 4 on default port 41697] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1791716023192_0002_m_000000_0 is : 1.0
+2026-10-11 10:55:10,606 INFO [IPC Server handler 5 on default port 41697] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Done acknowledgment from attempt_1791716023192_0002_m_000000_0
+2026-10-11 10:55:10,608 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1791716023192_0002_m_000000_0 TaskAttempt Transitioned from RUNNING to SUCCESS_FINISHING_CONTAINER
+2026-10-11 10:55:10,612 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskImpl: Task succeeded with attempt attempt_1791716023192_0002_m_000000_0
+2026-10-11 10:55:10,612 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskImpl: task_1791716023192_0002_m_000000 Task Transitioned from RUNNING to SUCCEEDED
+2026-10-11 10:55:10,612 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.JobImpl: Num completed Tasks: 2
+2026-10-11 10:55:11,454 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Before Scheduling: PendingReds:1 ScheduledMaps:0 ScheduledReds:0 AssignedMaps:2 AssignedReds:0 CompletedMaps:2 CompletedReds:0 ContAlloc:2 ContRel:0 HostLocal:2 RackLocal:0
+2026-10-11 10:55:11,462 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Received completed container container_1791716023192_0002_01_000003
+2026-10-11 10:55:11,462 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Received completed container container_1791716023192_0002_01_000002
+2026-10-11 10:55:11,462 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Recalculating schedule, headroom=<memory:3584, vCores:3>
+2026-10-11 10:55:11,462 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Reduce slow start threshold reached. Scheduling reduces.
+2026-10-11 10:55:11,462 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: All maps assigned. Ramping up all remaining reduces:1
+2026-10-11 10:55:11,463 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: Diagnostics report from attempt_1791716023192_0002_m_000001_0: 
+2026-10-11 10:55:11,463 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1791716023192_0002_m_000001_0 TaskAttempt Transitioned from SUCCESS_FINISHING_CONTAINER to SUCCEEDED
+2026-10-11 10:55:11,463 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: Diagnostics report from attempt_1791716023192_0002_m_000000_0: 
+2026-10-11 10:55:11,463 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1791716023192_0002_m_000000_0 TaskAttempt Transitioned from SUCCESS_FINISHING_CONTAINER to SUCCEEDED
+2026-10-11 10:55:11,463 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: After Scheduling: PendingReds:0 ScheduledMaps:0 ScheduledReds:1 AssignedMaps:0 AssignedReds:0 CompletedMaps:2 CompletedReds:0 ContAlloc:2 ContRel:0 HostLocal:2 RackLocal:0
+2026-10-11 10:55:11,465 INFO [ContainerLauncher #2] org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncherImpl: Processing the event EventType: CONTAINER_COMPLETED for container container_1791716023192_0002_01_000003 taskAttempt attempt_1791716023192_0002_m_000001_0
+2026-10-11 10:55:11,465 INFO [ContainerLauncher #3] org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncherImpl: Processing the event EventType: CONTAINER_COMPLETED for container container_1791716023192_0002_01_000002 taskAttempt attempt_1791716023192_0002_m_000000_0
+2026-10-11 10:55:12,466 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: applicationId=application_1791716023192_0002: ask=1 release=0 newContainers=0 finishedContainers=0 resourceLimit=<memory:3584, vCores:3> knownNMs=2
+2026-10-11 10:55:13,470 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Got allocated containers 1
+2026-10-11 10:55:13,470 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Assigned to reduce
+2026-10-11 10:55:13,470 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Assigned container container_1791716023192_0002_01_000004 to attempt_1791716023192_0002_r_000000_0
+2026-10-11 10:55:13,470 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: After Scheduling: PendingReds:0 ScheduledMaps:0 ScheduledReds:0 AssignedMaps:0 AssignedReds:1 CompletedMaps:2 CompletedReds:0 ContAlloc:3 ContRel:0 HostLocal:2 RackLocal:0
+2026-10-11 10:55:13,476 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1791716023192_0002_r_000000_0 TaskAttempt Transitioned from UNASSIGNED to ASSIGNED
+2026-10-11 10:55:13,477 INFO [ContainerLauncher #4] org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncherImpl: Processing the event EventType: CONTAINER_REMOTE_LAUNCH for container container_1791716023192_0002_01_000004 taskAttempt attempt_1791716023192_0002_r_000000_0
+2026-10-11 10:55:13,477 INFO [ContainerLauncher #4] org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncherImpl: Launching attempt_1791716023192_0002_r_000000_0
+2026-10-11 10:55:13,489 INFO [ContainerLauncher #4] org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncherImpl: Shuffle port returned by ContainerManager for attempt_1791716023192_0002_r_000000_0 : 13562
+2026-10-11 10:55:13,490 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: TaskAttempt: [attempt_1791716023192_0002_r_000000_0] using containerId: [container_1791716023192_0002_01_000004 on NM: [team-38-00:43197]
+2026-10-11 10:55:13,490 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1791716023192_0002_r_000000_0 TaskAttempt Transitioned from ASSIGNED to RUNNING
+2026-10-11 10:55:13,491 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.speculate.DefaultSpeculator: ATTEMPT_START task_1791716023192_0002_r_000000
+2026-10-11 10:55:13,491 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskImpl: task_1791716023192_0002_r_000000 Task Transitioned from SCHEDULED to RUNNING
+2026-10-11 10:55:14,474 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: applicationId=application_1791716023192_0002: ask=1 release=0 newContainers=0 finishedContainers=0 resourceLimit=<memory:3072, vCores:2> knownNMs=2
+2026-10-11 10:55:15,222 INFO [Socket Reader #1 for port 0] SecurityLogger.org.apache.hadoop.ipc.Server: Auth successful for job_1791716023192_0002 (auth:SIMPLE) from 10.38.0.12:58512
+2026-10-11 10:55:15,236 INFO [IPC Server handler 0 on default port 41697] org.apache.hadoop.mapred.TaskAttemptListenerImpl: JVM with ID : jvm_1791716023192_0002_r_000004 asked for a task
+2026-10-11 10:55:15,236 INFO [IPC Server handler 0 on default port 41697] org.apache.hadoop.mapred.TaskAttemptListenerImpl: JVM with ID: jvm_1791716023192_0002_r_000004 given task: attempt_1791716023192_0002_r_000000_0
+2026-10-11 10:55:16,608 INFO [IPC Server handler 5 on default port 41697] org.apache.hadoop.mapred.TaskAttemptListenerImpl: MapCompletionEvents request from attempt_1791716023192_0002_r_000000_0. startIndex 0 maxEvents 10000
+2026-10-11 10:55:16,686 INFO [IPC Server handler 6 on default port 41697] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1791716023192_0002_r_000000_0 is : 0.0
+2026-10-11 10:55:17,166 INFO [IPC Server handler 9 on default port 41697] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Commit-pending state update from attempt_1791716023192_0002_r_000000_0
+2026-10-11 10:55:17,166 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1791716023192_0002_r_000000_0 TaskAttempt Transitioned from RUNNING to COMMIT_PENDING
+2026-10-11 10:55:17,166 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskImpl: attempt_1791716023192_0002_r_000000_0 given a go for committing the task output.
+2026-10-11 10:55:17,167 INFO [IPC Server handler 8 on default port 41697] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Commit go/no-go request from attempt_1791716023192_0002_r_000000_0
+2026-10-11 10:55:17,168 INFO [IPC Server handler 8 on default port 41697] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskImpl: Result of canCommit for attempt_1791716023192_0002_r_000000_0:true
+2026-10-11 10:55:17,228 INFO [IPC Server handler 28 on default port 41697] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1791716023192_0002_r_000000_0 is : 1.0
+2026-10-11 10:55:17,230 INFO [IPC Server handler 29 on default port 41697] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Done acknowledgment from attempt_1791716023192_0002_r_000000_0
+2026-10-11 10:55:17,232 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1791716023192_0002_r_000000_0 TaskAttempt Transitioned from COMMIT_PENDING to SUCCESS_FINISHING_CONTAINER
+2026-10-11 10:55:17,235 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskImpl: Task succeeded with attempt attempt_1791716023192_0002_r_000000_0
+2026-10-11 10:55:17,235 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskImpl: task_1791716023192_0002_r_000000 Task Transitioned from RUNNING to SUCCEEDED
+2026-10-11 10:55:17,235 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.JobImpl: Num completed Tasks: 3
+2026-10-11 10:55:17,236 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.JobImpl: job_1791716023192_0002Job Transitioned from RUNNING to COMMITTING
+2026-10-11 10:55:17,236 INFO [CommitterEvent Processor #1] org.apache.hadoop.mapreduce.v2.app.commit.CommitterEventHandler: Processing the event EventType: JOB_COMMIT
+2026-10-11 10:55:17,262 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.JobImpl: Calling handler for JobFinishedEvent 
+2026-10-11 10:55:17,263 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.JobImpl: job_1791716023192_0002Job Transitioned from COMMITTING to SUCCEEDED
+2026-10-11 10:55:17,263 INFO [Thread-73] org.apache.hadoop.mapreduce.v2.app.MRAppMaster: Job finished cleanly, recording last MRAppMaster retry
+2026-10-11 10:55:17,264 INFO [Thread-73] org.apache.hadoop.mapreduce.v2.app.MRAppMaster: Notify RMCommunicator isAMLastRetry: true
+2026-10-11 10:55:17,264 INFO [Thread-73] org.apache.hadoop.mapreduce.v2.app.rm.RMCommunicator: RMCommunicator notified that shouldUnregistered is: true
+2026-10-11 10:55:17,264 INFO [Thread-73] org.apache.hadoop.mapreduce.v2.app.MRAppMaster: Notify JHEH isAMLastRetry: true
+2026-10-11 10:55:17,264 INFO [Thread-73] org.apache.hadoop.mapreduce.jobhistory.JobHistoryEventHandler: JobHistoryEventHandler notified that forceJobCompletion is true
+2026-10-11 10:55:17,264 INFO [Thread-73] org.apache.hadoop.mapreduce.v2.app.MRAppMaster: Calling stop for all the services
+2026-10-11 10:55:17,264 INFO [Thread-73] org.apache.hadoop.mapreduce.jobhistory.JobHistoryEventHandler: Stopping JobHistoryEventHandler. Size of the outstanding queue size is 0
+2026-10-11 10:55:17,302 INFO [eventHandlingThread] org.apache.hadoop.mapreduce.jobhistory.JobHistoryEventHandler: Copying hdfs://team-38-nn:9000/tmp/hadoop-yarn/staging/team/.staging/job_1791716023192_0002/job_1791716023192_0002_1.jhist to hdfs://team-38-nn:9000/mr-history/tmp/team/job_1791716023192_0002-1791716097971-team-streamjob4270044929088360167.jar-1791716117260-2-1-SUCCEEDED-root.default-1791716104377.jhist_tmp
+2026-10-11 10:55:17,370 INFO [eventHandlingThread] org.apache.hadoop.mapreduce.jobhistory.JobHistoryEventHandler: Copied from: hdfs://team-38-nn:9000/tmp/hadoop-yarn/staging/team/.staging/job_1791716023192_0002/job_1791716023192_0002_1.jhist to done location: hdfs://team-38-nn:9000/mr-history/tmp/team/job_1791716023192_0002-1791716097971-team-streamjob4270044929088360167.jar-1791716117260-2-1-SUCCEEDED-root.default-1791716104377.jhist_tmp
+2026-10-11 10:55:17,370 INFO [eventHandlingThread] org.apache.hadoop.mapreduce.jobhistory.JobHistoryEventHandler: Set historyUrl to http://team-38-en:19888/jobhistory/job/job_1791716023192_0002
+2026-10-11 10:55:17,372 INFO [eventHandlingThread] org.apache.hadoop.mapreduce.jobhistory.JobHistoryEventHandler: Copying hdfs://team-38-nn:9000/tmp/hadoop-yarn/staging/team/.staging/job_1791716023192_0002/job_1791716023192_0002_1_conf.xml to hdfs://team-38-nn:9000/mr-history/tmp/team/job_1791716023192_0002_conf.xml_tmp
+2026-10-11 10:55:17,403 INFO [eventHandlingThread] org.apache.hadoop.mapreduce.jobhistory.JobHistoryEventHandler: Copied from: hdfs://team-38-nn:9000/tmp/hadoop-yarn/staging/team/.staging/job_1791716023192_0002/job_1791716023192_0002_1_conf.xml to done location: hdfs://team-38-nn:9000/mr-history/tmp/team/job_1791716023192_0002_conf.xml_tmp
+2026-10-11 10:55:17,410 INFO [eventHandlingThread] org.apache.hadoop.mapreduce.jobhistory.JobHistoryEventHandler: Moved tmp to done: hdfs://team-38-nn:9000/mr-history/tmp/team/job_1791716023192_0002.summary_tmp to hdfs://team-38-nn:9000/mr-history/tmp/team/job_1791716023192_0002.summary
+2026-10-11 10:55:17,412 INFO [eventHandlingThread] org.apache.hadoop.mapreduce.jobhistory.JobHistoryEventHandler: Moved tmp to done: hdfs://team-38-nn:9000/mr-history/tmp/team/job_1791716023192_0002_conf.xml_tmp to hdfs://team-38-nn:9000/mr-history/tmp/team/job_1791716023192_0002_conf.xml
+2026-10-11 10:55:17,414 INFO [eventHandlingThread] org.apache.hadoop.mapreduce.jobhistory.JobHistoryEventHandler: Moved tmp to done: hdfs://team-38-nn:9000/mr-history/tmp/team/job_1791716023192_0002-1791716097971-team-streamjob4270044929088360167.jar-1791716117260-2-1-SUCCEEDED-root.default-1791716104377.jhist_tmp to hdfs://team-38-nn:9000/mr-history/tmp/team/job_1791716023192_0002-1791716097971-team-streamjob4270044929088360167.jar-1791716117260-2-1-SUCCEEDED-root.default-1791716104377.jhist
+2026-10-11 10:55:17,415 INFO [Thread-73] org.apache.hadoop.mapreduce.jobhistory.JobHistoryEventHandler: Stopped JobHistoryEventHandler. super.stop()
+2026-10-11 10:55:17,415 INFO [Thread-73] org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncherImpl: KILLING attempt_1791716023192_0002_r_000000_0
+2026-10-11 10:55:17,432 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1791716023192_0002_r_000000_0 TaskAttempt Transitioned from SUCCESS_FINISHING_CONTAINER to SUCCEEDED
+2026-10-11 10:55:17,433 INFO [Thread-73] org.apache.hadoop.mapreduce.v2.app.rm.RMCommunicator: Setting job diagnostics to 
+2026-10-11 10:55:17,433 INFO [Thread-73] org.apache.hadoop.mapreduce.v2.app.rm.RMCommunicator: History url is http://team-38-en:19888/jobhistory/job/job_1791716023192_0002
+2026-10-11 10:55:17,439 INFO [Thread-73] org.apache.hadoop.mapreduce.v2.app.rm.RMCommunicator: Waiting for application to be successfully unregistered.
+2026-10-11 10:55:18,441 INFO [Thread-73] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Final Stats: PendingReds:0 ScheduledMaps:0 ScheduledReds:0 AssignedMaps:0 AssignedReds:1 CompletedMaps:2 CompletedReds:0 ContAlloc:3 ContRel:0 HostLocal:2 RackLocal:0
+2026-10-11 10:55:18,442 INFO [Thread-73] org.apache.hadoop.mapreduce.v2.app.MRAppMaster: Deleting staging directory hdfs://team-38-nn:9000 /tmp/hadoop-yarn/staging/team/.staging/job_1791716023192_0002
+2026-10-11 10:55:18,446 INFO [Thread-73] org.apache.hadoop.ipc.Server: Stopping server on 41697
+2026-10-11 10:55:18,448 INFO [IPC Server listener on 0] org.apache.hadoop.ipc.Server: Stopping IPC Server listener on 0
+2026-10-11 10:55:18,448 INFO [IPC Server Responder] org.apache.hadoop.ipc.Server: Stopping IPC Server Responder
+2026-10-11 10:55:18,449 INFO [TaskHeartbeatHandler PingChecker] org.apache.hadoop.mapreduce.v2.app.TaskHeartbeatHandler: TaskHeartbeatHandler thread interrupted
+2026-10-11 10:55:18,449 INFO [Ping Checker for TaskAttemptFinishingMonitor] org.apache.hadoop.yarn.util.AbstractLivelinessMonitor: TaskAttemptFinishingMonitor thread interrupted
+2026-10-11 10:55:23,450 INFO [Thread-73] org.apache.hadoop.ipc.Server: Stopping server on 37335
+2026-10-11 10:55:23,450 INFO [IPC Server Responder] org.apache.hadoop.ipc.Server: Stopping IPC Server Responder
+2026-10-11 10:55:23,450 INFO [IPC Server listener on 0] org.apache.hadoop.ipc.Server: Stopping IPC Server listener on 0
+2026-10-11 10:55:23,459 INFO [Thread-73] org.eclipse.jetty.server.handler.ContextHandler: Stopped o.e.j.w.WebAppContext@25f14e93{mapreduce,/,null,STOPPED}{jar:file:/opt/hadoop-3.5.0/share/hadoop/yarn/hadoop-yarn-common-3.5.0.jar!/webapps/mapreduce}
+2026-10-11 10:55:23,462 INFO [Thread-73] org.eclipse.jetty.server.AbstractConnector: Stopped ServerConnector@3913f206{HTTP/1.1, (http/1.1)}{0.0.0.0:0}
+2026-10-11 10:55:23,462 INFO [Thread-73] org.eclipse.jetty.server.session: node0 Stopped scavenging
+2026-10-11 10:55:23,462 INFO [Thread-73] org.eclipse.jetty.server.handler.ContextHandler: Stopped o.e.j.s.ServletContextHandler@713ec32d{static,/static,jar:file:/opt/hadoop-3.5.0/share/hadoop/yarn/hadoop-yarn-common-3.5.0.jar!/webapps/static,STOPPED}
+
+End of LogType:syslog
+***********************************************************************
+
+Container: container_1791716023192_0002_01_000002 on team-38-01_44263
+LogAggregationType: AGGREGATED
+=====================================================================
+LogType:directory.info
+LogLastModifiedTime:Sun Oct 11 10:55:24 +0000 2026
+LogLength:2392
+LogContents:
+ls -l:
+total 40
+-rw-r--r-- 1 hadoop hadoop  129 Oct 11 10:55 container_tokens
+-rwx------ 1 hadoop hadoop  711 Oct 11 10:55 default_container_executor.sh
+-rwx------ 1 hadoop hadoop  656 Oct 11 10:55 default_container_executor_session.sh
+lrwxrwxrwx 1 hadoop hadoop  102 Oct 11 10:55 job.jar -> /var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/filecache/11/job.jar
+lrwxrwxrwx 1 hadoop hadoop  102 Oct 11 10:55 job.xml -> /var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/filecache/13/job.xml
+-rwx------ 1 hadoop hadoop 5290 Oct 11 10:55 launch_container.sh
+lrwxrwxrwx 1 hadoop hadoop   64 Oct 11 10:55 mapper.py -> /var/lib/hadoop/yarn/local/usercache/team/filecache/12/mapper.py
+lrwxrwxrwx 1 hadoop hadoop   65 Oct 11 10:55 reducer.py -> /var/lib/hadoop/yarn/local/usercache/team/filecache/13/reducer.py
+drwx--x--- 2 hadoop hadoop 4096 Oct 11 10:55 tmp
+find -L . -maxdepth 5 -ls:
+   786759      4 drwx--x---   3 hadoop   hadoop       4096 Oct 11 10:55 .
+   786769      4 -rw-r--r--   1 hadoop   hadoop         16 Oct 11 10:55 ./.default_container_executor.sh.crc
+   786702      4 drwx------   2 hadoop   hadoop       4096 Oct 11 10:54 ./job.jar
+   786703    144 -r-x------   1 hadoop   hadoop     143536 Oct 11 10:54 ./job.jar/job.jar
+   786761      4 drwx--x---   2 hadoop   hadoop       4096 Oct 11 10:55 ./tmp
+   786762      4 -rw-r--r--   1 hadoop   hadoop        129 Oct 11 10:55 ./container_tokens
+   786764      8 -rwx------   1 hadoop   hadoop       5290 Oct 11 10:55 ./launch_container.sh
+   786686      4 -r-x------   1 hadoop   hadoop        115 Oct 11 10:54 ./mapper.py
+   786768      4 -rwx------   1 hadoop   hadoop        711 Oct 11 10:55 ./default_container_executor.sh
+   786765      4 -rw-r--r--   1 hadoop   hadoop         52 Oct 11 10:55 ./.launch_container.sh.crc
+   786696      4 -r-x------   1 hadoop   hadoop        238 Oct 11 10:54 ./reducer.py
+   786767      4 -rw-r--r--   1 hadoop   hadoop         16 Oct 11 10:55 ./.default_container_executor_session.sh.crc
+   786766      4 -rwx------   1 hadoop   hadoop        656 Oct 11 10:55 ./default_container_executor_session.sh
+   786708    272 -r-x------   1 hadoop   hadoop     275801 Oct 11 10:54 ./job.xml
+   786763      4 -rw-r--r--   1 hadoop   hadoop         12 Oct 11 10:55 ./.container_tokens.crc
+broken symlinks(find -L . -maxdepth 5 -type l -ls):
+
+End of LogType:directory.info
+*******************************************************************************
+
+Container: container_1791716023192_0002_01_000002 on team-38-01_44263
+LogAggregationType: AGGREGATED
+=====================================================================
+LogType:launch_container.sh
+LogLastModifiedTime:Sun Oct 11 10:55:24 +0000 2026
+LogLength:5290
+LogContents:
+#!/bin/bash
+
+set -o pipefail -e
+export PRELAUNCH_OUT="/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000002/prelaunch.out"
+exec >"${PRELAUNCH_OUT}"
+export PRELAUNCH_ERR="/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000002/prelaunch.err"
+exec 2>"${PRELAUNCH_ERR}"
+echo "Setting up env variables"
+export JAVA_HOME=${JAVA_HOME:-"/usr/lib/jvm/java-17-openjdk-amd64"}
+export HADOOP_COMMON_HOME=${HADOOP_COMMON_HOME:-"/opt/hadoop"}
+export HADOOP_HDFS_HOME=${HADOOP_HDFS_HOME:-"/opt/hadoop"}
+export HADOOP_CONF_DIR=${HADOOP_CONF_DIR:-"/etc/hadoop"}
+export HADOOP_YARN_HOME=${HADOOP_YARN_HOME:-"/opt/hadoop"}
+export HADOOP_MAPRED_HOME=${HADOOP_MAPRED_HOME:-"/opt/hadoop"}
+export PATH=${PATH:-"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/snap/bin"}
+export LANG=${LANG:-"C.UTF-8"}
+export HADOOP_TOKEN_FILE_LOCATION="/var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/container_1791716023192_0002_01_000002/container_tokens"
+export CONTAINER_ID="container_1791716023192_0002_01_000002"
+export NM_PORT="44263"
+export NM_HOST="team-38-01"
+export NM_HTTP_PORT="8042"
+export LOCAL_DIRS="/var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002"
+export LOCAL_USER_DIRS="/var/lib/hadoop/yarn/local/usercache/team/"
+export LOG_DIRS="/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000002"
+export USER="team"
+export LOGNAME="team"
+export HOME="/home/"
+export PWD="/var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/container_1791716023192_0002_01_000002"
+export LOCALIZATION_COUNTERS="0,421878,0,4,4"
+export JVM_PID="$$"
+export NM_AUX_SERVICE_mapreduce_shuffle="AAA0+gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+export STDOUT_LOGFILE_ENV="/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000002/stdout"
+export SHELL="/bin/bash"
+export HADOOP_ROOT_LOGGER="INFO,console"
+export CLASSPATH="$PWD:$HADOOP_CONF_DIR:$HADOOP_COMMON_HOME/share/hadoop/common/*:$HADOOP_COMMON_HOME/share/hadoop/common/lib/*:$HADOOP_HDFS_HOME/share/hadoop/hdfs/*:$HADOOP_HDFS_HOME/share/hadoop/hdfs/lib/*:$HADOOP_YARN_HOME/share/hadoop/yarn/*:$HADOOP_YARN_HOME/share/hadoop/yarn/lib/*:$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/*:$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/lib/*:job.jar/*:job.jar/classes/:job.jar/lib/*:$PWD/*"
+export LD_LIBRARY_PATH="$PWD:$HADOOP_COMMON_HOME/lib/native"
+export STDERR_LOGFILE_ENV="/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000002/stderr"
+export HADOOP_CLIENT_OPTS=""
+export MALLOC_ARENA_MAX="4"
+echo "Setting up job resources"
+ln -sf -- "/var/lib/hadoop/yarn/local/usercache/team/filecache/13/reducer.py" "reducer.py"
+ln -sf -- "/var/lib/hadoop/yarn/local/usercache/team/filecache/12/mapper.py" "mapper.py"
+ln -sf -- "/var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/filecache/11/job.jar" "job.jar"
+ln -sf -- "/var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/filecache/13/job.xml" "job.xml"
+echo "Copying debugging information"
+# Creating copy of launch script
+cp "launch_container.sh" "/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000002/launch_container.sh"
+chmod 640 "/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000002/launch_container.sh"
+# Determining directory contents
+echo "ls -l:" 1>"/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000002/directory.info"
+ls -l 1>>"/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000002/directory.info"
+echo "find -L . -maxdepth 5 -ls:" 1>>"/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000002/directory.info"
+find -L . -maxdepth 5 -ls 1>>"/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000002/directory.info"
+echo "broken symlinks(find -L . -maxdepth 5 -type l -ls):" 1>>"/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000002/directory.info"
+find -L . -maxdepth 5 -type l -ls 1>>"/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000002/directory.info"
+echo "Launching container"
+exec /bin/bash -c "$JAVA_HOME/bin/java -Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN  -Xmx384m -Djava.io.tmpdir=$PWD/tmp -Dlog4j.configuration=container-log4j.properties -Dyarn.app.container.log.dir=/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000002 -Dyarn.app.container.log.filesize=0 -Dhadoop.root.logger=INFO,CLA -Dhadoop.root.logfile=syslog org.apache.hadoop.mapred.YarnChild 10.38.0.13 41697 attempt_1791716023192_0002_m_000000_0 2 1>/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000002/stdout 2>/var/lib/hadoop/yarn/container-logs/application_1791716023192_0002/container_1791716023192_0002_01_000002/stderr "
+
+End of LogType:launch_container.sh
+************************************************************************************
+
+Container: container_1791716023192_0002_01_000002 on team-38-01_44263
+LogAggregationType: AGGREGATED
+=====================================================================
+LogType:prelaunch.err
+LogLastModifiedTime:Sun Oct 11 10:55:24 +0000 2026
+LogLength:0
+LogContents:
+
+End of LogType:prelaunch.err
+******************************************************************************
+
+Container: container_1791716023192_0002_01_000002 on team-38-01_44263
+LogAggregationType: AGGREGATED
+=====================================================================
+LogType:prelaunch.out
+LogLastModifiedTime:Sun Oct 11 10:55:24 +0000 2026
+LogLength:100
+LogContents:
+Setting up env variables
+Setting up job resources
+Copying debugging information
+Launching container
+
+End of LogType:prelaunch.out
+******************************************************************************
+
+Container: container_1791716023192_0002_01_000002 on team-38-01_44263
+LogAggregationType: AGGREGATED
+=====================================================================
+LogType:stderr
+LogLastModifiedTime:Sun Oct 11 10:55:24 +0000 2026
+LogLength:0
+LogContents:
+
+End of LogType:stderr
+***********************************************************************
+
+Container: container_1791716023192_0002_01_000002 on team-38-01_44263
+LogAggregationType: AGGREGATED
+=====================================================================
+LogType:stdout
+LogLastModifiedTime:Sun Oct 11 10:55:24 +0000 2026
+LogLength:0
+LogContents:
+
+End of LogType:stdout
+***********************************************************************
+
+Container: container_1791716023192_0002_01_000002 on team-38-01_44263
+LogAggregationType: AGGREGATED
+=====================================================================
+LogType:syslog
+LogLastModifiedTime:Sun Oct 11 10:55:24 +0000 2026
+LogLength:28817
+LogContents:
+2026-10-11 10:55:07,881 INFO [main] org.apache.hadoop.security.SecurityUtil: Updating Configuration
+2026-10-11 10:55:08,326 INFO [main] org.apache.hadoop.mapred.YarnChild: Executing with tokens: [Kind: mapreduce.job, Service: job_1791716023192_0002, Ident: (org.apache.hadoop.mapreduce.security.token.JobTokenIdentifier@2f67b837)]
+2026-10-11 10:55:08,355 INFO [main] org.apache.hadoop.mapred.YarnChild: Sleeping for 0ms before retrying again. Got null now.
+2026-10-11 10:55:08,669 INFO [main] org.apache.hadoop.mapred.YarnChild: mapreduce.cluster.local.dir for child: /var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002
+2026-10-11 10:55:09,219 INFO [main] org.apache.hadoop.mapred.YarnChild: 
+/************************************************************
+[system properties]
+os.name: Linux
+os.version: 6.8.0-139-generic
+java.home: /usr/lib/jvm/java-17-openjdk-amd64
+java.runtime.version: 17.0.20.1+1-1-24.04-Ubuntu
+java.vendor: Ubuntu
+java.version: 17.0.20.1
+java.vm.name: OpenJDK 64-Bit Server VM
+java.class.path: /var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/container_1791716023192_0002_01_000002:/etc/hadoop:/opt/hadoop/share/hadoop/common/hadoop-registry-3.5.0.jar:/opt/hadoop/share/hadoop/common/hadoop-nfs-3.5.0.jar:/opt/hadoop/share/hadoop/common/hadoop-common-3.5.0-tests.jar:/opt/hadoop/share/hadoop/common/hadoop-common-3.5.0.jar:/opt/hadoop/share/hadoop/common/hadoop-kms-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/dnsjava-3.6.1.jar:/opt/hadoop/share/hadoop/common/lib/jackson-annotations-2.18.6.jar:/opt/hadoop/share/hadoop/common/lib/HdrHistogram-2.1.12.jar:/opt/hadoop/share/hadoop/common/lib/kerby-asn1-2.0.3.jar:/opt/hadoop/share/hadoop/common/lib/commons-net-3.9.0.jar:/opt/hadoop/share/hadoop/common/lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/opt/hadoop/share/hadoop/common/lib/jackson-databind-2.18.6.jar:/opt/hadoop/share/hadoop/common/lib/kerby-config-2.0.3.jar:/opt/hadoop/share/hadoop/common/lib/jspecify-1.0.0.jar:/opt/hadoop/share/hadoop/common/lib/stax2-api-4.2.1.jar:/opt/hadoop/share/hadoop/common/lib/commons-lang3-3.18.0.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.xml.bind-api-2.3.3.jar:/opt/hadoop/share/hadoop/common/lib/hk2-locator-2.6.1.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.servlet.jsp-api-2.3.6.jar:/opt/hadoop/share/hadoop/common/lib/javax.servlet-api-3.1.0.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.activation-api-1.2.1.jar:/opt/hadoop/share/hadoop/common/lib/metrics-core-3.2.4.jar:/opt/hadoop/share/hadoop/common/lib/reload4j-1.2.22.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-cos-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/kerby-util-2.0.3.jar:/opt/hadoop/share/hadoop/common/lib/jetty-servlet-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/curator-recipes-5.2.0.jar:/opt/hadoop/share/hadoop/common/lib/netty-transport-native-unix-common-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-tos-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/commons-collections4-4.4.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-shaded-guava-1.5.0.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.servlet-api-4.0.4.jar:/opt/hadoop/share/hadoop/common/lib/slf4j-api-1.7.36.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.annotation-api-1.3.5.jar:/opt/hadoop/share/hadoop/common/lib/nimbus-jose-jwt-10.4.jar:/opt/hadoop/share/hadoop/common/lib/kerb-util-2.0.3.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-auth-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/istack-commons-runtime-3.0.12.jar:/opt/hadoop/share/hadoop/common/lib/curator-client-5.2.0.jar:/opt/hadoop/share/hadoop/common/lib/commons-cli-1.9.0.jar:/opt/hadoop/share/hadoop/common/lib/zookeeper-3.8.6.jar:/opt/hadoop/share/hadoop/common/lib/jersey-client-2.46.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.inject-2.6.1.jar:/opt/hadoop/share/hadoop/common/lib/netty-transport-native-epoll-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/bcprov-jdk18on-1.82.jar:/opt/hadoop/share/hadoop/common/lib/netty-transport-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/jul-to-slf4j-1.7.36.jar:/opt/hadoop/share/hadoop/common/lib/jackson-core-2.18.6.jar:/opt/hadoop/share/hadoop/common/lib/failureaccess-1.0.3.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-shaded-protobuf_3_25-1.5.0.jar:/opt/hadoop/share/hadoop/common/lib/jetty-security-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/jersey-container-servlet-2.46.jar:/opt/hadoop/share/hadoop/common/lib/jetty-util-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/jetty-webapp-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/commons-configuration2-2.10.1.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.activation-1.2.2.jar:/opt/hadoop/share/hadoop/common/lib/netty-codec-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/commons-io-2.16.1.jar:/opt/hadoop/share/hadoop/common/lib/commons-math3-3.6.1.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-azure-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/analyticsaccelerator-s3-1.3.1.jar:/opt/hadoop/share/hadoop/common/lib/aopalliance-repackaged-2.6.1.jar:/opt/hadoop/share/hadoop/common/lib/hk2-utils-2.6.1.jar:/opt/hadoop/share/hadoop/common/lib/jetty-io-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/httpclient-4.5.13.jar:/opt/hadoop/share/hadoop/common/lib/osgi-resource-locator-1.0.3.jar:/opt/hadoop/share/hadoop/common/lib/woodstox-core-5.4.0.jar:/opt/hadoop/share/hadoop/common/lib/jersey-hk2-2.46.jar:/opt/hadoop/share/hadoop/common/lib/zookeeper-jute-3.8.6.jar:/opt/hadoop/share/hadoop/common/lib/netty-transport-classes-epoll-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-azure-datalake-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/j2objc-annotations-3.0.0.jar:/opt/hadoop/share/hadoop/common/lib/jsr305-3.0.2.jar:/opt/hadoop/share/hadoop/common/lib/jetty-util-ajax-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/javassist-3.30.2-GA.jar:/opt/hadoop/share/hadoop/common/lib/audience-annotations-0.12.0.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-huaweicloud-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/kerb-crypto-2.0.3.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.ws.rs-api-2.1.6.jar:/opt/hadoop/share/hadoop/common/lib/jsch-0.1.55.jar:/opt/hadoop/share/hadoop/common/lib/hk2-api-2.6.1.jar:/opt/hadoop/share/hadoop/common/lib/netty-resolver-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/re2j-1.1.jar:/opt/hadoop/share/hadoop/common/lib/gson-2.9.0.jar:/opt/hadoop/share/hadoop/common/lib/commons-daemon-1.0.13.jar:/opt/hadoop/share/hadoop/common/lib/slf4j-reload4j-1.7.36.jar:/opt/hadoop/share/hadoop/common/lib/jetty-http-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/jetty-xml-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/kerb-core-2.0.3.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-gcp-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/azure-storage-7.0.1.jar:/opt/hadoop/share/hadoop/common/lib/jersey-common-2.46.jar:/opt/hadoop/share/hadoop/common/lib/wildfly-openssl-2.2.5.Final.jar:/opt/hadoop/share/hadoop/common/lib/azure-keyvault-core-1.0.0.jar:/opt/hadoop/share/hadoop/common/lib/netty-buffer-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/httpcore-4.4.13.jar:/opt/hadoop/share/hadoop/common/lib/netty-handler-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/commons-text-1.14.0.jar:/opt/hadoop/share/hadoop/common/lib/guava-33.4.8-jre.jar:/opt/hadoop/share/hadoop/common/lib/jetty-server-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-annotations-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/jakarta.validation-api-2.0.2.jar:/opt/hadoop/share/hadoop/common/lib/jaxb-runtime-2.3.9.jar:/opt/hadoop/share/hadoop/common/lib/snappy-java-1.1.10.4.jar:/opt/hadoop/share/hadoop/common/lib/kerby-pkix-2.0.3.jar:/opt/hadoop/share/hadoop/common/lib/hadoop-aws-3.5.0.jar:/opt/hadoop/share/hadoop/common/lib/commons-logging-1.3.0.jar:/opt/hadoop/share/hadoop/common/lib/commons-codec-1.15.jar:/opt/hadoop/share/hadoop/common/lib/curator-framework-5.2.0.jar:/opt/hadoop/share/hadoop/common/lib/txw2-2.3.9.jar:/opt/hadoop/share/hadoop/common/lib/netty-common-4.1.130.Final.jar:/opt/hadoop/share/hadoop/common/lib/jersey-server-2.46.jar:/opt/hadoop/share/hadoop/common/lib/avro-1.11.5.jar:/opt/hadoop/share/hadoop/common/lib/jersey-container-servlet-core-2.46.jar:/opt/hadoop/share/hadoop/common/lib/commons-compress-1.26.1.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-httpfs-3.5.0.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-client-3.5.0.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-nfs-3.5.0.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-native-client-3.5.0-tests.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-client-3.5.0-tests.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-3.5.0.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-native-client-3.5.0.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-rbf-3.5.0-tests.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-3.5.0-tests.jar:/opt/hadoop/share/hadoop/hdfs/hadoop-hdfs-rbf-3.5.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/dnsjava-3.6.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/jackson-annotations-2.18.6.jar:/opt/hadoop/share/hadoop/hdfs/lib/kerby-asn1-2.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-redis-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-net-3.9.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-resolver-dns-classes-macos-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/jackson-databind-2.18.6.jar:/opt/hadoop/share/hadoop/hdfs/lib/kerby-config-2.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/jspecify-1.0.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/stax2-api-4.2.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-lang3-3.18.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/HikariCP-4.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.xml.bind-api-2.3.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-native-epoll-4.1.130.Final-linux-aarch_64.jar:/opt/hadoop/share/hadoop/hdfs/lib/hk2-locator-2.6.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.servlet.jsp-api-2.3.6.jar:/opt/hadoop/share/hadoop/hdfs/lib/javax.servlet-api-3.1.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.activation-api-1.2.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/metrics-core-3.2.4.jar:/opt/hadoop/share/hadoop/hdfs/lib/reload4j-1.2.22.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-stomp-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/kerby-util-2.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-servlet-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/json-simple-1.1.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/curator-recipes-5.2.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-native-unix-common-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-udt-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-native-epoll-4.1.130.Final-linux-riscv64.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-collections4-4.4.jar:/opt/hadoop/share/hadoop/hdfs/lib/hadoop-shaded-guava-1.5.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.servlet-api-4.0.4.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-socks-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.annotation-api-1.3.5.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-handler-ssl-ocsp-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/nimbus-jose-jwt-10.4.jar:/opt/hadoop/share/hadoop/hdfs/lib/kerb-util-2.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/hadoop-auth-3.5.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/istack-commons-runtime-3.0.12.jar:/opt/hadoop/share/hadoop/hdfs/lib/curator-client-5.2.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-cli-1.9.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-http2-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/zookeeper-3.8.6.jar:/opt/hadoop/share/hadoop/hdfs/lib/jersey-client-2.46.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.inject-2.6.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-native-epoll-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-native-epoll-4.1.130.Final-linux-x86_64.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/jackson-core-2.18.6.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-smtp-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/failureaccess-1.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/hadoop-shaded-protobuf_3_25-1.5.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-security-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/jersey-container-servlet-2.46.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-util-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-haproxy-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-webapp-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-configuration2-2.10.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.activation-1.2.2.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-sctp-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-io-2.16.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-math3-3.6.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/aopalliance-repackaged-2.6.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-xml-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-resolver-dns-native-macos-4.1.130.Final-osx-x86_64.jar:/opt/hadoop/share/hadoop/hdfs/lib/hk2-utils-2.6.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-io-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/httpclient-4.5.13.jar:/opt/hadoop/share/hadoop/hdfs/lib/osgi-resource-locator-1.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/woodstox-core-5.4.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/jersey-hk2-2.46.jar:/opt/hadoop/share/hadoop/hdfs/lib/zookeeper-jute-3.8.6.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-classes-epoll-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-dns-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-memcache-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/j2objc-annotations-3.0.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/jsr305-3.0.2.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-util-ajax-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/javassist-3.30.2-GA.jar:/opt/hadoop/share/hadoop/hdfs/lib/audience-annotations-0.12.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/kerb-crypto-2.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.ws.rs-api-2.1.6.jar:/opt/hadoop/share/hadoop/hdfs/lib/jsch-0.1.55.jar:/opt/hadoop/share/hadoop/hdfs/lib/hk2-api-2.6.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-resolver-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/re2j-1.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-all-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-http-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-classes-kqueue-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/gson-2.9.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-daemon-1.0.13.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-resolver-dns-native-macos-4.1.130.Final-osx-aarch_64.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-http-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-xml-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/kerb-core-2.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/jettison-1.5.4.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-rxtx-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/jersey-common-2.46.jar:/opt/hadoop/share/hadoop/hdfs/lib/leveldbjni-all-1.8.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-buffer-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/httpcore-4.4.13.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-handler-proxy-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-handler-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-text-1.14.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/guava-33.4.8-jre.jar:/opt/hadoop/share/hadoop/hdfs/lib/jetty-server-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-native-kqueue-4.1.130.Final-osx-x86_64.jar:/opt/hadoop/share/hadoop/hdfs/lib/hadoop-annotations-3.5.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-codec-mqtt-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/jakarta.validation-api-2.0.2.jar:/opt/hadoop/share/hadoop/hdfs/lib/jaxb-runtime-2.3.9.jar:/opt/hadoop/share/hadoop/hdfs/lib/snappy-java-1.1.10.4.jar:/opt/hadoop/share/hadoop/hdfs/lib/kerby-pkix-2.0.3.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-logging-1.3.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-codec-1.15.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-resolver-dns-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/curator-framework-5.2.0.jar:/opt/hadoop/share/hadoop/hdfs/lib/txw2-2.3.9.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-common-4.1.130.Final.jar:/opt/hadoop/share/hadoop/hdfs/lib/jersey-server-2.46.jar:/opt/hadoop/share/hadoop/hdfs/lib/avro-1.11.5.jar:/opt/hadoop/share/hadoop/hdfs/lib/jersey-container-servlet-core-2.46.jar:/opt/hadoop/share/hadoop/hdfs/lib/commons-compress-1.26.1.jar:/opt/hadoop/share/hadoop/hdfs/lib/netty-transport-native-kqueue-4.1.130.Final-osx-aarch_64.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-applicationhistoryservice-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-globalpolicygenerator-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-timeline-pluginstorage-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-applications-distributedshell-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-services-api-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-applications-unmanaged-am-launcher-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-tests-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-services-core-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-router-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-api-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-registry-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-resourcemanager-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-common-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-nodemanager-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-web-proxy-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-sharedcachemanager-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-applications-mawo-core-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-server-common-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/hadoop-yarn-client-3.5.0.jar:/opt/hadoop/share/hadoop/yarn/lib/websocket-servlet-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/jsonschema2pojo-core-1.0.2.jar:/opt/hadoop/share/hadoop/yarn/lib/bcpkix-jdk18on-1.82.jar:/opt/hadoop/share/hadoop/yarn/lib/javax-websocket-client-impl-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/jetty-jndi-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/websocket-api-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/asm-tree-9.7.1.jar:/opt/hadoop/share/hadoop/yarn/lib/websocket-server-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/org.eclipse.persistence.asm-9.6.0.jar:/opt/hadoop/share/hadoop/yarn/lib/jakarta.json-api-1.1.6.jar:/opt/hadoop/share/hadoop/yarn/lib/commons-csv-1.9.0.jar:/opt/hadoop/share/hadoop/yarn/lib/fst-2.50.jar:/opt/hadoop/share/hadoop/yarn/lib/websocket-client-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/org.eclipse.persistence.core-2.7.14.jar:/opt/hadoop/share/hadoop/yarn/lib/swagger-annotations-1.5.4.jar:/opt/hadoop/share/hadoop/yarn/lib/javax.json-1.1.4.jar:/opt/hadoop/share/hadoop/yarn/lib/asm-commons-9.7.1.jar:/opt/hadoop/share/hadoop/yarn/lib/commons-lang-2.6.jar:/opt/hadoop/share/hadoop/yarn/lib/javax.websocket-client-api-1.0.jar:/opt/hadoop/share/hadoop/yarn/lib/javax.websocket-api-1.0.jar:/opt/hadoop/share/hadoop/yarn/lib/aopalliance-1.0.jar:/opt/hadoop/share/hadoop/yarn/lib/jersey-media-jaxb-2.46.jar:/opt/hadoop/share/hadoop/yarn/lib/mssql-jdbc-6.2.1.jre7.jar:/opt/hadoop/share/hadoop/yarn/lib/websocket-common-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/jetty-plus-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/snakeyaml-2.0.jar:/opt/hadoop/share/hadoop/yarn/lib/jackson-jaxrs-json-provider-2.18.6.jar:/opt/hadoop/share/hadoop/yarn/lib/javax-websocket-server-impl-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/bcutil-jdk18on-1.82.jar:/opt/hadoop/share/hadoop/yarn/lib/cache-api-1.1.1.jar:/opt/hadoop/share/hadoop/yarn/lib/jetty-client-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/org.eclipse.persistence.moxy-2.7.14.jar:/opt/hadoop/share/hadoop/yarn/lib/jersey-media-json-jettison-2.46.jar:/opt/hadoop/share/hadoop/yarn/lib/caffeine-2.9.3.jar:/opt/hadoop/share/hadoop/yarn/lib/jcodings-1.0.13.jar:/opt/hadoop/share/hadoop/yarn/lib/jackson-module-jaxb-annotations-2.18.6.jar:/opt/hadoop/share/hadoop/yarn/lib/guice-servlet-5.1.0.jar:/opt/hadoop/share/hadoop/yarn/lib/jna-5.2.0.jar:/opt/hadoop/share/hadoop/yarn/lib/guice-5.1.0.jar:/opt/hadoop/share/hadoop/yarn/lib/javax.annotation-api-1.3.2.jar:/opt/hadoop/share/hadoop/yarn/lib/jetty-annotations-9.4.58.v20250814.jar:/opt/hadoop/share/hadoop/yarn/lib/ehcache-3.8.2.jar:/opt/hadoop/share/hadoop/yarn/lib/jline-3.9.0.jar:/opt/hadoop/share/hadoop/yarn/lib/failsafe-2.4.4.jar:/opt/hadoop/share/hadoop/yarn/lib/jackson-jaxrs-base-2.18.6.jar:/opt/hadoop/share/hadoop/yarn/lib/objenesis-2.6.jar:/opt/hadoop/share/hadoop/yarn/lib/codemodel-2.6.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-3.5.0-tests.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-hs-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-nativetask-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-core-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-app-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-uploader-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-common-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-hs-plugins-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-shuffle-3.5.0.jar:/opt/hadoop/share/hadoop/mapreduce/lib/javax.inject-1.jar:job.jar/job.jar:job.jar/classes/:job.jar/lib/*:/var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/container_1791716023192_0002_01_000002/job.jar
+java.io.tmpdir: /var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/container_1791716023192_0002_01_000002/tmp
+user.dir: /var/lib/hadoop/yarn/local/usercache/team/appcache/application_1791716023192_0002/container_1791716023192_0002_01_000002
+user.name: hadoop
+************************************************************/
+2026-10-11 10:55:09,219 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: session.id is deprecated. Instead, use dfs.metrics.session-id
+2026-10-11 10:55:09,825 INFO [main] org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2026-10-11 10:55:09,831 INFO [main] org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2026-10-11 10:55:09,852 INFO [main] org.apache.hadoop.mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2026-10-11 10:55:10,127 INFO [main] org.apache.hadoop.mapred.MapTask: Processing split: hdfs://team-38-nn:9000/user/team/yarn-check-20261011-105419/input/text.txt:0+12
+2026-10-11 10:55:10,161 INFO [main] org.apache.hadoop.mapred.MapTask: numReduceTasks: 1
+2026-10-11 10:55:10,325 INFO [main] org.apache.hadoop.mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2026-10-11 10:55:10,326 INFO [main] org.apache.hadoop.mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2026-10-11 10:55:10,326 INFO [main] org.apache.hadoop.mapred.MapTask: soft limit at 83886080
+2026-10-11 10:55:10,326 INFO [main] org.apache.hadoop.mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2026-10-11 10:55:10,326 INFO [main] org.apache.hadoop.mapred.MapTask: kvstart = 26214396; length = 6553600
+2026-10-11 10:55:10,329 INFO [main] org.apache.hadoop.mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2026-10-11 10:55:10,341 INFO [main] org.apache.hadoop.streaming.PipeMapRed: PipeMapRed exec [/usr/bin/python3, mapper.py]
+2026-10-11 10:55:10,352 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.work.output.dir is deprecated. Instead, use mapreduce.task.output.dir
+2026-10-11 10:55:10,352 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: job.local.dir is deprecated. Instead, use mapreduce.job.local.dir
+2026-10-11 10:55:10,353 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.local.dir is deprecated. Instead, use mapreduce.cluster.local.dir
+2026-10-11 10:55:10,353 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: map.input.file is deprecated. Instead, use mapreduce.map.input.file
+2026-10-11 10:55:10,353 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: map.input.length is deprecated. Instead, use mapreduce.map.input.length
+2026-10-11 10:55:10,354 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.job.id is deprecated. Instead, use mapreduce.job.id
+2026-10-11 10:55:10,354 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.task.partition is deprecated. Instead, use mapreduce.task.partition
+2026-10-11 10:55:10,355 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: map.input.start is deprecated. Instead, use mapreduce.map.input.start
+2026-10-11 10:55:10,356 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.task.is.map is deprecated. Instead, use mapreduce.task.ismap
+2026-10-11 10:55:10,356 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+2026-10-11 10:55:10,356 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+2026-10-11 10:55:10,357 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.skip.on is deprecated. Instead, use mapreduce.job.skiprecords
+2026-10-11 10:55:10,357 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.cache.localFiles is deprecated. Instead, use mapreduce.job.cache.local.files
+2026-10-11 10:55:10,427 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=1/0/0 in:NA [rec/s] out:NA [rec/s]
+2026-10-11 10:55:10,435 INFO [Thread-13] org.apache.hadoop.streaming.PipeMapRed: Records R/W=2/1
+2026-10-11 10:55:10,441 INFO [Thread-14] org.apache.hadoop.streaming.PipeMapRed: MRErrorThread done
+2026-10-11 10:55:10,442 INFO [main] org.apache.hadoop.streaming.PipeMapRed: mapRedFinished
+2026-10-11 10:55:10,445 INFO [main] org.apache.hadoop.mapred.MapTask: Starting flush of map output
+2026-10-11 10:55:10,445 INFO [main] org.apache.hadoop.mapred.MapTask: Spilling map output
+2026-10-11 10:55:10,445 INFO [main] org.apache.hadoop.mapred.MapTask: bufstart = 0; bufend = 32; bufvoid = 104857600
+2026-10-11 10:55:10,457 INFO [main] org.apache.hadoop.mapred.MapTask: kvstart = 26214396(104857584); kvend = 26214384(104857536); length = 13/6553600
+2026-10-11 10:55:10,465 INFO [main] org.apache.hadoop.mapred.MapTask: Finished spill 0
+2026-10-11 10:55:10,520 INFO [main] org.apache.hadoop.mapred.Task: Task:attempt_1791716023192_0002_m_000000_0 is done. And is in the process of committing
+2026-10-11 10:55:10,607 INFO [main] org.apache.hadoop.mapred.Task: Task 'attempt_1791716023192_0002_m_000000_0' done.
+2026-10-11 10:55:10,617 INFO [main] org.apache.hadoop.mapred.Task: Final Counters for attempt_1791716023192_0002_m_000000_0: Counters: 28
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=322631
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=150
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=3
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=0
+		HDFS: Number of bytes read erasure-coded=0
+	Map-Reduce Framework
+		Map input records=2
+		Map output records=4
+		Map output bytes=32
+		Map output materialized bytes=46
+		Input split bytes=126
+		Combine input records=0
+		Spilled Records=4
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=36
+		CPU time spent (ms)=1070
+		Physical memory (bytes) snapshot=304357376
+		Virtual memory (bytes) snapshot=2272636928
+		Total committed heap usage (bytes)=225443840
+		Peak Map Physical memory (bytes)=304357376
+		Peak Map Virtual memory (bytes)=2272636928
+	File Input Format Counters 
+		Bytes Read=24
+
+End of LogType:syslog
+***********************************************************************
+

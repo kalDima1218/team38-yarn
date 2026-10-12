@@ -1,0 +1,126 @@
+Configured Capacity: 101768216576 (94.78 GB)
+Present Capacity: 93672314040 (87.24 GB)
+DFS Remaining: 93668036608 (87.24 GB)
+DFS Used: 4277432 (4.08 MB)
+DFS Used%: 0.00%
+Replicated Blocks:
+	Under replicated blocks: 0
+	Blocks with corrupt replicas: 0
+	Missing blocks: 0
+	Missing blocks (with replication factor 1): 0
+	Badly Distributed Blocks: 0
+	Low redundancy blocks with highest priority to recover: 0
+	Pending deletion blocks: 0
+Erasure Coded Block Groups: 
+	Low redundancy block groups: 0
+	Block groups with corrupt internal blocks: 0
+	Missing block groups: 0
+	Badly Distributed Blocks: 0
+	Low redundancy blocks with highest priority to recover: 0
+	Pending deletion blocks: 0
+
+-------------------------------------------------
+Live datanodes (2):
+
+Name: 10.38.0.12:9866 (team-38-00)
+Hostname: team-38-00
+Decommission Status : Normal
+Configured Capacity: 50884108288 (47.39 GB)
+DFS Used: 2138716 (2.04 MB)
+Non DFS Used: 4031188388 (3.75 GB)
+DFS Remaining: 46834003968 (43.62 GB)
+DFS Used%: 0.00%
+DFS Remaining%: 92.04%
+Configured Cache Capacity: 0 (0 B)
+Cache Used: 0 (0 B)
+Cache Remaining: 0 (0 B)
+Cache Used%: 100.00%
+Cache Remaining%: 0.00%
+Xceivers: 0
+Last contact: Sun Oct 11 11:00:17 UTC 2026
+Last Block Report: Sun Oct 11 10:55:53 UTC 2026
+Num of Blocks: 22
+
+
+Name: 10.38.0.13:9866 (team-38-01)
+Hostname: team-38-01
+Decommission Status : Normal
+Configured Capacity: 50884108288 (47.39 GB)
+DFS Used: 2138716 (2.04 MB)
+Non DFS Used: 4031159716 (3.75 GB)
+DFS Remaining: 46834032640 (43.62 GB)
+DFS Used%: 0.00%
+DFS Remaining%: 92.04%
+Configured Cache Capacity: 0 (0 B)
+Cache Used: 0 (0 B)
+Cache Remaining: 0 (0 B)
+Cache Used%: 100.00%
+Cache Remaining%: 0.00%
+Xceivers: 0
+Last contact: Sun Oct 11 11:00:17 UTC 2026
+Last Block Report: Sun Oct 11 10:41:41 UTC 2026
+Num of Blocks: 22
+
+
+
+Connecting to namenode via http://team-38-nn:9870/fsck?ugi=hadoop&files=1&blocks=1&locations=1&path=%2Fuser%2Fteam%2Fyarn-check-20261011-105419
+FSCK started by hadoop (auth:SIMPLE) from /10.38.0.10 for path /user/team/yarn-check-20261011-105419 at Sun Oct 11 11:00:21 UTC 2026
+
+/user/team/yarn-check-20261011-105419 <dir>
+/user/team/yarn-check-20261011-105419/input <dir>
+/user/team/yarn-check-20261011-105419/input/text.txt 24 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-562020515-127.0.1.1-1791714975505:blk_1073741852_1028 len=24 Live_repl=2  [DatanodeInfoWithStorage[10.38.0.13:9866,DS-844cb9b2-da41-450f-a8c6-7a02a1a5a58b,DISK], DatanodeInfoWithStorage[10.38.0.12:9866,DS-2ea53732-735f-4557-95bf-6e35417399e0,DISK]]
+
+/user/team/yarn-check-20261011-105419/streaming <dir>
+/user/team/yarn-check-20261011-105419/streaming/_SUCCESS 0 bytes, replicated: replication=2, 0 block(s):  OK
+
+/user/team/yarn-check-20261011-105419/streaming/part-00000 24 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-562020515-127.0.1.1-1791714975505:blk_1073741873_1049 len=24 Live_repl=2  [DatanodeInfoWithStorage[10.38.0.13:9866,DS-844cb9b2-da41-450f-a8c6-7a02a1a5a58b,DISK], DatanodeInfoWithStorage[10.38.0.12:9866,DS-2ea53732-735f-4557-95bf-6e35417399e0,DISK]]
+
+/user/team/yarn-check-20261011-105419/wordcount <dir>
+/user/team/yarn-check-20261011-105419/wordcount/_SUCCESS 0 bytes, replicated: replication=2, 0 block(s):  OK
+
+/user/team/yarn-check-20261011-105419/wordcount/part-r-00000 24 bytes, replicated: replication=2, 1 block(s):  OK
+0. BP-562020515-127.0.1.1-1791714975505:blk_1073741859_1035 len=24 Live_repl=2  [DatanodeInfoWithStorage[10.38.0.13:9866,DS-844cb9b2-da41-450f-a8c6-7a02a1a5a58b,DISK], DatanodeInfoWithStorage[10.38.0.12:9866,DS-2ea53732-735f-4557-95bf-6e35417399e0,DISK]]
+
+
+Status: HEALTHY
+ Number of data-nodes:	2
+ Number of racks:		1
+ Total dirs:			4
+ Total symlinks:		0
+
+Replicated Blocks:
+ Total size:	72 B
+ Total files:	5
+ Total blocks (validated):	3 (avg. block size 24 B)
+ Minimally replicated blocks:	3 (100.0 %)
+ Over-replicated blocks:	0 (0.0 %)
+ Under-replicated blocks:	0 (0.0 %)
+ Mis-replicated blocks:		0 (0.0 %)
+ Default replication factor:	2
+ Average block replication:	2.0
+ Missing blocks:		0
+ Corrupt blocks:		0
+ Missing replicas:		0 (0.0 %)
+ Blocks queued for replication:	0
+
+Erasure Coded Block Groups:
+ Total size:	0 B
+ Total files:	0
+ Total block groups (validated):	0
+ Minimally erasure-coded block groups:	0
+ Over-erasure-coded block groups:	0
+ Under-erasure-coded block groups:	0
+ Unsatisfactory placement block groups:	0
+ Average block group size:	0.0
+ Missing block groups:		0
+ Corrupt block groups:		0
+ Missing internal blocks:	0
+ Blocks queued for replication:	0
+FSCK ended at Sun Oct 11 11:00:21 UTC 2026 in 3 milliseconds
+
+
+The filesystem under path '/user/team/yarn-check-20261011-105419' is HEALTHY
+
+PASS: 2 NM, 2 DN, healthy blocks, replication=2
